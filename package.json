@@ -1,0 +1,62 @@
+{
+  "name": "forebygge-sykefravaer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "@navikt/fnrvalidator": "^1.1.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router": "^5.1.7",
+    "@types/react-router-dom": "^5.1.5",
+    "classnames": "^2.2.6",
+    "craco-less": "^1.16.0",
+    "cross-env": "^7.0.2",
+    "lodash.throttle": "^4.1.1",
+    "nav-frontend-alertstriper": "^3.0.16",
+    "nav-frontend-alertstriper-style": "^2.0.14",
+    "nav-frontend-core": "^4.0.12",
+    "nav-frontend-ikoner-assets": "^2.0.1",
+    "nav-frontend-js-utils": "^1.0.8",
+    "nav-frontend-lenker": "^1.0.35",
+    "nav-frontend-lenker-style": "^0.2.26",
+    "nav-frontend-paneler-style": "^0.3.19",
+    "nav-frontend-skjema": "^3.0.2",
+    "nav-frontend-skjema-style": "^2.0.7",
+    "nav-frontend-typografi": "^2.0.19",
+    "nav-frontend-typografi-style": "^1.0.20",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "start": "cross-env ENABLE_EXTERNAL_MENU=true craco start",
+    "build": "craco build",
+    "test": "craco test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
