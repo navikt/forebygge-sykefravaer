@@ -6,6 +6,8 @@ module.exports = {
     webpack: {
         alias: {
             '@': path.resolve(__dirname, 'src/'),
+            '@/komponenter': path.resolve(__dirname, 'src/komponenter/'),
+            '@/assets': path.resolve(__dirname, 'src/assets/'),
         },
         devserver: {
             open: false,
