@@ -8,7 +8,7 @@ import {
   Undertittel,
 } from "nav-frontend-typografi";
 import React from "react";
-import { TextBlock, TypoStyle } from "./sanityTypes";
+import { sanityImageLink, TextBlock, TypoStyle } from "./sanityTypes";
 
 const typoComponents = {
   [TypoStyle.H1]: Sidetittel,
@@ -47,8 +47,23 @@ const serializeCheck = (block: TextBlock) => {
   );
 };
 
+const imageSerializer = (props: any) => (
+  <img src={sanityImageLink(props.node.asset._ref)} alt={"illustrasjon"} />
+);
+
+const colorMarks = (props: any) => {
+  console.log("props => ", props);
+  return (
+    <span style={{ backgroundColor: props.mark.hex }}>{props.children}</span>
+  );
+};
+
 export const serializers = {
   types: {
     block: serializeCheck,
+    image: imageSerializer,
+  },
+  marks: {
+    color: colorMarks,
   },
 };

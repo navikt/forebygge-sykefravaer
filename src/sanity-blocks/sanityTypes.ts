@@ -62,14 +62,36 @@ export type DocumentTypes =
   | IAavtalen;
 
 export interface VihjelperMed extends CommonTypes {
-  checklist: {}[];
+  checklist: {
+    checkpoint: string;
+    _key: string;
+  }[];
   content: {}[];
-  footerContent: {}[];
-  hovedliste: {}[];
+  hovedliste: {
+    body: {}[];
+    iconImage: {
+      asset: {
+        _ref: string;
+        _type: string;
+      };
+      _type: string;
+    };
+  }[];
+  footer: {
+    bodyContent: {}[];
+    color: [string];
+    _key: string;
+    _type: string;
+  }[];
 }
 
 export interface DigitalTjeneste extends CommonTypes {
-  hovedliste: {}[];
+  hovedliste: {
+    body: {}[];
+    iconImage: {
+      _type: string;
+    };
+  }[];
   mainImage: MainImage;
 }
 

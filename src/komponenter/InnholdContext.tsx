@@ -45,29 +45,28 @@ const InnholdContext = (props: ProviderProps) => {
   const leggTilMenyElement = (item: string) =>
     setOverskrift((overskrifter) => [...overskrifter, item]);
 
-  const setDocumentData = (item: DocumentTypes) => {
-    if (item.title) {
-      leggTilMenyElement(item.title);
-    }
-    switch (item._type) {
-      case "vi-hjelper-dere-med":
-        return setViHjelperMed(item as VihjelperMed);
-      case "digitale-tjenester":
-        return setDtjenester(item as DigitalTjeneste);
-      case "oppfolging-fra-nav-arbeidslivssenter":
-        return setOppfolging(item as Oppfolging);
-      case "helseIArbeid":
-        return setHelsearbeid(item as HelseIArbeid);
-      case "ia-avtalen":
-        return setIaAvtale(item as IAavtalen);
-    }
-  };
-
   useEffect(() => {
+    const setDocumentData = (item: DocumentTypes) => {
+      if (item.title) {
+        leggTilMenyElement(item.title);
+      }
+      switch (item._type) {
+        case "vi-hjelper-dere-med":
+          return setViHjelperMed(item as VihjelperMed);
+        case "digitale-tjenester":
+          return setDtjenester(item as DigitalTjeneste);
+        case "oppfolging-fra-nav-arbeidslivssenter":
+          return setOppfolging(item as Oppfolging);
+        case "helseIArbeid":
+          return setHelsearbeid(item as HelseIArbeid);
+        case "ia-avtalen":
+          return setIaAvtale(item as IAavtalen);
+      }
+    };
+
     const url = isProduction();
     fetchsanityJSON(url)
       .then((res) => {
-        console.log(res);
         setEnv(res.env);
         res.data.forEach((item: DocumentTypes) => {
           setDocumentData(item);
