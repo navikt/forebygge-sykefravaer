@@ -51,10 +51,11 @@ server.get("/forebygge-sykefravaer/internal/isReady", (req, res) =>
 );
 
 const sanityQueryTypes = () => [
-  "hvordan-permittere-ansatte",
-  "i-permitteringsperioden",
-  "nar-skal-jeg-utbetale-lonn",
-  "vanlige-sporsmal",
+  "vi-hjelper-dere-med",
+  "digitale-tjenester",
+  "oppfolging-fra-nav-arbeidslivssenter",
+  "helseIArbeid",
+  "ia-avtalen",
 ];
 
 const htmlinsert = () => [
@@ -69,12 +70,17 @@ const url = () =>
   process.env.DECORATOR_EXTERNAL_URL ||
   "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4/no/";
 
-const querySanity = () =>
-  `*[_type == '${sanityQueryTypes()[0]}' || _type == '${
-    sanityQueryTypes()[1]
-  }' || _type == '${sanityQueryTypes()[2]}' || _type == '${
-    sanityQueryTypes()[3]
-  }'] | order(_type, priority)`;
+const querystart = (len) => len === 0;
+
+const querySanity = () => {
+  let querystring = "";
+  sanityQueryTypes().forEach((elem, index) => {
+    querystring = querystring.concat(
+      querystart(index) ? `*[_type == '${elem}'` : ` || _type == '${elem}'`
+    );
+  });
+  return querystring.concat("] | order(priority)");
+};
 
 const setHeaders = (responsheader) => {
   responsheader.setHeader("Access-Control-Allow-Origin", "*");
@@ -100,11 +106,18 @@ const serverUse = (staticPath) => {
   );
 };
 
+const sendDataObj = (json) => {
+  return {
+    data: json,
+    env: [process.env.SANITY_PROJECT_ID, process.env.SANITY_DATASET],
+  };
+};
+
 const checkbackupCacheInnhold = (res, fetchError) => {
   const cacheBackupInnhold = backupCacheInnhold.get(backupCacheInnholdKey);
   if (cacheBackupInnhold) {
     mainCacheInnhold.set(mainCacheInnholdKey, cacheBackupInnhold);
-    res.send(cacheBackupInnhold);
+    res.send(sendDataObj(cacheBackupInnhold));
   } else {
     console.log("fetchError", fetchError);
     res.send(fetchError);
@@ -118,18 +131,17 @@ const fetchInnhold = (res) => {
     .then((result) => {
       mainCacheInnhold.set(mainCacheInnholdKey, result);
       backupCacheInnhold.set(backupCacheInnholdKey, result);
-      res.send(result);
+      res.send(sendDataObj(result));
     })
     .catch((error) => {
       checkbackupCacheInnhold(res, error);
     });
 };
 
-// sanity innhold
 server.get(`${BASE_URL}/innhold/`, (req, res) => {
   setHeaders(res);
   const cacheInnhold = mainCacheInnhold.get(mainCacheInnholdKey);
-  cacheInnhold ? res.send(cacheInnhold) : fetchInnhold(res);
+  cacheInnhold ? res.send(sendDataObj(cacheInnhold)) : fetchInnhold(res);
 });
 
 const injectMenuIntoHtml = (menu) => {
@@ -178,7 +190,7 @@ const serveAppWithMenu = (app) => {
   ];
 
   staticPaths.map((path) => serverUse(path));
-  server.get([`${BASE_URL}/`, `${BASE_URL}/*`], (req, res) => {
+  server.get([`${BASE_URL}/`], (req, res) => {
     res.send(app);
   });
   setServerPort();
