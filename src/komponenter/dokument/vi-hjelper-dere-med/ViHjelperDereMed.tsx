@@ -4,7 +4,7 @@ import BEMHelper from "../../../utils/bem";
 import CheckedCircle from "../../../assets/img_tsx/CheckedCircle";
 import BlockContent from "@sanity/block-content-to-react";
 import "./viHjelperDereMed.less";
-import { serializers } from "../../../sanity-blocks/serializer";
+import { serializers, setStyle } from "../../../sanity-blocks/serializer";
 
 interface Props {
   innhold: VihjelperMed | null;
@@ -13,19 +13,6 @@ interface Props {
 const cls = BEMHelper("viHjelperDereMed");
 
 const ViHjelperDereMed = (props: Props) => {
-  const setStyle = (element: { color?: [string] }) => {
-    if (element.color) {
-      return {
-        backgroundColor: element.color[0],
-        padding: "2rem 1rem",
-        borderRadius: "4px",
-      };
-    }
-    return {
-      backgroundColor: "#FFFFF",
-    };
-  };
-
   return props.innhold ? (
     <div>
       <div className={cls.element("checklist")}>

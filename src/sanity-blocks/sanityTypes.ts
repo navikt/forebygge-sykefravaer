@@ -10,6 +10,8 @@ export enum TypoStyle {
   Normal = "normal",
 }
 
+type AlertStripeType = "info" | "suksess" | "advarsel" | "feil";
+
 export type TextBlock = {
   node: {
     markDefs: [];
@@ -43,6 +45,20 @@ interface MainImage {
   _type: string;
 }
 
+export interface BodyContent {
+  bodyContent: {
+    children: {}[];
+    markDefs: [];
+    style: string;
+    _key: string;
+    _type: string;
+  }[];
+  title: string;
+  color?: [string];
+  _key: string;
+  _type: string;
+}
+
 export interface CommonTypes {
   priority: number;
   publishedAt: string;
@@ -52,6 +68,7 @@ export interface CommonTypes {
   _rev: string;
   _type: string;
   _updatedAt: string;
+  mainImage?: MainImage;
 }
 
 export type DocumentTypes =
@@ -87,29 +104,65 @@ export interface VihjelperMed extends CommonTypes {
 
 export interface DigitalTjeneste extends CommonTypes {
   hovedliste: {
-    body: {}[];
+    body: {
+      children: {}[];
+      markDefs: [];
+      style: string;
+      _key: string;
+      _type: string;
+      __proto__: string;
+    }[];
     iconImage: {
+      asset: {
+        _ref: string;
+        _type: string;
+      };
       _type: string;
     };
+    title: string;
+    _key: string;
+    _type: string;
   }[];
   mainImage: MainImage;
 }
 
 export interface Oppfolging extends CommonTypes {
-  alertstripe: {}[];
-  body: {}[];
+  alertstripe: {
+    alertType: [AlertStripeType];
+    innhold: {
+      _key: string;
+      _type: string;
+      children: {
+        markDefs: [];
+        style: string;
+      }[];
+    }[];
+    _key: string;
+    _type: string;
+  }[];
+  body: BodyContent[];
   mainImage: MainImage;
 }
 
 export interface HelseIArbeid extends CommonTypes {
-  body: {}[];
+  body: {
+    children: {}[];
+    markDefs: [];
+    style: string;
+    _key: string;
+    _type: string;
+  }[];
   mainImage: MainImage;
 }
 
 export interface IAavtalen extends CommonTypes {
   body: {}[];
   list: {
-    listElement: {}[];
+    listElement: {
+      tekst: {}[];
+      _key: string;
+      _type: string;
+    }[];
     title: string;
   };
   mainImage: MainImage;

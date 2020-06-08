@@ -51,12 +51,9 @@ const imageSerializer = (props: any) => (
   <img src={sanityImageLink(props.node.asset._ref)} alt={"illustrasjon"} />
 );
 
-const colorMarks = (props: any) => {
-  console.log("props => ", props);
-  return (
-    <span style={{ backgroundColor: props.mark.hex }}>{props.children}</span>
-  );
-};
+const colorMarks = (props: any) => (
+  <span style={{ backgroundColor: props.mark.hex }}>{props.children}</span>
+);
 
 export const serializers = {
   types: {
@@ -66,4 +63,17 @@ export const serializers = {
   marks: {
     color: colorMarks,
   },
+};
+
+export const setStyle = (element: { color?: [string] }) => {
+  if (element.color) {
+    return {
+      backgroundColor: element.color[0],
+      padding: "1.5rem 1rem",
+      borderRadius: "4px",
+    };
+  }
+  return {
+    backgroundColor: "#FFFFF",
+  };
 };

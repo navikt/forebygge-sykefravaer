@@ -2,14 +2,36 @@ import React, { useContext } from "react";
 import { ForebyggeSykefravaerContext } from "./InnholdContext";
 import Dokument from "./dokument/Dokument";
 import ViHjelperDereMed from "./dokument/vi-hjelper-dere-med/ViHjelperDereMed";
+import DigitaleTjenester from "./dokument/digitale-tjenester/DigitaleTjenester";
+import OppfolgingFraNav from "./dokument/oppfolging-fra-nav/OppfolgingFraNav";
+import Helsearbeid from "./dokument/helsearbeid/HelseArbeid";
+import IaAvtalen from "./dokument/ia-avtalen/IaAvtalen";
 
 const Content = () => {
-  const { viHjelper } = useContext(ForebyggeSykefravaerContext);
+  const {
+    viHjelper,
+    tjenester,
+    oppfolging,
+    helsearbeid,
+    iaavtale,
+  } = useContext(ForebyggeSykefravaerContext);
 
   return (
     <div>
       <Dokument innhold={viHjelper}>
         <ViHjelperDereMed innhold={viHjelper} />
+      </Dokument>
+      <Dokument innhold={tjenester}>
+        <DigitaleTjenester innhold={tjenester} />
+      </Dokument>
+      <Dokument innhold={oppfolging}>
+        <OppfolgingFraNav innhold={oppfolging} />
+      </Dokument>
+      <Dokument innhold={helsearbeid}>
+        <Helsearbeid innhold={helsearbeid} />
+      </Dokument>
+      <Dokument innhold={iaavtale}>
+        <IaAvtalen innhold={iaavtale} />
       </Dokument>
     </div>
   );
