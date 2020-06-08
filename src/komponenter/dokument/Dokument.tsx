@@ -37,12 +37,12 @@ const headerWithImage = (innhold: DocumentTypes) => {
   return (
     <div className={cls.element("header")}>
       <BlockContent blocks={innhold.mainImage} serializers={serializers} />
-      <Innholdstittel className={cls.element("header-txt")}>
+      <Innholdstittel className={cls.element("header-txt")} id={innhold.title}>
         {innhold.title}
       </Innholdstittel>
     </div>
   );
 };
-const header = (txt: string) => <Innholdstittel>{txt}</Innholdstittel>;
+const header = (txt: string) => <Innholdstittel id={txt}>{txt}</Innholdstittel>;
 
 export default Dokument;
