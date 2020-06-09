@@ -1,10 +1,15 @@
 import React from "react";
 
-const ForebyggeSykefravaerIcon = () => {
+interface Props {
+  width: string;
+  height: string;
+}
+
+const ForebyggeSykefravaerIcon = (props: Props) => {
   return (
     <svg
-      width="243"
-      height="191"
+      width={props.width}
+      height={props.height}
       viewBox="0 0 243 191"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from "react";
 import BEMHelper from "../../utils/bem";
 import TypografiBase from "nav-frontend-typografi";
-
-import "./banner.less";
 import ForebyggeSykefravaerIcon from "../../assets/img_tsx/ForebyggeSykefravaerIcon";
-
-enum TypoSize {
-  sidetittel = "sidetittel",
-  undertitel = "undertittel",
-}
+import {
+  calcImageSize,
+  calcTextSize,
+  ImageSize,
+  TypoSize,
+} from "../../utils/banner-utils";
+import "./banner.less";
 
 const Banner = () => {
-  const [txtSize, setTxtSize] = useState<TypoSize>(TypoSize.sidetittel);
+  const [txtSize, setTxtSize] = useState<TypoSize>(calcTextSize);
+  const [imagesize, setImagesize] = useState<ImageSize>(calcImageSize);
+
   useEffect(() => {
-    const settxt = () =>
-      window.innerWidth < 768 ? TypoSize.undertitel : TypoSize.sidetittel;
     const setHeaderTekst = () => {
-      setTxtSize(settxt);
+      setTxtSize(calcTextSize);
+      setImagesize(calcImageSize);
     };
     window.addEventListener("resize", setHeaderTekst);
     return () => window.removeEventListener("resize", setHeaderTekst);
-  });
+  }, []);
 
   const cls = BEMHelper("banner");
   return (
@@ -37,7 +38,10 @@ const Banner = () => {
             </TypografiBase>
           </div>
           <div className={cls.element("image")}>
-            <ForebyggeSykefravaerIcon />
+            <ForebyggeSykefravaerIcon
+              height={imagesize.height}
+              width={imagesize.width}
+            />
           </div>
         </div>
         <div className={cls.element("bunnlinje")} />

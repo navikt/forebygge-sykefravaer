@@ -37,7 +37,7 @@ export const sanityImageLink = (imageId: string) => {
 
 export const setEnv = (item: string[]) => (env = item);
 
-interface MainImage {
+interface Image {
   asset: {
     _ref: string;
     _type: string;
@@ -45,14 +45,19 @@ interface MainImage {
   _type: string;
 }
 
-export interface BodyContent {
-  bodyContent: {
-    children: {}[];
+interface Body {
+  children: {
     markDefs: [];
     style: string;
-    _key: string;
-    _type: string;
   }[];
+  markDefs: [];
+  style: string;
+  _key: string;
+  _type: string;
+}
+
+export interface BodyContent {
+  bodyContent: Body[];
   title: string;
   color?: [string];
   _key: string;
@@ -66,9 +71,10 @@ export interface CommonTypes {
   _createdAt: string;
   _id: string;
   _rev: string;
+  _key: string;
   _type: string;
   _updatedAt: string;
-  mainImage?: MainImage;
+  mainImage?: Image;
 }
 
 export type DocumentTypes =
@@ -85,78 +91,41 @@ export interface VihjelperMed extends CommonTypes {
   }[];
   content: {}[];
   hovedliste: {
-    body: {}[];
-    iconImage: {
-      asset: {
-        _ref: string;
-        _type: string;
-      };
-      _type: string;
-    };
+    body: Body;
+    iconImage: Image;
   }[];
-  footer: {
-    bodyContent: {}[];
-    color: [string];
-    _key: string;
-    _type: string;
-  }[];
+  footer: BodyContent[];
 }
 
 export interface DigitalTjeneste extends CommonTypes {
   hovedliste: {
-    body: {
-      children: {}[];
-      markDefs: [];
-      style: string;
-      _key: string;
-      _type: string;
-      __proto__: string;
-    }[];
-    iconImage: {
-      asset: {
-        _ref: string;
-        _type: string;
-      };
-      _type: string;
-    };
+    body: Body;
+    iconImage: Image;
     title: string;
     _key: string;
     _type: string;
   }[];
-  mainImage: MainImage;
+  mainImage: Image;
 }
 
 export interface Oppfolging extends CommonTypes {
   alertstripe: {
     alertType: [AlertStripeType];
-    innhold: {
-      _key: string;
-      _type: string;
-      children: {
-        markDefs: [];
-        style: string;
-      }[];
-    }[];
+    innhold: Body[];
     _key: string;
     _type: string;
   }[];
   body: BodyContent[];
-  mainImage: MainImage;
+  mainImage: Image;
 }
 
 export interface HelseIArbeid extends CommonTypes {
-  body: {
-    children: {}[];
-    markDefs: [];
-    style: string;
-    _key: string;
-    _type: string;
-  }[];
-  mainImage: MainImage;
+  body: Body[];
+  mainImage: Image;
 }
 
 export interface IAavtalen extends CommonTypes {
-  body: {}[];
+  body: Body[];
   list: {
     listElement: {
       tekst: {}[];
@@ -165,7 +134,7 @@ export interface IAavtalen extends CommonTypes {
     }[];
     title: string;
   };
-  mainImage: MainImage;
+  mainImage: Image;
 }
 
 export interface SanityBlockTypes {

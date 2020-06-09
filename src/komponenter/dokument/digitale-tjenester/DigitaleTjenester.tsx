@@ -13,9 +13,10 @@ interface Props {
 const cls = BEMHelper("digitaleTjenester");
 
 const DigitaleTjenester = (props: Props) => {
-  return props.innhold ? (
+  const { innhold } = props;
+  return innhold ? (
     <div className={cls.className}>
-      {props.innhold.hovedliste.map((element, index) => {
+      {innhold.hovedliste.map((element, index) => {
         return (
           <div className={cls.element("liste-element")} key={index}>
             <div className={cls.element("image")}>

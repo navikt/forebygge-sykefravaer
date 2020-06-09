@@ -1,6 +1,5 @@
 import React from "react";
 import BEMHelper from "../../utils/bem";
-import "./dokument.less";
 import { Innholdstittel } from "nav-frontend-typografi";
 import { DocumentTypes } from "../../sanity-blocks/sanityTypes";
 import BlockContent from "@sanity/block-content-to-react";
