@@ -1,94 +1,42 @@
 @import "../../assets/style/commonStyle";
 
 .meny {
+  position: fixed;
+  top: 6rem;
+  right: 0;
+  left: 0;
+
+  &__wrapper {
+    position: relative;
+  }
+
   &__container {
+    z-index: 1000;
     background-color: white;
     max-width: 16.5rem;
     max-height: 19.625rem;
     border-radius: 4px;
     box-shadow: @componentShadow;
-    position: fixed;
-    top: 22rem;
-    left: 0;
+    position: absolute;
+    right: 0.75rem;
     transition: ease-in-out 0.4s;
+    transform: scale(1);
+    opacity: 1;
 
     &--closed {
-      left: -13.75rem;
+      transform: scale(0);
+      opacity: 0;
     }
   }
 
-  &__button {
+  .menubutton {
     position: absolute;
-    width: 35px;
-    height: 35px;
-    top: 1.75rem;
-    right: -2.85rem;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    //background: #fffafa;
-    background: #f8f3f3;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-
-    span {
-      position: absolute;
-      width: 20px;
-      height: 3px;
-      top: 50%;
-      left: 50%;
-      background: black;
-      border-radius: 2px;
-      overflow: hidden;
-      transition: all 0.3s linear;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 100%;
-        top: 0;
-        right: 0;
-        background: black;
-        transition: all 0.3s linear;
-      }
-
-      &:nth-child(1) {
-        animation: span-first-off 0.5s ease-in-out;
-        animation-fill-mode: forwards;
-      }
-      &:nth-child(2) {
-        animation: span-second-off 0.5s ease-in-out;
-        animation-fill-mode: forwards;
-      }
-
-      &:nth-child(3) {
-        animation: span-third-off 0.5s ease-in-out;
-        animation-fill-mode: forwards;
-      }
-    }
-
-    &--on {
-      span {
-        &:nth-child(1) {
-          animation: span-first-on 0.5s ease-in-out;
-          animation-fill-mode: forwards;
-        }
-        &:nth-child(2) {
-          animation: span-second-on 0.5s ease-in-out;
-          animation-fill-mode: forwards;
-        }
-
-        &:nth-child(3) {
-          animation: span-third-on 0.5s ease-in-out;
-          animation-fill-mode: forwards;
-        }
-      }
-    }
+    right: 3.5%;
+    top: 0;
+    z-index: 1001;
   }
 
   &__content {
-    position: relative;
     padding: 1rem;
     max-width: 75%;
   }
@@ -113,88 +61,15 @@
     &__container {
       position: sticky;
       top: 7rem;
+
+      &--closed {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     &__content {
       max-width: unset;
     }
-  }
-}
-
-@keyframes span-first-on {
-  0% {
-    transform: translate(-50%, -300%);
-  }
-  30% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-}
-
-@keyframes span-second-on {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  25% {
-    background: grey;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    transform: translate(-150%, -50%) scale(0);
-  }
-}
-
-@keyframes span-third-on {
-  0% {
-    transform: translate(-50%, 200%);
-  }
-  30% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-}
-
-@keyframes span-first-off {
-  0% {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-  30% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -300%);
-  }
-}
-
-@keyframes span-second-off {
-  0% {
-    transform: translate(-150%, -50%) scale(0);
-  }
-  25% {
-    background: black;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
-
-@keyframes span-third-off {
-  0% {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-  30% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, 200%);
   }
 }
