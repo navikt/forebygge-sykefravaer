@@ -6,14 +6,15 @@ import { ForebyggeSykefravaerContext } from "../InnholdContext";
 import throttle from "lodash.throttle";
 import MenuButton from "./menu-button/MenuButton";
 import "./meny.less";
+import { initmenuPosition, isMobil, setScroll } from "../../utils/menu-utils";
 
 const cls = BEMHelper("meny");
 
 const Meny = () => {
-  let meny: any = null;
   const { overskrift } = useContext(ForebyggeSykefravaerContext);
   const [sectionInFocus, setSectionInFocus] = useState<number>(0);
   const [viewmobilMenu, setViewmobilMenu] = useState<boolean>(false);
+  const [buttonStyling, setButtonStyling] = useState<any>(initmenuPosition());
 
   const toggleButton = () => setViewmobilMenu(!viewmobilMenu);
 
@@ -34,21 +35,26 @@ const Meny = () => {
           })
         : null;
 
-    const calcmenuMobil = () => console.log("yo");
-
     const throttleScrollevent = throttle(() => setFocusIndex(), 75);
-    window.addEventListener("scroll", throttleScrollevent, {
-      passive: true,
-    });
-    return () => {
-      window.removeEventListener("scroll", () => setFocusIndex());
+    const dispatchmobilevent = () =>
+      isMobil() ? setButtonStyling(setScroll()) : null;
+
+    window.onscroll = function () {
+      throttleScrollevent();
+      dispatchmobilevent();
     };
+
+    window.addEventListener("resize", () =>
+      setButtonStyling(initmenuPosition())
+    );
+    return () =>
+      window.removeEventListener("resize", () =>
+        setButtonStyling(initmenuPosition())
+      );
   }, [overskrift]);
 
-  useEffect(() => {}, []);
-
   return (
-    <div className={cls.className}>
+    <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
       <div className={cls.element("wrapper")}>
         <MenuButton on={viewmobilMenu} change={toggleButton} />
         <div

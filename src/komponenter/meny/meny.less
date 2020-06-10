@@ -5,20 +5,22 @@
   top: 6rem;
   right: 0;
   left: 0;
+  z-index: 950;
 
   &__wrapper {
+    z-index: 950;
     position: relative;
   }
 
   &__container {
-    z-index: 1000;
+    z-index: 950;
     background-color: white;
     max-width: 16.5rem;
     max-height: 19.625rem;
     border-radius: 4px;
     box-shadow: @componentShadow;
     position: absolute;
-    right: 0.75rem;
+    right: 0.95rem;
     transition: ease-in-out 0.4s;
     transform: scale(1);
     opacity: 1;
@@ -33,7 +35,7 @@
     position: absolute;
     right: 3.5%;
     top: 0;
-    z-index: 1001;
+    z-index: 951;
   }
 
   &__content {
@@ -58,13 +60,17 @@
   }
 
   @media (min-width: 768px) {
-    &__container {
-      position: sticky;
-      top: 7rem;
+    position: sticky;
+    top: 7rem;
+    height: fit-content;
+    max-height: 18.75rem;
+    margin-top: 0;
 
+    &__container {
       &--closed {
         transform: scale(1);
         opacity: 1;
+        position: unset;
       }
     }
 
