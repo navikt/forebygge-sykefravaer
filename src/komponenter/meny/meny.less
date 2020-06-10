@@ -1,13 +1,46 @@
+@import "../../assets/style/commonStyle";
+
 .meny {
-  background-color: white;
-  max-width: 16.5rem;
-  max-height: 19.625rem;
-  border-radius: 4px;
-  position: sticky;
-  top: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 0;
+  left: 0;
+  z-index: 950;
+
+  &__wrapper {
+    z-index: 950;
+    position: relative;
+  }
+
+  &__container {
+    z-index: 950;
+    background-color: white;
+    max-width: 16.5rem;
+    max-height: 19.625rem;
+    border-radius: 4px;
+    box-shadow: @componentShadow;
+    position: absolute;
+    right: 0.95rem;
+    transition: ease-in-out 0.4s;
+    transform: scale(1);
+    opacity: 1;
+
+    &--closed {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  .menubutton {
+    position: absolute;
+    right: 3.5%;
+    top: 0;
+    z-index: 951;
+  }
 
   &__content {
     padding: 1rem;
+    max-width: 75%;
   }
 
   &__lenke {
@@ -23,6 +56,26 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @media (min-width: 768px) {
+    position: sticky;
+    top: 7rem;
+    height: fit-content;
+    max-height: 18.75rem;
+    margin-top: 0;
+
+    &__container {
+      &--closed {
+        transform: scale(1);
+        opacity: 1;
+        position: unset;
+      }
+    }
+
+    &__content {
+      max-width: unset;
     }
   }
 }

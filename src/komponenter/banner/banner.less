@@ -1,5 +1,7 @@
+@import "../../assets/style/commonStyle";
+
 .banner {
-  height: 12.3125rem;
+  height: 8.775rem;
   background-color: #d0e0f1;
 
   &__wrapper {
@@ -24,5 +26,9 @@
     min-height: 0.5rem;
     width: 100%;
     z-index: 100;
+  }
+
+  @media (min-width: @mobilbreakpoint) {
+    height: 12.3125rem;
   }
 }

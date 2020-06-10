@@ -1,13 +1,15 @@
+@import "../../assets/style/commonStyle";
+
 .dokument {
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+  margin: 0 0.5rem 1.5rem 0.5rem;
+
   max-width: 44rem;
-  min-width: 20rem;
   background-color: white;
   border-radius: 4px;
+  box-shadow: @componentShadow;
 
   &__wrapper {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
   }
 
   &__header {
@@ -35,5 +37,18 @@
       background-color: black;
       left: 46.4%;
     }
+  }
+
+  @media (min-width: @smallMobilbreakpoint) {
+    margin: 0 0.75rem 1.5rem 0.75rem;
+
+    &__wrapper {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: @mobilbreakpoint) {
+    margin: 0 0 2rem 3rem;
   }
 }

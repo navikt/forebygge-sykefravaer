@@ -1,4 +1,4 @@
-@backgroundColorGrey: #e5e5e5;
+@import "../assets/style/commonStyle";
 
 html {
   scroll-behavior: smooth;
@@ -11,10 +11,17 @@ html {
     justify-content: space-around;
     background-color: @backgroundColorGrey;
     padding: 4.125rem 0;
+    position: relative;
   }
 
   &__content {
     background-color: @backgroundColorGrey;
     display: flex;
+  }
+
+  @media (min-width: @mobilbreakpoint) {
+    &__content {
+      padding: 0 1rem;
+    }
   }
 }
