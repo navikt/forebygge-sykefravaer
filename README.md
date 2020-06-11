@@ -1,4 +1,4 @@
-# Arbeidsgiver-permittering ![nav.no logo](./src/assets/ikoner/navlogo.svg)
+# Forebygge-sykefravaer ![nav.no logo](./src/assets/img/navlogo.svg)
 
 Informasjonssider til ...
 
