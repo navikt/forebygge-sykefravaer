@@ -1,6 +1,6 @@
 # Forebygge-sykefravaer ![nav.no logo](./src/assets/img/navlogo.svg)
 
-Informasjonssider til ...
+Informasjonssider til IA-web for å forebygge og redusere sykefravær og frafall.
 
 Utviklingsmiljø: `https://arbeidsgiver-q.nav.no/forebygge-sykefravaer`
 
