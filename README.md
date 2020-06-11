@@ -17,7 +17,7 @@ For å komme i gang med applikasjonen, last ned repo
 
 ##### Kjøre opp utviklingserver med menylinje `npm start`
 
-##### Kjøre opp utviklingserver uten menylinje `npm run start-plain`
+##### Kjøre opp utviklingserver uten menylinje `npm run start-nomenu`
 
 ##### Bygg av applikasjonen `npm run build`
 
