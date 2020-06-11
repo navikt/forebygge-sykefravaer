@@ -17,6 +17,8 @@ spec:
   readiness:
     path: /forebygge-sykefravaer/internal/isReady
     initialDelay: 10
+  vault:
+    enabled: true
   webproxy: true
   env:
     - name: NODE_EXTRA_CA_CERTS
