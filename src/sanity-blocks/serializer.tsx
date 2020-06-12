@@ -65,11 +65,11 @@ export const serializers = {
   },
 };
 
-export const setStyle = (element: { color?: [string] }) => {
+export const setStyle = (element: { color?: [string] }, width: number) => {
   if (element.color) {
     return {
       backgroundColor: element.color[0],
-      padding: "1.5rem 1rem",
+      padding: `1.5rem ${width}rem`,
       borderRadius: "4px",
     };
   }

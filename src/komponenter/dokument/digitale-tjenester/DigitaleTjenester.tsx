@@ -27,7 +27,9 @@ const DigitaleTjenester = (props: Props) => {
             </div>
             <div className={cls.element("txt-container")}>
               <div>
-                <Undertittel>{element.title}</Undertittel>
+                <Undertittel className={cls.element("title")}>
+                  {element.title}
+                </Undertittel>
               </div>
               <div>
                 <BlockContent blocks={element.body} serializers={serializers} />
