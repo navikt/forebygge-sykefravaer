@@ -1,6 +1,7 @@
+import { isMobil } from "./document-utils";
+
 const margintop = 208;
 
-export const isMobil = () => window.innerWidth < 768;
 export const pageScrolled = (): boolean => window.pageYOffset > 0;
 
 export const initmenuPosition = () =>

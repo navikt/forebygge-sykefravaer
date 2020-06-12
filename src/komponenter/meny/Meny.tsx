@@ -6,7 +6,8 @@ import { ForebyggeSykefravaerContext } from "../InnholdContext";
 import throttle from "lodash.throttle";
 import MenuButton from "./menu-button/MenuButton";
 import "./meny.less";
-import { initmenuPosition, isMobil, setScroll } from "../../utils/menu-utils";
+import { initmenuPosition, setScroll } from "../../utils/menu-utils";
+import { isMobil } from "../../utils/document-utils";
 
 const cls = BEMHelper("meny");
 
