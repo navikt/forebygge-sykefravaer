@@ -75,6 +75,15 @@ const InnholdContext = (props: ProviderProps) => {
       .catch((err) => console.warn(err));
   }, []);
 
+  useEffect(() => {
+    const uniquelist = overskrift.filter(
+      (item, index) => overskrift.indexOf(item) === index
+    );
+    if (uniquelist.length !== overskrift.length) {
+      setOverskrift(uniquelist);
+    }
+  }, [overskrift]);
+
   return (
     <ForebyggeSykefravaerContext.Provider value={context}>
       {props.children}
