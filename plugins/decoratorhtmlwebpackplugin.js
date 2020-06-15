@@ -6,10 +6,10 @@ const url =
   "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4/no/";
 const htmlinsert = [
   { inject: "styles", from: "styles" },
-  { inject: "scripts", from: "scripts" },
   { inject: "headerWithmenu", from: "header-withmenu" },
   { inject: "footerWithmenu", from: "footer-withmenu" },
   { inject: "megamenuResources", from: "megamenu-resources" },
+  { inject: "scripts", from: "scripts" },
 ];
 
 const decoratorHtmlWebpackPlugin = (enablemenu = false) => {
