@@ -60,10 +60,10 @@ const sanityQueryTypes = () => [
 
 const htmlinsert = () => [
   { inject: "styles", from: "styles" },
-  { inject: "scripts", from: "scripts" },
   { inject: "headerWithmenu", from: "header-withmenu" },
   { inject: "footerWithmenu", from: "footer-withmenu" },
   { inject: "megamenuResources", from: "megamenu-resources" },
+  { inject: "scripts", from: "scripts" },
 ];
 
 const url = () =>
@@ -153,7 +153,7 @@ const injectMenuIntoHtml = (menu) => {
           element.from
         )[prop];
       });
-      const output = document.documentElement.innerHTML;
+      const output = `<!DOCTYPE html>${document.documentElement.outerHTML}`;
       mainCacheMeny.set(mainCacheKey, output, 10000);
       backupCacheMeny.set(backupCacheKey, output, 0);
       serveAppWithMenu(output);
