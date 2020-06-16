@@ -7,8 +7,10 @@ import {
   Systemtittel,
   Undertittel,
 } from "nav-frontend-typografi";
-import React from "react";
+import React, { CSSProperties } from "react";
 import { sanityImageLink, TextBlock, TypoStyle } from "./sanityTypes";
+import Lenke from "nav-frontend-lenker";
+import { logLenkeTrykk } from "../amplitude/amplitude-eventlog";
 
 const typoComponents = {
   [TypoStyle.H1]: Sidetittel,
@@ -55,17 +57,19 @@ const colorMarks = (props: any) => (
   <span style={{ backgroundColor: props.mark.hex }}>{props.children}</span>
 );
 
-export const serializers = {
-  types: {
-    block: serializeCheck,
-    image: imageSerializer,
-  },
-  marks: {
-    color: colorMarks,
-  },
-};
+const link = (props: any) => (
+  <Lenke
+    href={props.mark.href}
+    onClick={(event) => logLenkeTrykk(event, props.mark.href)}
+  >
+    {props.children.map((elem: string) => elem)}
+  </Lenke>
+);
 
-export const setStyle = (element: { color?: [string] }, width: number) => {
+export const setStyle = (
+  element: { color?: [string] },
+  width: number
+): CSSProperties => {
   if (element.color) {
     return {
       backgroundColor: element.color[0],
@@ -76,4 +80,15 @@ export const setStyle = (element: { color?: [string] }, width: number) => {
   return {
     backgroundColor: "#FFFFF",
   };
+};
+
+export const serializers = {
+  types: {
+    block: serializeCheck,
+    image: imageSerializer,
+  },
+  marks: {
+    color: colorMarks,
+    link: link,
+  },
 };
