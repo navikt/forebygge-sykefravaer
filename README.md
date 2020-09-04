@@ -10,7 +10,7 @@ Utviklingsmiljø: `https://arbeidsgiver-q.nav.no/forebygge-sykefravaer`
 Applikasjonen bygger på Node, React og Typescript.
 
 
-For å komme i gang med applikasjonen, last ned repo 
+For å komme i gang med applikasjonen, last ned repo: 
 <br /><br />
 
 ##### Start med å installere avhengigheter `npm install`
