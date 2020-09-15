@@ -1,34 +1,34 @@
-# Forebygge-sykefravaer ![nav.no logo](./src/assets/img/navlogo.svg)
+# Frontend for siden om forebygging av sykefravær
 
-Informasjonssider til IA-web for å forebygge og redusere sykefravær og frafall.
+Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbindelse med forebygging av sykefravær.
 
-Utviklingsmiljø: `https://arbeidsgiver-q.nav.no/forebygge-sykefravaer`
+- Man kan endre og redigere tekster i [Sanity studio](https://forebygge-sykefravaer.sanity.studio/)
+- Prosjektet administreres her: https://manage.sanity.io/projects/er31zvh0
 
+# Komme i gang
 
-<br /><br />
+- Legg Sanity-hemmeligheter i en fil som heter `.env` i prosjektet. Da lastes de automatisk inn som miljøvariabler. Filen er lagt med i `.gitignore`, så den blir ikke sjekket inn med git. Hemmelighetene trengs for å kunne hente tekster fra Sanity. Hemmenlighetene finnes i Vault under preprod/sbs.
+- Installere avhengigheter: `npm i`
+- Starte appen lokalt: Her har man flere muligheter, avhengig av hva man vil.
+  1.  Kjøre opp utviklingserver med menylinje `npm start`
+  2.  Kjøre opp utviklingserver uten menylinje `npm run start-nomenu`
+- Eventuelt starte appen med Node-serveren: `npm run build && npm run server`
 
-Applikasjonen bygger på Node, React og Typescript.
+## Relevante lenker
 
+- Prosjektet administreres her: https://manage.sanity.io/projects/er31zvh0
+- [Sanity studio](https://forebygge-sykefravaer.sanity.studio/) - det er her man endrer og publiserer tekster
 
-For å komme i gang med applikasjonen, last ned repo: 
-<br /><br />
+---
 
-##### Start med å installere avhengigheter `npm install`
+# Henvendelser
 
-##### Kjøre opp utviklingserver med menylinje `npm start`
+Spørsmål knyttet til koden eller prosjektet kan rettes mot:
 
-##### Kjøre opp utviklingserver uten menylinje `npm run start-nomenu`
-
-##### Bygg av applikasjonen `npm run build`
-
-####  Start opp server `npm run server`
-<br />
-
-## Henvendelser
-
-Spørsmål knyttet til koden eller prosjektet kan rettes mot https://github.com/orgs/navikt/teams/arbeidsgiver
+- Malaz Alkoj, malaz.alkoj@nav.no
+- Thomas Dufourd, thomas.dufourd@nav.no
+- Lars Andreas Tveiten, lars.andreas.van.woensel.kooy.tveiten@nav.no
 
 ## For NAV-ansatte
 
-Interne henvendelser kan sendes via Slack i kanalen #arbeidsgiver-general.
-
+Interne henvendelser kan sendes via Slack i kanalen #arbeidsgiver-teamia.
