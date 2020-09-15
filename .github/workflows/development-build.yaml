@@ -19,11 +19,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Installer avhegigheter (npm ci)
-        run: npm ci --no-optional
+      - name: Installer avhengigheter
+          run: |
+            yarn install --frozen-lockfile
 
-      - name: Bygg applikasjonen (npm run build)
-        run: npm run build-prod
+      - name: Bygg applikasjonen
+          run: |
+            yarn run build
 
       - name: Sett variable
         id: variable
