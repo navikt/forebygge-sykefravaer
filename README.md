@@ -8,16 +8,27 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 # Komme i gang
 
 - Legg Sanity-hemmeligheter i en fil som heter `.env` i prosjektet. Da lastes de automatisk inn som miljøvariabler. Filen er lagt med i `.gitignore`, så den blir ikke sjekket inn med git. Hemmelighetene trengs for å kunne hente tekster fra Sanity. Hemmenlighetene finnes i Vault under preprod/sbs.
-- Installere avhengigheter: `npm i`
+- Installere avhengigheter: `yarn`
 - Starte appen lokalt: Her har man flere muligheter, avhengig av hva man vil.
-  1.  Kjøre opp utviklingserver med menylinje `npm start`
-  2.  Kjøre opp utviklingserver uten menylinje `npm run start-nomenu`
-- Eventuelt starte appen med Node-serveren: `npm run build && npm run server`
+  1.  Kjøre opp utviklingserver med menylinje `yarn start`
+  2.  Kjøre opp utviklingserver uten menylinje `yarn start-nomenu`
+- Eventuelt starte appen med Node-serveren: `yarn build && yarn server`
+
+## Deploy
+Master branch deployes automatisk til Prod. 
+
+### Hvordan deployer man en vis branch? 
+Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes 
 
 ## Relevante lenker
 
 - Prosjektet administreres her: https://manage.sanity.io/projects/er31zvh0
 - [Sanity studio](https://forebygge-sykefravaer.sanity.studio/) - det er her man endrer og publiserer tekster
+
+### Lenker til applikasjon
+- i prod: https://arbeidsgiver.nav.no/forebygge-sykefravaer 
+- i dev miljø: https://arbeidsgiver.dev.nav.no/forebygge-sykefravaer
+- fra utvikler image: https://arbeidsgiver-q.nav.no/forebygge-sykefravaer 
 
 ---
 
