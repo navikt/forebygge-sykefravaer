@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   DigitalTjeneste,
+  WebinarOgKurs,
   HelseIArbeid,
   IAavtalen,
   Oppfolging,
@@ -18,6 +19,7 @@ interface Context {
   overskrift: string[];
   viHjelper: null | VihjelperMed;
   tjenester: null | DigitalTjeneste;
+  webinarogkurs: null | WebinarOgKurs;
   oppfolging: null | Oppfolging;
   helsearbeid: null | HelseIArbeid;
   iaavtale: null | IAavtalen;
@@ -29,6 +31,9 @@ const InnholdContext = (props: ProviderProps) => {
   const [overskrift, setOverskrift] = useState<string[]>([]);
   const [viHjelperMed, setViHjelperMed] = useState<null | VihjelperMed>(null);
   const [dtjenester, setDtjenester] = useState<null | DigitalTjeneste>(null);
+  const [webinarogkurs, setWebinarogkurs] = useState<null | DigitalTjeneste>(
+    null
+  );
   const [oppfolging, setOppfolging] = useState<null | Oppfolging>(null);
   const [helsearbeid, setHelsearbeid] = useState<null | HelseIArbeid>(null);
   const [iaAvtale, setIaAvtale] = useState<null | IAavtalen>(null);
@@ -37,6 +42,7 @@ const InnholdContext = (props: ProviderProps) => {
     overskrift: overskrift,
     viHjelper: viHjelperMed,
     tjenester: dtjenester,
+    webinarogkurs: webinarogkurs,
     oppfolging: oppfolging,
     helsearbeid: helsearbeid,
     iaavtale: iaAvtale,
@@ -55,6 +61,8 @@ const InnholdContext = (props: ProviderProps) => {
           return setViHjelperMed(item as VihjelperMed);
         case "digitale-tjenester":
           return setDtjenester(item as DigitalTjeneste);
+        case "webinar-og-kurs":
+          return setWebinarogkurs(item as WebinarOgKurs);
         case "oppfolging-fra-nav-arbeidslivssenter":
           return setOppfolging(item as Oppfolging);
         case "helseIArbeid":

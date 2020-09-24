@@ -53,6 +53,7 @@ server.get("/forebygge-sykefravaer/internal/isReady", (req, res) =>
 const sanityQueryTypes = () => [
   "vi-hjelper-dere-med",
   "digitale-tjenester",
+  "webinar-og-kurs",
   "oppfolging-fra-nav-arbeidslivssenter",
   "helseIArbeid",
   "ia-avtalen",

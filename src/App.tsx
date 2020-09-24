@@ -10,11 +10,13 @@ function App() {
       <div className="forebygge-sykefravaer">
         <Switch>
           <Redirect>
-            <Route
-              path={"/forebygge-sykefravaer"}
-              component={ForebyggeSykefravaer}
-              exact={true}
-            />
+            <main id="maincontent">
+              <Route
+                path={"/forebygge-sykefravaer"}
+                component={ForebyggeSykefravaer}
+                exact={true}
+              />
+            </main>
           </Redirect>
         </Switch>
       </div>
