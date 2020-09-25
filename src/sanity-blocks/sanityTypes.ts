@@ -113,12 +113,20 @@ export interface WebinarOgKursInnhold extends CommonTypes {
   title: string;
   ingress: Body[];
   lenkelisteTittel: string;
-  lenkeliste: {
-    href: string;
-    lenketekst: string;
-    _key: string;
-    _type: string;
-  }[];
+  lenkesamlingListe: LenkesamlingInnhold[];
+}
+
+export interface LenkesamlingInnhold extends CommonTypes {
+  lenkelisteTittel: string;
+  lenkeliste: Lenke[];
+}
+
+export interface Lenke extends CommonTypes {
+  href: string;
+  lenketekst: string;
+  undertekst: string;
+  _key: string;
+  _type: string;
 }
 
 export interface Oppfolging extends CommonTypes {
