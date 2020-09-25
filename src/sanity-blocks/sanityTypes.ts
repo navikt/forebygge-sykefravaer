@@ -111,6 +111,7 @@ export interface DigitalTjeneste extends CommonTypes {
 
 export interface WebinarOgKursInnhold extends CommonTypes {
   title: string;
+  ingress: Body[];
   lenkelisteTittel: string;
   lenkeliste: {
     href: string;
