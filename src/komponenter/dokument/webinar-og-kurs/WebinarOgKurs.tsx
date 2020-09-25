@@ -5,6 +5,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import { serializers } from "../../../sanity-blocks/serializer";
 import { Undertittel } from "nav-frontend-typografi";
 import "./webinarOgKurs.less";
+import Lenkepanel from "nav-frontend-lenkepanel";
 
 interface Props {
   innhold: DigitalTjeneste | null;
@@ -32,7 +33,11 @@ const WebinarOgKurs = (props: Props) => {
                 </Undertittel>
               </div>
               <div>
+              {console.log(innhold)}
                 <BlockContent blocks={element.body} serializers={serializers} />
+                <Lenkepanel href="https://nav.no" >
+test
+</Lenkepanel>
               </div>
             </div>
           </div>

@@ -37,7 +37,7 @@ const Content = () => {
         <DigitaleTjenester innhold={tjenester} />
       </Dokument>
        <Dokument innhold={webinarogkurs}>
-        <WebinarOgKurs innhold={tjenester} />
+        <WebinarOgKurs innhold={webinarogkurs} />
       </Dokument>
       <Dokument innhold={oppfolging}>
         <OppfolgingFraNav innhold={oppfolging} width={width} />
