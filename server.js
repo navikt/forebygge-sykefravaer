@@ -80,11 +80,9 @@ const querySanity = () => {
       querystart(index) ? `*[(_type == '${elem}'` : ` || _type == '${elem}'`
     );
   });
-  const query = querystring.concat(
+  return querystring.concat(
     ') && !(_id in path("drafts.**"))] | order(priority)'
   );
-  console.log("query", query);
-  return query;
 };
 
 const setHeaders = (responsheader) => {
