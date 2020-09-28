@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   DigitalTjeneste,
+  WebinarOgKursInnhold,
   HelseIArbeid,
   IAavtalen,
   Oppfolging,
@@ -18,6 +19,7 @@ interface Context {
   overskrift: string[];
   viHjelper: null | VihjelperMed;
   tjenester: null | DigitalTjeneste;
+  webinarogkurs: null | WebinarOgKursInnhold;
   oppfolging: null | Oppfolging;
   helsearbeid: null | HelseIArbeid;
   iaavtale: null | IAavtalen;
@@ -29,22 +31,26 @@ const InnholdContext = (props: ProviderProps) => {
   const [overskrift, setOverskrift] = useState<string[]>([]);
   const [viHjelperMed, setViHjelperMed] = useState<null | VihjelperMed>(null);
   const [dtjenester, setDtjenester] = useState<null | DigitalTjeneste>(null);
+  const [
+    webinarogkurs,
+    setWebinarogkurs,
+  ] = useState<null | WebinarOgKursInnhold>(null);
   const [oppfolging, setOppfolging] = useState<null | Oppfolging>(null);
   const [helsearbeid, setHelsearbeid] = useState<null | HelseIArbeid>(null);
   const [iaAvtale, setIaAvtale] = useState<null | IAavtalen>(null);
 
   const context: Context = {
-    overskrift: overskrift,
+    overskrift,
     viHjelper: viHjelperMed,
     tjenester: dtjenester,
-    oppfolging: oppfolging,
-    helsearbeid: helsearbeid,
+    webinarogkurs,
+    oppfolging,
+    helsearbeid,
     iaavtale: iaAvtale,
   };
 
   const leggTilMenyElement = (item: string) =>
     setOverskrift((overskrifter) => [...overskrifter, item]);
-
   useEffect(() => {
     const setDocumentData = (item: DocumentTypes) => {
       if (item.title) {
@@ -55,6 +61,8 @@ const InnholdContext = (props: ProviderProps) => {
           return setViHjelperMed(item as VihjelperMed);
         case "digitale-tjenester":
           return setDtjenester(item as DigitalTjeneste);
+        case "webinar-og-kurs":
+          return setWebinarogkurs(item as WebinarOgKursInnhold);
         case "oppfolging-fra-nav-arbeidslivssenter":
           return setOppfolging(item as Oppfolging);
         case "helseIArbeid":

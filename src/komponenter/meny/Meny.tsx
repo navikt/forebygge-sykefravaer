@@ -27,14 +27,12 @@ const Meny = () => {
         .map((sectionNode) => (sectionNode ? sectionNode.offsetTop : 0));
 
     const setFocusIndex = () =>
-      overskrift.length === 5
-        ? hoppLenkerScrollheight().map((scrollheight, index) => {
-            if (scrollheight - 250 < scrollHeight()) {
-              return setSectionInFocus(index);
-            }
-            return null;
-          })
-        : null;
+      hoppLenkerScrollheight().map((scrollheight, index) => {
+        if (scrollheight - 250 < scrollHeight()) {
+          return setSectionInFocus(index);
+        }
+        return null;
+      });
 
     const throttleScrollevent = throttle(() => setFocusIndex(), 75);
     const dispatchmobilevent = () =>

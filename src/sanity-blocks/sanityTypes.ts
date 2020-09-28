@@ -80,6 +80,7 @@ export interface CommonTypes {
 export type DocumentTypes =
   | VihjelperMed
   | DigitalTjeneste
+  | WebinarOgKursInnhold
   | HelseIArbeid
   | Oppfolging
   | IAavtalen;
@@ -106,6 +107,28 @@ export interface DigitalTjeneste extends CommonTypes {
     _type: string;
   }[];
   mainImage: Image;
+}
+
+export interface WebinarOgKursInnhold extends CommonTypes {
+  title: string;
+  ingress: Body[];
+  lenkelisteTittel: string;
+  lenkesamlinger: LenkesamlingInnhold[];
+}
+
+export interface LenkesamlingInnhold extends CommonTypes {
+  tittel: string;
+  undertekst: string;
+  lenker: Lenke[];
+}
+
+export interface Lenke extends CommonTypes {
+  tekst: string;
+  undertekst: string;
+  href: string;
+  ikon: Image;
+  _key: string;
+  _type: string;
 }
 
 export interface Oppfolging extends CommonTypes {
