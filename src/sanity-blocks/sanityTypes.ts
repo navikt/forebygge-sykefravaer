@@ -125,6 +125,7 @@ export interface Lenke extends CommonTypes {
   href: string;
   lenketekst: string;
   undertekst: string;
+  ikon: Image;
   _key: string;
   _type: string;
 }
