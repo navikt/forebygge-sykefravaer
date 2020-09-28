@@ -77,10 +77,14 @@ const querySanity = () => {
   let querystring = "";
   sanityQueryTypes().forEach((elem, index) => {
     querystring = querystring.concat(
-      querystart(index) ? `*[_type == '${elem}'` : ` || _type == '${elem}'`
+      querystart(index) ? `*[(_type == '${elem}'` : ` || _type == '${elem}'`
     );
   });
-  return querystring.concat("&& !(_id in path(\"drafts.**\"))] | order(priority)");
+  const query = querystring.concat(
+    ') && !(_id in path("drafts.**"))] | order(priority)'
+  );
+  console.log("query", query);
+  return query;
 };
 
 const setHeaders = (responsheader) => {
