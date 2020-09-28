@@ -22,14 +22,14 @@ export const LenkesamlingMedInnhold: FunctionComponent<Props> = (
   return (
     <>
       <Element className={cls.element("lenkelisteTittel")}>
-        {innhold.lenkelisteTittel}
+        {innhold.tittel}
       </Element>
       {innhold.undertekst && (
         <Normaltekst className={cls.element("undertekst")}>
           {innhold.undertekst}
         </Normaltekst>
       )}
-      {innhold?.lenkeliste.map((lenkeinnhold) => (
+      {innhold?.lenker.map((lenkeinnhold) => (
         <LenkepanelMedInnhold innhold={lenkeinnhold} key={lenkeinnhold._key} />
       ))}
     </>

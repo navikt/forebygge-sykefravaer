@@ -20,7 +20,7 @@ const WebinarOgKurs = (props: Props) => {
       <div className={cls.element("ingress")}>
         <BlockContent blocks={innhold.ingress} serializers={serializers} />
       </div>
-      {innhold?.lenkesamlingListe.map((lenkesamlingInnhold) => (
+      {innhold?.lenkesamlinger.map((lenkesamlingInnhold) => (
         <LenkesamlingMedInnhold
           innhold={lenkesamlingInnhold}
           key={lenkesamlingInnhold._key}

@@ -25,7 +25,7 @@ export const LenkepanelMedInnhold: FunctionComponent<Props> = ({ innhold }) => {
           />
         )}
         <div className="lenkepanel__heading">
-          <Element>{innhold.lenketekst}</Element>
+          <Element>{innhold.tekst}</Element>
           {innhold.undertekst && (
             <Normaltekst>{innhold.undertekst}</Normaltekst>
           )}
