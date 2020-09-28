@@ -37,7 +37,7 @@ jobs:
 
     deploy-to-dev:
         name: Deploy to dev-sbs
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/bruke-yarn-istedet-av-npm'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/ikke-publiser-drafts'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
