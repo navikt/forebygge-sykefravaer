@@ -51,7 +51,6 @@ const InnholdContext = (props: ProviderProps) => {
 
   const leggTilMenyElement = (item: string) =>
     setOverskrift((overskrifter) => [...overskrifter, item]);
-
   useEffect(() => {
     const setDocumentData = (item: DocumentTypes) => {
       if (item.title) {
