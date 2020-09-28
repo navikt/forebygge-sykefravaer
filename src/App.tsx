@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Redirect from "./komponenter/Redirect";
 import ForebyggeSykefravaer from "./komponenter/ForebyggeSykefravaer";
+import './App.less';
 
 function App() {
   return (
