@@ -4,7 +4,7 @@ import "./webinarOgKurs.less";
 import { WebinarOgKursInnhold } from "../../../sanity-blocks/sanityTypes";
 import BlockContent from "@sanity/block-content-to-react";
 import { serializers } from "../../../sanity-blocks/serializer";
-import { Lenkesamling } from "../../lenkesamling/Lenkesamling";
+import { LenkesamlingMedInnhold } from "../../LenkesamlingMedInnhold/LenkesamlingMedInnhold";
 
 interface Props {
   innhold: WebinarOgKursInnhold | null;
@@ -21,7 +21,7 @@ const WebinarOgKurs = (props: Props) => {
         <BlockContent blocks={innhold.ingress} serializers={serializers} />
       </div>
       {innhold?.lenkesamlingListe.map((lenkesamlingInnhold) => (
-        <Lenkesamling
+        <LenkesamlingMedInnhold
           innhold={lenkesamlingInnhold}
           key={lenkesamlingInnhold._key}
         />
