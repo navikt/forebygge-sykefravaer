@@ -19,3 +19,9 @@ export const logLenkeTrykk = (
     window.location = href;
   }
 };
+
+export const logNavigering = (href: string) => {
+  amplitude.logEvent("navigere", {
+    href,
+  });
+};
