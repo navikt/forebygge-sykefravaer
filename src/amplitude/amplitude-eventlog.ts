@@ -20,8 +20,10 @@ export const logLenkeTrykk = (
   }
 };
 
-export const logNavigering = (href: string) => {
+export const logNavigering = (destinasjon: string) => {
+  const gjeldendeHrefUtenQuery = window.location.href.split("?")[0];
   amplitude.logEvent("navigere", {
-    href,
+    destinasjon,
+    url: gjeldendeHrefUtenQuery,
   });
 };
