@@ -22,9 +22,7 @@ export const LenkepanelMedInnhold: FunctionComponent<Props> = ({ innhold }) => {
     if (!!href) {
       e.preventDefault();
       logNavigering(href);
-      // tslint:disable-next-line:no-console
-      console.log(window.location.href)
-      // window.location.href = href;
+      window.location.href = href;
     }
   };
 
