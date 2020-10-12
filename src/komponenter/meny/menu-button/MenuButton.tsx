@@ -12,15 +12,14 @@ const cls = BEMHelper("menubutton");
 const MenuButton = (button: Button) => {
   return (
     <div className={cls.className}>
-      <div
+      <button
         className={cls.element("button", !button.on ? "" : "on")}
-        role="button"
         onClick={button.change}
       >
         <span />
         <span />
         <span />
-      </div>
+      </button>
     </div>
   );
 };
