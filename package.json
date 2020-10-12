@@ -59,7 +59,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "request": "^2.88.2",
-    "tslint": "^6.1.2",
     "typescript": "^3.9.3",
     "webpack": "4.42.0"
   },
@@ -89,8 +88,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^5.0.0"
-  }
+  "devDependencies": {}
 }
