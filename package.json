@@ -7,7 +7,8 @@
     "@craco/craco": "^5.7.0",
     "@navikt/fnrvalidator": "^1.1.2",
     "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^1.149.13",
+    "@sanity/client": "^2.0.1",
+    "@testing-library/dom": "^7.24.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -16,6 +17,7 @@
     "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^14.0.5",
     "@types/react": "^16.9.36",
+    "@types/react-collapse": "^4.0.1",
     "@types/react-dom": "^16.9.8",
     "@types/react-router": "^5.1.7",
     "@types/react-router-dom": "^5.1.5",
@@ -55,10 +57,11 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.3",
     "request": "^2.88.2",
     "tslint": "^6.1.2",
-    "typescript": "^4.0.3"
+    "typescript": "^3.9.3",
+    "webpack": "4.42.0"
   },
   "scripts": {
     "start": "npm-run-all -p -r start-with-menu dev-server",
