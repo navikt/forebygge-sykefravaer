@@ -5,8 +5,7 @@ import ForebyggeSykefravaer from "./komponenter/ForebyggeSykefravaer";
 import "./App.less";
 import { RestStatus } from "./kurs/api-utils";
 import { hentRestKurs, RestKursliste } from "./kurs/kurs-api";
-import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import { getNesteWebinarOmIA } from "./kurs/kurs-utils";
+import { NesteIAWebinar } from "./komponenter/NesteIAWebinar/NesteIAWebinar";
 
 function App() {
   const [restKursliste, setRestKursliste] = useState<RestKursliste>({
@@ -26,16 +25,7 @@ function App() {
         <Switch>
           <Redirect>
             <main id="maincontent">
-              <Ekspanderbartpanel tittel={"kurs"}>
-                <pre>
-                  {restKursliste.status === RestStatus.Suksess &&
-                    JSON.stringify(
-                      getNesteWebinarOmIA(restKursliste.data),
-                      null,
-                      2
-                    )}
-                </pre>
-              </Ekspanderbartpanel>
+              <NesteIAWebinar restKursliste={restKursliste} />
               <Route
                 path={"/forebygge-sykefravaer"}
                 component={ForebyggeSykefravaer}
