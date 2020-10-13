@@ -21,7 +21,7 @@ interface KursDto {
   ActiveWeb: number;
   ShowRegistrationForm: number;
   ShowInActivityList: number;
-  configurable_custom: {
+  configurable_custom: null | {
     Fylke: string;
     "Type kurs": string;
     Tema: string;
@@ -30,41 +30,39 @@ interface KursDto {
 
 export interface Kurs {
   id: number;
-  tema: string;
-  type: string;
-  tidspunkt: {
-    fra: Date;
-    til: Date;
-    påmeldingsfrist: Date;
-  };
+  tittel: string;
+  tema?: string;
+  type?: string;
+  start: Date;
+  slutt: Date;
+  påmeldingsfrist: Date;
 }
 
-export type RestKurs = RestRessurs<Kurs[]>;
+export type RestKursliste = RestRessurs<Kurs[]>;
 
 const mapTilKurs = (kursDto: KursDto): Kurs => ({
   id: kursDto.RegistrationID,
-  tema: kursDto.configurable_custom.Tema,
-  type: kursDto.configurable_custom["Type kurs"],
-  tidspunkt: {
-    fra: kursDto.RegistrationFromDateTime,
-    til: kursDto.RegistrationToDateTime,
-    påmeldingsfrist: kursDto.RegistrationDeadline,
-  },
+  tittel: kursDto.Title,
+  tema: kursDto.configurable_custom?.Tema,
+  type: kursDto.configurable_custom?.["Type kurs"],
+  start: kursDto.RegistrationFromDateTime,
+  slutt: kursDto.RegistrationToDateTime,
+  påmeldingsfrist: kursDto.RegistrationDeadline,
 });
 
-export const hentKurs = async (): Promise<RestKurs> => {
+export const hentRestKurs = async (): Promise<RestKursliste> => {
   const response = await fetch(TMP_PATH);
   const restStatus = getRestStatus(response.status);
 
   if (restStatus === RestStatus.Suksess) {
     try {
-      const kurs: Kurs[] = ((await response.json()) as KursDto[]).map(
+      const kursliste: Kurs[] = ((await response.json()) as KursDto[]).map(
         (kursDto) => mapTilKurs(kursDto)
       );
 
       return {
         status: RestStatus.Suksess,
-        data: kurs,
+        data: kursliste,
       };
     } catch (error) {
       return { status: RestStatus.Feil };
