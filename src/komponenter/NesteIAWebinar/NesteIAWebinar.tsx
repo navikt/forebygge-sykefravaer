@@ -1,8 +1,25 @@
-import React, { FunctionComponent } from "react";
-import { Kurs, RestKursliste } from "../../kurs/kurs-api";
+import React, { FunctionComponent, useEffect, useState } from "react";
+import { hentRestKurs, Kurs, RestKursliste } from "../../kurs/kurs-api";
 import { RestStatus } from "../../kurs/api-utils";
 import { getNesteWebinarOmIA } from "../../kurs/kurs-utils";
 import "./NesteIAWebinar.less";
+
+export const NesteWebinar: FunctionComponent = () => {
+  // TODO Dette er en midlertidig komponent som henter kurs og wrapper NesteIAWebinar.
+  // Logikken må flyttes til den naturlige wrapper-komponenten, eventuelt App.tsx.
+  const [restKursliste, setRestKursliste] = useState<RestKursliste>({
+    status: RestStatus.IkkeLastet,
+  });
+
+  useEffect(() => {
+    const hentOgSetRestKurs = async () => {
+      setRestKursliste(await hentRestKurs());
+    };
+    hentOgSetRestKurs();
+  }, [setRestKursliste]);
+
+  return <NesteIAWebinar restKursliste={restKursliste} />;
+};
 
 interface Props {
   restKursliste: RestKursliste;
