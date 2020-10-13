@@ -1,7 +1,6 @@
 import { getRestStatus, RestRessurs, RestStatus } from "./api-utils";
 
-const KURSOVERSIKT_API_PATH = "/kursoversikt/api/kurs";
-const TMP_PATH = "https://arbeidsgiver.nav.no/kursoversikt/api/kurs"; // TODO Switch paths
+export const KURSOVERSIKT_API_PATH = "/kursoversikt/api/kurs";
 
 interface KursDto {
   RegistrationID: number;
@@ -51,7 +50,7 @@ const mapTilKurs = (kursDto: KursDto): Kurs => ({
 });
 
 export const hentRestKurs = async (): Promise<RestKursliste> => {
-  const response = await fetch(TMP_PATH);
+  const response = await fetch(KURSOVERSIKT_API_PATH);
   const restStatus = getRestStatus(response.status);
 
   if (restStatus === RestStatus.Suksess) {

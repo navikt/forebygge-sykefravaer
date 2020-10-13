@@ -65,6 +65,7 @@
   },
   "scripts": {
     "start": "npm-run-all -p -r start-with-menu dev-server",
+    "mock": "REACT_APP_MOCK=true yarn start",
     "start-nomenu": "npm-run-all -p -r start-without-menu dev-server",
     "start-with-menu": "cross-env ENABLE_EXTERNAL_MENU=true craco start",
     "start-without-menu": "craco start",
@@ -90,5 +91,8 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/fetch-mock": "^7.3.3",
+    "fetch-mock": "^9.10.7"
+  }
 }
