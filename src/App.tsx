@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Redirect from "./komponenter/Redirect";
 import ForebyggeSykefravaer from "./komponenter/ForebyggeSykefravaer";
-import './App.less';
+import "./App.less";
 
 function App() {
   return (
