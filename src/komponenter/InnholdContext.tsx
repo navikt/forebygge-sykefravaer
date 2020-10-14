@@ -56,12 +56,12 @@ const InnholdContext = (props: ProviderProps) => {
     iaavtale: iaAvtale,
   };
 
-  const leggTilMenyElement = (id: string, tekst: string) =>
-    setOverskrift((overskrifter) => [...overskrifter, { id, tekst }]);
+  const leggTilOverskriftSomMenyElement = (overskrift: Overskrift) =>
+    setOverskrift((overskrifter) => [...overskrifter, overskrift]);
   useEffect(() => {
     const setDocumentData = (item: DocumentTypes) => {
       if (item.title) {
-        leggTilMenyElement(item._type, item.title);
+        leggTilOverskriftSomMenyElement({ id: item._type, tekst: item.title });
       }
       switch (item._type) {
         case "vi-hjelper-dere-med":
