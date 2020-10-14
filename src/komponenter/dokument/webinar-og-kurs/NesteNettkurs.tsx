@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { hentRestKurs, RestKursliste } from "../../../kurs/kurs-api";
 import { RestStatus } from "../../../kurs/api-utils";
-import {formatterKursdato, getNesteNettkurs} from "../../../kurs/kurs-utils";
+import { formatterKursdato, getNesteNettkurs } from "../../../kurs/kurs-utils";
 import nesteNettkursIkon from "./neste-nettkurs-ikon.svg";
 import "./NesteNettkurs.less";
 import BEMHelper from "../../../utils/bem";
