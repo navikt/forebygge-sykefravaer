@@ -9,9 +9,9 @@ interface KursDto {
   RegistrationImageMediaStorageID: number;
   FrontImageMediaStorageID: number;
   CatalogListMediaStorageID: number | null;
-  RegistrationFromDateTime: Date;
-  RegistrationToDateTime: Date;
-  RegistrationDeadline: Date;
+  RegistrationFromDateTime: string;
+  RegistrationToDateTime: string;
+  RegistrationDeadline: string;
   RegistrationPlaceName: string;
   DescriptionInternal: string;
   CatalogText: string;
@@ -44,9 +44,9 @@ const mapTilKurs = (kursDto: KursDto): Kurs => ({
   tittel: kursDto.Title,
   tema: kursDto.configurable_custom?.Tema,
   type: kursDto.configurable_custom?.["Type kurs"],
-  start: kursDto.RegistrationFromDateTime,
-  slutt: kursDto.RegistrationToDateTime,
-  påmeldingsfrist: kursDto.RegistrationDeadline,
+  start: new Date(kursDto.RegistrationFromDateTime),
+  slutt: new Date(kursDto.RegistrationToDateTime),
+  påmeldingsfrist: new Date(kursDto.RegistrationDeadline),
 });
 
 export const hentRestKurs = async (): Promise<RestKursliste> => {
