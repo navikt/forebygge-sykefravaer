@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent, useEffect, useRef } from "react";
 import BEMHelper from "../../utils/bem";
 import { Innholdstittel } from "nav-frontend-typografi";
 import { DocumentTypes } from "../../sanity-blocks/sanityTypes";
@@ -16,32 +16,46 @@ interface Props {
 
 const cls = BEMHelper("dokument");
 
-const Dokument = (props: Props) => {
-  return props.innhold ? (
-    <div className={cls.className}>
+const Dokument: FunctionComponent<Props> = (props) => {
+  const { innhold } = props;
+  if (!innhold) {
+    return null;
+  }
+
+  const header = innhold.mainImage ? (
+    <HeaderWithImage innhold={innhold} />
+  ) : (
+    <Innholdstittel>{innhold.title}</Innholdstittel>
+  );
+
+  return (
+    <div className={cls.className} id={innhold.title}>
       <div className={cls.element("wrapper")}>
-        {documentSetHeader(props.innhold)}
+        {header}
         {props.children}
       </div>
     </div>
-  ) : null;
+  );
 };
 
-const documentSetHeader = (innhold: DocumentTypes) =>
-  innhold && innhold.mainImage
-    ? headerWithImage(innhold)
-    : header(innhold.title);
+const HeaderWithImage: FunctionComponent<{ innhold: DocumentTypes }> = ({
+  innhold,
+}) => {
+  const tittelId = innhold.title;
+  const tittelRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (window.location.href.includes(`#${tittelId}`) && tittelRef) {
+    }
+  }, [tittelId]);
 
-const headerWithImage = (innhold: DocumentTypes) => {
   return (
-    <div className={cls.element("header")}>
+    <div className={cls.element("header")} ref={tittelRef}>
       <BlockContent blocks={innhold.mainImage} serializers={serializers} />
-      <Innholdstittel className={cls.element("header-txt")} id={innhold.title}>
+      <Innholdstittel className={cls.element("header-txt")}>
         {innhold.title}
       </Innholdstittel>
     </div>
   );
 };
-const header = (txt: string) => <Innholdstittel id={txt}>{txt}</Innholdstittel>;
 
 export default Dokument;
