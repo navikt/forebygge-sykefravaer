@@ -18,6 +18,18 @@ const cls = BEMHelper("dokument");
 
 const Dokument: FunctionComponent<Props> = (props) => {
   const { innhold } = props;
+
+  const id = innhold && innhold.title;
+  const dokumentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    setTimeout(() => {
+      if (window.location.href.includes(`#${id}`) && dokumentRef.current) {
+        dokumentRef.current.scrollIntoView();
+        //window.scrollTo({ top: dokumentRef.current.getBoundingClientRect().y });
+      }
+    }, 0);
+  }, [id]);
+
   if (!innhold) {
     return null;
   }
@@ -29,7 +41,7 @@ const Dokument: FunctionComponent<Props> = (props) => {
   );
 
   return (
-    <div className={cls.className} id={innhold.title}>
+    <div className={cls.className} id={id || undefined} ref={dokumentRef}>
       <div className={cls.element("wrapper")}>
         {header}
         {props.children}
@@ -41,15 +53,8 @@ const Dokument: FunctionComponent<Props> = (props) => {
 const HeaderWithImage: FunctionComponent<{ innhold: DocumentTypes }> = ({
   innhold,
 }) => {
-  const tittelId = innhold.title;
-  const tittelRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (window.location.href.includes(`#${tittelId}`) && tittelRef) {
-    }
-  }, [tittelId]);
-
   return (
-    <div className={cls.element("header")} ref={tittelRef}>
+    <div className={cls.element("header")}>
       <BlockContent blocks={innhold.mainImage} serializers={serializers} />
       <Innholdstittel className={cls.element("header-txt")}>
         {innhold.title}
