@@ -15,8 +15,13 @@ interface ProviderProps {
   children: React.ReactNode;
 }
 
+export interface Overskrift {
+  id: string;
+  tekst: string;
+}
+
 interface Context {
-  overskrift: string[];
+  overskrifter: Overskrift[];
   viHjelper: null | VihjelperMed;
   tjenester: null | DigitalTjeneste;
   webinarogkurs: null | WebinarOgKursInnhold;
@@ -28,7 +33,9 @@ interface Context {
 export const ForebyggeSykefravaerContext = React.createContext({} as Context);
 
 const InnholdContext = (props: ProviderProps) => {
-  const [overskrift, setOverskrift] = useState<string[]>([]);
+  const [overskrifter, setOverskrift] = useState<
+    { id: string; tekst: string }[]
+  >([]);
   const [viHjelperMed, setViHjelperMed] = useState<null | VihjelperMed>(null);
   const [dtjenester, setDtjenester] = useState<null | DigitalTjeneste>(null);
   const [
@@ -40,7 +47,7 @@ const InnholdContext = (props: ProviderProps) => {
   const [iaAvtale, setIaAvtale] = useState<null | IAavtalen>(null);
 
   const context: Context = {
-    overskrift,
+    overskrifter: overskrifter,
     viHjelper: viHjelperMed,
     tjenester: dtjenester,
     webinarogkurs,
@@ -49,12 +56,12 @@ const InnholdContext = (props: ProviderProps) => {
     iaavtale: iaAvtale,
   };
 
-  const leggTilMenyElement = (item: string) =>
-    setOverskrift((overskrifter) => [...overskrifter, item]);
+  const leggTilOverskriftSomMenyElement = (overskrift: Overskrift) =>
+    setOverskrift((overskrifter) => [...overskrifter, overskrift]);
   useEffect(() => {
     const setDocumentData = (item: DocumentTypes) => {
       if (item.title) {
-        leggTilMenyElement(item.title);
+        leggTilOverskriftSomMenyElement({ id: item._type, tekst: item.title });
       }
       switch (item._type) {
         case "vi-hjelper-dere-med":
@@ -84,13 +91,13 @@ const InnholdContext = (props: ProviderProps) => {
   }, []);
 
   useEffect(() => {
-    const uniquelist = overskrift.filter(
-      (item, index) => overskrift.indexOf(item) === index
+    const uniquelist = overskrifter.filter(
+      (item, index) => overskrifter.indexOf(item) === index
     );
-    if (uniquelist.length !== overskrift.length) {
+    if (uniquelist.length !== overskrifter.length) {
       setOverskrift(uniquelist);
     }
-  }, [overskrift]);
+  }, [overskrifter]);
 
   return (
     <ForebyggeSykefravaerContext.Provider value={context}>

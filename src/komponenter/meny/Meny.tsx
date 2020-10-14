@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import BEMHelper from "../../utils/bem";
 import { Normaltekst, Undertittel } from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
-import { ForebyggeSykefravaerContext } from "../InnholdContext";
+import { ForebyggeSykefravaerContext, Overskrift } from "../InnholdContext";
 import throttle from "lodash.throttle";
 import MenuButton from "./menu-button/MenuButton";
 import "./meny.less";
@@ -12,7 +12,7 @@ import { isMobil } from "../../utils/document-utils";
 const cls = BEMHelper("meny");
 
 const Meny = () => {
-  const { overskrift } = useContext(ForebyggeSykefravaerContext);
+  const { overskrifter } = useContext(ForebyggeSykefravaerContext);
   const [sectionInFocus, setSectionInFocus] = useState<number>(0);
   const [viewmobilMenu, setViewmobilMenu] = useState<boolean>(false);
   const [buttonStyling, setButtonStyling] = useState<any>(initmenuPosition());
@@ -22,8 +22,8 @@ const Meny = () => {
   useEffect(() => {
     const scrollHeight = () => window.scrollY || window.pageYOffset;
     const hoppLenkerScrollheight = () =>
-      overskrift
-        .map((section) => document.getElementById(section))
+      overskrifter
+        .map((section) => document.getElementById(section.id))
         .map((sectionNode) => (sectionNode ? sectionNode.offsetTop : 0));
 
     const setFocusIndex = () =>
@@ -50,7 +50,7 @@ const Meny = () => {
       window.removeEventListener("resize", () =>
         setButtonStyling(initmenuPosition())
       );
-  }, [overskrift]);
+  }, [overskrifter]);
 
   return (
     <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
@@ -64,8 +64,8 @@ const Meny = () => {
               Innhold på denne siden:
             </Undertittel>
 
-            {overskrift
-              ? overskrift.map((element: string, index: number) => {
+            {overskrifter
+              ? overskrifter.map((overskrift: Overskrift, index: number) => {
                   return (
                     <Normaltekst
                       className={cls.element(
@@ -74,7 +74,9 @@ const Meny = () => {
                       )}
                       key={index}
                     >
-                      <Lenke href={"#".concat(element)}>{element}</Lenke>
+                      <Lenke href={"#".concat(overskrift.id)}>
+                        {overskrift.tekst}
+                      </Lenke>
                     </Normaltekst>
                   );
                 })
