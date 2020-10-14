@@ -19,7 +19,7 @@ const cls = BEMHelper("dokument");
 const Dokument: FunctionComponent<Props> = (props) => {
   const { innhold } = props;
 
-  const id = innhold && innhold.title;
+  const id = innhold && innhold._type;
   const dokumentRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     setTimeout(() => {
