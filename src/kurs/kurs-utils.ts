@@ -27,7 +27,7 @@ const måneder = [
 
 export const formatterKursdato = (kursdato: Date | undefined): string => {
   if (kursdato) {
-    return `${kursdato.getDay()}. ${
+    return `${kursdato.getDate()}. ${
       måneder[kursdato.getMonth()]
     } ${kursdato.getFullYear()} kl. ${kursdato
       .getHours()
