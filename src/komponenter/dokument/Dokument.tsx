@@ -21,11 +21,11 @@ const Dokument: FunctionComponent<Props> = (props) => {
 
   const id = innhold && innhold._type;
   const dokumentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     setTimeout(() => {
       if (window.location.href.includes(`#${id}`) && dokumentRef.current) {
         dokumentRef.current.scrollIntoView();
-        //window.scrollTo({ top: dokumentRef.current.getBoundingClientRect().y });
       }
     }, 0);
   }, [id]);
