@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { hentRestKurs, Kurs, RestKursliste } from "../../kurs/kurs-api";
 import { RestStatus } from "../../kurs/api-utils";
-import { getNesteWebinarOmIA } from "../../kurs/kurs-utils";
+import { getNesteNettkurs } from "../../kurs/kurs-utils";
 import "./NesteIAWebinar.less";
 
 export const NesteWebinar: FunctionComponent = () => {
@@ -32,7 +32,7 @@ export const NesteIAWebinar: FunctionComponent<Props> = (props) => {
   if (props.restKursliste.status !== RestStatus.Suksess) {
     return null;
   }
-  const nesteWebinar = getNesteWebinarOmIA(props.restKursliste.data);
+  const nesteWebinar = getNesteNettkurs(props.restKursliste.data);
   if (!nesteWebinar) {
     return null;
   }
