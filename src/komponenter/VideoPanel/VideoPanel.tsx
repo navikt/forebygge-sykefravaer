@@ -1,21 +1,22 @@
-import React, { FunctionComponent } from "react";
+import React, {FunctionComponent} from "react";
 import BEMHelper from "../../utils/bem";
-import { Element, Normaltekst } from "nav-frontend-typografi";
-import { Video } from "../../kurs/vimeo-api";
+import {Element, Normaltekst} from "nav-frontend-typografi";
+import {RestVideoliste, Video} from "../../kurs/vimeo-api";
 import "./VideoPanel.less";
+import {RestStatus} from "../../kurs/api-utils";
 
 interface Props {
-  videoer: Video[];
+  restVideoliste: RestVideoliste;
 }
 
-export const VideoPanel: FunctionComponent<Props> = (props: Props) => {
+export const VideoPanel: FunctionComponent<Props> = ({restVideoliste}) => {
   const cls = BEMHelper("videopanel");
   const ANTALL_VIDEOER_SOM_SKAL_VISES: number = 2;
-  const videoer = props.videoer;
 
-  if (!videoer || videoer.length === 0) {
-    return <></>;
+  if (restVideoliste.status !== RestStatus.Suksess || restVideoliste.data.length === 0) {
+    return null;
   }
+  const videoer: Video[] = restVideoliste.data;
 
   return (
     <>
