@@ -6,10 +6,13 @@ import fetchMock, {
   MockResponseFunction,
 } from "fetch-mock";
 import { kurslisteMock } from "./kursliste";
+import { showcaseMock } from "./showcase";
 import { KURSOVERSIKT_API_PATH } from "../kurs/kurs-api";
+import {SHOWCASE_PATH} from "../kurs/vimeo-api";
 
 const mock = {
   kursliste: true,
+  showcase: true,
 };
 
 const mockGetAndLog = (
@@ -39,6 +42,10 @@ const mockGetAndLog = (
 
 if (mock.kursliste) {
   mockGetAndLog(KURSOVERSIKT_API_PATH, kurslisteMock);
+}
+
+if (mock.showcase) {
+  mockGetAndLog(SHOWCASE_PATH, showcaseMock);
 }
 
 fetchMock.spy();
