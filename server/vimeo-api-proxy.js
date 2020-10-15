@@ -1,6 +1,6 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
-const VIMEO_BASEURL = "https://api.vimeo.com";
+const VIMEO_API_BASEURL = "https://api.vimeo.com";
 
 const FRONTEND_VIDEO_API_PATH = "/forebygge-sykefravaer/api/video";
 
@@ -11,7 +11,7 @@ const listeAvTillatteUrler = [
 ];
 
 const proxyConfig = {
-  target: VIMEO_BASEURL,
+  target: VIMEO_API_BASEURL,
   changeOrigin: true,
   pathRewrite: (path, req) => {
     const urlErTillatt =
@@ -38,4 +38,4 @@ const vimeoApiProxy = createProxyMiddleware(
   proxyConfig
 );
 
-module.exports = { vimeoApiProxy };
+module.exports = { vimeoApiProxy, FRONTEND_VIDEO_API_PATH };
