@@ -8,14 +8,13 @@ import fetchMock, {
 import { kurslisteMock } from "./kursliste";
 import { showcaseMock } from "./showcase";
 import { KURSOVERSIKT_API_PATH } from "../kurs/kurs-api";
-import {SHOWCASE_PATH} from "../kurs/vimeo-api";
-import {bilderMock} from "./bilder";
+import { SHOWCASE_PATH } from "../kurs/vimeo-api";
 import bilde from "./videoThumbnail.jpg";
 
 const mock = {
   kursliste: true,
   showcase: true,
-  bilder: true
+  bilder: true,
 };
 
 const mockGetAndLog = (

@@ -93,6 +93,7 @@
   },
   "devDependencies": {
     "@types/fetch-mock": "^7.3.3",
-    "fetch-mock": "^9.10.7"
+    "fetch-mock": "^9.10.7",
+    "http-proxy-middleware": "^1.0.6"
   }
 }

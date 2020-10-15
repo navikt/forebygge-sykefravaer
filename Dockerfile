@@ -10,6 +10,7 @@ RUN npm install -g fs-extra@8.1.0
 RUN npm install -g @sanity/client@1.149.7
 RUN npm install -g console-stamp@0.2.9
 RUN npm install -g dotenv@8.2.0
+RUN npm install -g http-proxy-middleware@^1.0.6
 
 WORKDIR /app
 COPY server.js ./

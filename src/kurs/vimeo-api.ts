@@ -1,6 +1,7 @@
 import { getRestStatus, RestRessurs, RestStatus } from "./api-utils";
+import { BASE_URL } from "../utils/fetch-utils";
 
-export const VIMEO_API_HOST = ""; // "https://api.vimeo.com" | "proxy"
+export const VIMEO_API_HOST = BASE_URL + "/api/video"; // "https://api.vimeo.com" | "proxy"
 export const SHOWCASE_PATH = "users/94865899/albums/6728595/videos";
 
 interface ShowcaseDto {
