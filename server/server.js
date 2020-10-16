@@ -194,6 +194,8 @@ const serveAppWithMenu = (app) => {
   ];
 
   staticPaths.map((path) => serverUse(path));
+  server.use(vimeoApiProxy);
+  server.use(vimeoBilderProxy);
   server.get([`${BASE_URL}/`], (req, res) => {
     res.send(app);
   });

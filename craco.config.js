@@ -3,18 +3,14 @@ const decoratorhtmlwebpackplugin = require("./plugins/decoratorhtmlwebpackplugin
 const path = require("path");
 
 module.exports = {
-  webpack: {
-    alias: {
-      "@": path.resolve(__dirname, "src/"),
-      "@/komponenter": path.resolve(__dirname, "src/komponenter/"),
-      "@/assets": path.resolve(__dirname, "src/assets/"),
+  devServer: {
+    before: (app) => {
+      app.get("/forebygge-sykefravaer/api/thumbnail*", (req, res) =>
+        res.sendFile("videoThumbnail.jpg", {
+          root: path.join(__dirname, "./src/mocking/"),
+        })
+      );
     },
-    devserver: {
-      open: false,
-    },
-  },
-  devserver: {
-    open: false,
   },
   eslint: {
     enable: true,
