@@ -14,7 +14,8 @@ const request = require("request");
 const jsdom = require("jsdom");
 const NodeCache = require("node-cache");
 const sanityClient = require("@sanity/client");
-// env
+const { vimeoApiProxy } = require("./vimeo-api-proxy");
+const { vimeoBilderProxy } = require("./vimeo-bilder-proxy");
 
 const server = express();
 server.use(helmet());

@@ -12,7 +12,7 @@ RUN npm install -g console-stamp@0.2.9
 RUN npm install -g dotenv@8.2.0
 
 WORKDIR /app
-COPY server.js ./
+COPY server/ ./
 COPY build/ ./build
 
 EXPOSE 3000
