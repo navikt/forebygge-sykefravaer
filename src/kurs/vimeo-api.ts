@@ -40,32 +40,20 @@ interface SizeDto {
 }
 
 export interface Video {
-  uri: string;
   name: string;
   description: string;
   duration: number;
   link: string;
-  width: number;
-  height: number;
-  createdTime: Date;
-  modifiedTime: Date;
-  releaseTime: Date;
   thumbnailLink: string | undefined;
 }
 
 export type RestVideoliste = RestRessurs<Video[]>;
 
 const mapTilVideo = (videoDto: VideoDto): Video => ({
-  uri: videoDto.link,
   name: videoDto.name,
   description: videoDto.description,
   duration: videoDto.duration,
   link: videoDto.link,
-  width: videoDto.width,
-  height: videoDto.height,
-  createdTime: new Date(videoDto.created_time),
-  modifiedTime: new Date(videoDto.modified_time),
-  releaseTime: new Date(videoDto.release_time),
   thumbnailLink: videoDto.pictures.sizes.find(
     (size: SizeDto) => size.width === 295
   )?.link_with_play_button,
