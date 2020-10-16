@@ -26,8 +26,8 @@ export const VideoPanel: FunctionComponent<Props> = ({ restVideoliste }) => {
     <>
       <Element className={cls.element("tittel")}>Siste webinarer</Element>
       <div className={cls.element("videoer")}>
-        {videoer.slice(0, ANTALL_VIDEOER_SOM_SKAL_VISES).map((video: Video) => (
-          <Videolenke video={video} />
+        {videoer.slice(0, ANTALL_VIDEOER_SOM_SKAL_VISES).map((video: Video, index) => (
+          <Videolenke video={video} key={index} />
         ))}
       </div>
     </>

@@ -1,8 +1,9 @@
 import { getRestStatus, RestRessurs, RestStatus } from "./api-utils";
 import { BASE_URL } from "../utils/fetch-utils";
 
-export const VIMEO_API_HOST = BASE_URL + "/api/video"; // "https://api.vimeo.com" | "proxy"
-export const SHOWCASE_PATH = "users/94865899/albums/6728595/videos";
+export const SHOWCASE_PATH =
+  BASE_URL + "/api/video/users/94865899/albums/6728595/videos";
+export const THUMBNAILS_PATH = BASE_URL + "/api/thumbnails";
 
 interface ShowcaseDto {
   total: number;
@@ -49,7 +50,7 @@ export interface Video {
   createdTime: Date;
   modifiedTime: Date;
   releaseTime: Date;
-  pictureLink: string | undefined;
+  thumbnailLink: string | undefined;
 }
 
 export type RestVideoliste = RestRessurs<Video[]>;
@@ -65,13 +66,13 @@ const mapTilVideo = (videoDto: VideoDto): Video => ({
   createdTime: new Date(videoDto.created_time),
   modifiedTime: new Date(videoDto.modified_time),
   releaseTime: new Date(videoDto.release_time),
-  pictureLink: videoDto.pictures.sizes.find(
+  thumbnailLink: videoDto.pictures.sizes.find(
     (size: SizeDto) => size.width === 295
   )?.link_with_play_button,
 });
 
 export const hentRestVideoliste = async (): Promise<RestVideoliste> => {
-  const response = await fetch(`${VIMEO_API_HOST}/${SHOWCASE_PATH}`, {
+  const response = await fetch(SHOWCASE_PATH, {
     method: "get",
   });
   const restStatus = getRestStatus(response.status);
@@ -92,3 +93,6 @@ export const hentRestVideoliste = async (): Promise<RestVideoliste> => {
   }
   return { status: RestStatus.Feil };
 };
+
+export const getUrlTilThumbnail = (video: Video): string | undefined =>
+  video.thumbnailLink?.replace("https://i.vimeocdn.com", THUMBNAILS_PATH);
