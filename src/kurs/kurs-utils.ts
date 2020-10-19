@@ -6,7 +6,7 @@ export const getNesteNettkurs = (kursliste: Kurs[]): Kurs | undefined => {
     .filter((kurs) => kurs.type === "Webinar")
     .sort(
       (kurs1, kurs2) =>
-        new Date(kurs2.start).getTime() - new Date(kurs1.slutt).getTime()
+        new Date(kurs1.start).getTime() - new Date(kurs2.start).getTime()
     )[0];
 };
 
