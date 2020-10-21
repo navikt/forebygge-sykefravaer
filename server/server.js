@@ -68,9 +68,17 @@ const htmlinsert = () => [
   { inject: "scripts", from: "scripts" },
 ];
 
+const brødsmulesti = [
+  {
+    title: "Forebygge og redusere sykefravær og frafall",
+    url: "https://arbeidsgiver.nav.no/forebygge-sykefravaer/",
+  },
+];
+
 const url = () =>
   process.env.DECORATOR_EXTERNAL_URL ||
-  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb";
+  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
+    JSON.stringify(brødsmulesti);
 
 const querystart = (len) => len === 0;
 
@@ -99,8 +107,10 @@ const setHeaders = (responsheader) => {
   responsheader.setHeader("Access-Control-Allow-Credentials", true);
 };
 
+const BUILD_PATH = path.join(__dirname, "../build");
+
 const setBuildpathStatic = (subpath) => {
-  return express.static(path.join(__dirname, `build/${subpath}`));
+  return express.static(path.join(BUILD_PATH, subpath));
 };
 
 const serverUse = (staticPath) => {
@@ -149,7 +159,7 @@ server.get(`${BASE_URL}/innhold/`, (req, res) => {
 });
 
 const injectMenuIntoHtml = (menu) => {
-  fs.readFile(__dirname + "/build/index.html", "utf8", function (err, html) {
+  fs.readFile(BUILD_PATH + "/index.html", "utf8", function (err, html) {
     if (!err) {
       const { document } = new JSDOM(html).window;
       htmlinsert().forEach((element) => {
@@ -210,9 +220,9 @@ const setServerPort = () => {
 };
 
 const serveAppWithOutMenu = () => {
-  server.use(BASE_URL, express.static(path.join(__dirname, "build")));
+  server.use(BASE_URL, express.static(BUILD_PATH));
   server.get(`${BASE_URL}/*`, (req, res) => {
-    res.sendFile(path.resolve(__dirname, "build", "index.html"));
+    res.sendFile(path.resolve(BUILD_PATH, "index.html"));
   });
   setServerPort();
 };
