@@ -77,7 +77,8 @@ const brødsmulesti = [
 
 const url = () =>
   process.env.DECORATOR_EXTERNAL_URL ||
-  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb";
+  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
+    JSON.stringify(brødsmulesti);
 
 const querystart = (len) => len === 0;
 
