@@ -13,7 +13,7 @@ RUN npm install -g dotenv@8.2.0
 RUN npm install -g http-proxy-middleware@^1.0.6
 
 WORKDIR /app
-COPY server/ ./
+COPY server/ ./server
 COPY build/ ./build
 
 EXPOSE 3000
