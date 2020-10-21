@@ -16,7 +16,6 @@ WORKDIR /app
 COPY server/ ./server
 COPY build/ ./build
 
-WORKDIR /server
-
 EXPOSE 3000
 
+ENTRYPOINT ["node", "server/server.js"]
