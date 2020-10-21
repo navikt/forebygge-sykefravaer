@@ -13,12 +13,19 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
   1.  Kjøre opp utviklingserver med menylinje `yarn start`
   2.  Kjøre opp utviklingserver uten menylinje `yarn start-nomenu`
 - Eventuelt starte appen med Node-serveren: `yarn build && yarn server`
+- Kjøre applikasjonen med Docker:
+  1. `yarn install && yarn build`
+  2. `docker build -t forebygge-sykefravaer .`
+  3. `docker run -d -p 3000:3000 forebygge-sykefravaer`
+  4. For å stoppe, kjør `docker stop <id>` med id-en fra forrige kommando
 
 ## Deploy
-Master branch deployes automatisk til Prod. 
 
-### Hvordan deployer man en vis branch? 
-Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes 
+Master branch deployes automatisk til Prod.
+
+### Hvordan deployer man en vis branch?
+
+Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes
 
 ## Relevante lenker
 
@@ -26,9 +33,10 @@ Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med
 - [Sanity studio](https://forebygge-sykefravaer.sanity.studio/) - det er her man endrer og publiserer tekster
 
 ### Lenker til applikasjon
-- i prod: https://arbeidsgiver.nav.no/forebygge-sykefravaer 
+
+- i prod: https://arbeidsgiver.nav.no/forebygge-sykefravaer
 - i dev miljø: https://arbeidsgiver.dev.nav.no/forebygge-sykefravaer
-- fra utvikler image: https://arbeidsgiver-q.nav.no/forebygge-sykefravaer 
+- fra utvikler image: https://arbeidsgiver-q.nav.no/forebygge-sykefravaer
 
 ---
 
