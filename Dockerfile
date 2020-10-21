@@ -16,5 +16,7 @@ WORKDIR /app
 COPY server/ ./server
 COPY build/ ./build
 
+WORKDIR /server
+
 EXPOSE 3000
 
