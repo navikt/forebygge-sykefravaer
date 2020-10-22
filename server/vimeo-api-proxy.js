@@ -1,4 +1,5 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
+const HttpsProxyAgent = require("https-proxy-agent");
 
 const VIMEO_API_BASEURL = "https://api.vimeo.com";
 
@@ -9,6 +10,8 @@ const listeAvTillatteUrler = [
     "^" + FRONTEND_VIDEO_API_PATH + "/users/94865899/albums/[0-9]*/videos"
   ),
 ];
+
+const proxyServer = process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
 
 const proxyConfig = {
   target: VIMEO_API_BASEURL,
@@ -53,9 +56,11 @@ const proxyConfig = {
   },
 };
 
-const vimeoApiProxy = createProxyMiddleware(
-  FRONTEND_VIDEO_API_PATH,
-  proxyConfig
-);
+const getVimeoApiProxy = () => {
+  if (proxyServer) {
+    proxyConfig.agent = new HttpsProxyAgent(proxyServer);
+  }
+  return createProxyMiddleware(FRONTEND_VIDEO_API_PATH, proxyConfig);
+};
 
-module.exports = { vimeoApiProxy, FRONTEND_VIDEO_API_PATH };
+module.exports = { getVimeoApiProxy, FRONTEND_VIDEO_API_PATH };
