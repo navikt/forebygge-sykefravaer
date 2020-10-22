@@ -115,6 +115,14 @@ export interface WebinarOgKursInnhold extends CommonTypes {
   lenkelisteTittel: string;
   lenkesamlinger: LenkesamlingInnhold[];
   kurspamelding: Kurspåmelding;
+  tidligerenettkurs: TidligereNettkursInnhold;
+}
+
+export interface TidligereNettkursInnhold extends CommonTypes {
+  tittel: string;
+  nyestopptakUndertekst: string,
+  alleopptakUndertekst: string,
+  lenker: Lenke[];
 }
 
 export interface LenkesamlingInnhold extends CommonTypes {
