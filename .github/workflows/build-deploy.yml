@@ -37,7 +37,7 @@ jobs:
 
     deploy-to-dev:
         name: Deploy to dev-sbs
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/debug-proxy-on-pod'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/refactor-til-tidligere-nettkurs'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
