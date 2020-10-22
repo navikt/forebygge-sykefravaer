@@ -19,6 +19,7 @@ export const VideoPanel: FunctionComponent<Props> = ({ restVideoliste }) => {
   ) {
     return null;
   }
+
   const videoer: Video[] = restVideoliste.data;
 
   return (

@@ -26,7 +26,9 @@ const WebinarOgKurs = (props: Props) => {
       {innhold?.kurspamelding && (
         <KurspåmeldingInnhold innhold={innhold?.kurspamelding} />
       )}
-      <TidligereNettkurs innhold={innhold?.tidligerenettkurs}/>
+      {innhold?.tidligerenettkurs && (
+        <TidligereNettkurs innhold={innhold?.tidligerenettkurs} />
+      )}
     </div>
   ) : null;
 };
