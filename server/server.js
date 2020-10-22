@@ -15,7 +15,7 @@ const jsdom = require("jsdom");
 const NodeCache = require("node-cache");
 const sanityClient = require("@sanity/client");
 const { getVimeoApiProxy } = require("./vimeo-api-proxy");
-const { vimeoBilderProxy } = require("./vimeo-bilder-proxy");
+const { getVimeoBilderProxy } = require("./vimeo-bilder-proxy");
 
 const server = express();
 server.use(helmet());
@@ -205,7 +205,7 @@ const serveAppWithMenu = (app) => {
 
   staticPaths.map((path) => serverUse(path));
   server.use(getVimeoApiProxy());
-  server.use(vimeoBilderProxy);
+  server.use(getVimeoBilderProxy());
   server.get([`${BASE_URL}/`], (req, res) => {
     res.send(app);
   });
