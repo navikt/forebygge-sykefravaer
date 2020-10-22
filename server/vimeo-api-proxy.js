@@ -35,25 +35,6 @@ const proxyConfig = {
   headers: {
     Authorization: "Bearer " + process.env.VIMEO_TOKEN,
   },
-  onProxyReq: (proxyReq, req, res) => {
-    let authHeader = proxyReq.getHeader("Authorization")
-      ? proxyReq.getHeader("Authorization")
-      : "NOT FOUND";
-    console.log(
-      "[DEBUG] proxyReq (auth header - truncated): ",
-      authHeader.substring(0, 10) + "..."
-    );
-  },
-  onProxyRes: (proxyRes, req, res) => {
-    console.log("[DEBUG] proxyRes.statusCode: ", proxyRes.statusCode);
-    console.log("[DEBUG] proxyRes.statusMessage: ", proxyRes.statusMessage);
-  },
-  onError: (err, req, res) => {
-    console.log("[DEBUG] Error: ", err);
-    res.end(
-      "Something went wrong. And we are reporting a custom error message."
-    );
-  },
 };
 
 const getVimeoApiProxy = () => {
