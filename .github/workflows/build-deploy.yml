@@ -37,7 +37,7 @@ jobs:
 
     deploy-to-dev:
         name: Deploy to dev-sbs
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/refactor-til-tidligere-nettkurs'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/slette-gamle-komponenter-ved-lenkesamling'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
