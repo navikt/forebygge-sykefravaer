@@ -36,8 +36,8 @@ jobs:
                   docker push ${IMAGE}
 
     deploy-to-dev:
-        name: Deploy to dev-sbs
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/slette-gamle-komponenter-ved-lenkesamling'
+        name: Deploy to dev-gcp
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/migrere-til-GCP'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
@@ -45,9 +45,9 @@ jobs:
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: dev-sbs
+                  CLUSTER: dev-gcp
                   VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/dev-sbs.yaml
+                  RESOURCE: nais/dev-gcp.yaml
                   PRINT_PAYLOAD: true
 
     deploy-to-prod:
