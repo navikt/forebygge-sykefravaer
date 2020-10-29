@@ -31,6 +31,10 @@ spec:
         - host: cdn.sanity.io
         - host: dekoratoren.dev.nav.no
         - host: www.nav.no
+        - host: arbeidsgiver.nav.no
+    inbound:
+      external:
+        - host: arbeidsgiver.nav.no
       rules:
         - application: nav-dekoratoren
           namespace: personbruker
