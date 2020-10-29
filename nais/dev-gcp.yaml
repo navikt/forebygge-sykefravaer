@@ -29,7 +29,7 @@ spec:
         - host: i.vimeocdn.com
         - host: api.vimeo.com
         - host: cdn.sanity.io
-        - host: https://dekoratoren.dev.nav.no
+        - host: dekoratoren.dev.nav.no
       rules:
         - application: nav-dekoratoren
           namespace: personbruker
