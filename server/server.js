@@ -71,7 +71,7 @@ const htmlinsert = () => [
 const brødsmulesti = [
   {
     title: "Forebygge og redusere sykefravær og frafall",
-    url: "https://arbeidsgiver.nav.no/forebygge-sykefravaer/",
+    url: "https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer/",
   },
 ];
 
