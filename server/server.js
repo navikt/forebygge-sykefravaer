@@ -75,13 +75,16 @@ const brødsmulesti = [
   },
 ];
 
-const devUrl = "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" + JSON.stringify(brødsmulesti)
-
-const url = () => devUrl;
+const devUrl =
+  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
+  JSON.stringify(brødsmulesti);
+const prodUrl =
+  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
+  JSON.stringify(brødsmulesti);
+const url = () => prodUrl;
 //  process.env.DECORATOR_EXTERNAL_URL ||
 //  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
 //    JSON.stringify(brødsmulesti);
-
 
 const querystart = (len) => len === 0;
 

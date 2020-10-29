@@ -6,7 +6,7 @@ metadata:
   labels:
     team: arbeidsgiver
 spec:
-  image: docker.pkg.github.com/navikt/forebygge-sykefravaer/forebygge-sykefravaer:6582eb01bfce548037910084aa5dfa85d2d14538
+  image: docker.pkg.github.com/navikt/forebygge-sykefravaer/forebygge-sykefravaer:15a8a67fac817d05d8a3a999a31afdade198ed5e
   team: arbeidsgiver
   port: 3000
   ingresses:
@@ -30,6 +30,7 @@ spec:
         - host: api.vimeo.com
         - host: cdn.sanity.io
         - host: dekoratoren.dev.nav.no
+        - host: www.nav.no
       rules:
         - application: nav-dekoratoren
           namespace: personbruker
