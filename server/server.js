@@ -76,8 +76,7 @@ const brødsmulesti = [
 ];
 
 const devUrl =
-  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-  JSON.stringify(brødsmulesti);
+  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb";
 const prodUrl =
   "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
   JSON.stringify(brødsmulesti);
