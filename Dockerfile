@@ -1,5 +1,6 @@
 FROM navikt/node-express:12.2.0-alpine
 ENV NODE_ENV production
+ENV NODE_EXTRA_CA_CERTS /etc/ssl/ca-bundle.pem
 
 RUN npm config set unsafe-perm true
 RUN npm install -g helmet@3.21.3
