@@ -6,7 +6,7 @@ metadata:
   labels:
     team: arbeidsgiver
 spec:
-  image: docker.pkg.github.com/navikt/forebygge-sykefravaer/forebygge-sykefravaer:15a8a67fac817d05d8a3a999a31afdade198ed5e
+  image: docker.pkg.github.com/navikt/forebygge-sykefravaer/forebygge-sykefravaer:6d78db15b34924081a0234a657e6340d021c5097
   team: arbeidsgiver
   port: 3000
   ingresses:
@@ -17,7 +17,6 @@ spec:
   readiness:
     path: /forebygge-sykefravaer/internal/isReady
     initialDelay: 10
-  webproxy: true
   env:
     - name: NODE_EXTRA_CA_CERTS
       value: "/etc/ssl/ca-bundle.pem"
