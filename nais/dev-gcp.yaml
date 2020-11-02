@@ -6,7 +6,7 @@ metadata:
   labels:
     team: arbeidsgiver
 spec:
-  image: docker.pkg.github.com/navikt/forebygge-sykefravaer/forebygge-sykefravaer:6d78db15b34924081a0234a657e6340d021c5097
+  image: {{image}}
   team: arbeidsgiver
   port: 3000
   ingresses:
@@ -17,11 +17,6 @@ spec:
   readiness:
     path: /forebygge-sykefravaer/internal/isReady
     initialDelay: 10
-  env:
-    - name: NODE_EXTRA_CA_CERTS
-      value: "/etc/ssl/ca-bundle.pem"
-  envFrom:
-    - secret: forebygge-sykefravaer-secrets
   accessPolicy:
     outbound:
       external:
@@ -29,11 +24,5 @@ spec:
         - host: api.vimeo.com
         - host: cdn.sanity.io
         - host: dekoratoren.dev.nav.no
-        - host: www.nav.no
-        - host: arbeidsgiver.nav.no
-    inbound:
-      external:
-        - host: arbeidsgiver.nav.no
-      rules:
-        - application: nav-dekoratoren
-          namespace: personbruker
+  envFrom:
+    - secret: forebygge-sykefravaer-secrets

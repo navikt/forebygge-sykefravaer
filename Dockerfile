@@ -1,5 +1,7 @@
 FROM navikt/node-express:12.2.0-alpine
-ENV NODE_ENV production
+
+ARG NODE_ENV
+ENV NODE_ENV $NODE_ENV
 ENV NODE_EXTRA_CA_CERTS /etc/ssl/ca-bundle.pem
 
 RUN npm config set unsafe-perm true
