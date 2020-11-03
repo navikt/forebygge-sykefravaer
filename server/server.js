@@ -134,6 +134,7 @@ const checkbackupCacheInnhold = (res, fetchError) => {
 };
 
 const fetchInnhold = (res) => {
+  console.log("[DEBUG] fetchInnhold");
   const query = querySanity();
   client
     .fetch(query)
