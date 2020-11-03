@@ -159,6 +159,7 @@ server.get(`${BASE_URL}/innhold/`, (req, res) => {
 const injectMenuIntoHtml = (menu) => {
   fs.readFile(BUILD_PATH + "/index.html", "utf8", function (err, html) {
     if (!err) {
+      console.log("[DEBUG] fs.readfile er OK");
       const { document } = new JSDOM(html).window;
       htmlinsert().forEach((element) => {
         document.getElementById(element.inject)[prop] = menu.getElementById(
@@ -170,6 +171,7 @@ const injectMenuIntoHtml = (menu) => {
       backupCacheMeny.set(backupCacheKey, output, 0);
       serveAppWithMenu(output);
     } else {
+      console.log("[DEBUG] error ved readFile i injectMenuIntoHtml()");
       checkBackupCache();
     }
   });
