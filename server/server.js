@@ -114,16 +114,6 @@ const setHeaders = (responsheader) => {
 
 const BUILD_PATH = path.join(__dirname, "../build");
 
-const setBuildpathStatic = (subpath) => {
-  return express.static(path.join(BUILD_PATH, subpath));
-};
-
-const serverUse = (staticPath) => {
-  return server.use(
-    `${BASE_URL}/${staticPath}`,
-    setBuildpathStatic(staticPath)
-  );
-};
 
 const sendDataObj = (json) => {
   return {
@@ -196,6 +186,17 @@ const getMenu = () => {
   });
 };
 
+const setBuildpathStatic = (subpath) => {
+  return express.static(path.join(BUILD_PATH, subpath));
+};
+
+const serverUse = (staticPath) => {
+  return server.use(
+      `${BASE_URL}/${staticPath}`,
+      setBuildpathStatic(staticPath)
+  );
+};
+
 const serveAppWithMenu = (app) => {
   const staticPaths = [
     "asset-manifest.json",
@@ -217,6 +218,16 @@ const serveAppWithMenu = (app) => {
   setServerPort();
 };
 
+const serveAppWithOutMenu = () => {
+  server.use(getVimeoApiProxy());
+  server.use(getVimeoBilderProxy());
+  server.use(BASE_URL, express.static(BUILD_PATH));
+  server.get(`${BASE_URL}/*`, (req, res) => {
+    res.sendFile(path.resolve(BUILD_PATH, "index.html"));
+  });
+  setServerPort();
+};
+
 const setServerPort = () => {
   const port = process.env.PORT || 3000;
   server.listen(port, () => {
@@ -224,13 +235,6 @@ const setServerPort = () => {
   });
 };
 
-const serveAppWithOutMenu = () => {
-  server.use(BASE_URL, express.static(BUILD_PATH));
-  server.get(`${BASE_URL}/*`, (req, res) => {
-    res.sendFile(path.resolve(BUILD_PATH, "index.html"));
-  });
-  setServerPort();
-};
 
 const getMenuAndServeApp = () => {
   mainCacheMeny.get(mainCacheKey, (err, response) => {
@@ -255,4 +259,5 @@ const checkBackupCache = () => {
   });
 };
 
-getMenuAndServeApp();
+serveAppWithOutMenu();
+//getMenuAndServeApp();
