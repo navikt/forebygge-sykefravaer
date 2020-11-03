@@ -76,10 +76,13 @@ const brødsmulesti = [
 ];
 
 const devUrl =
-  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb";
+  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
+  encodeURIComponent(JSON.stringify(brødsmulesti));
+
 const prodUrl =
   "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
   JSON.stringify(brødsmulesti);
+
 const url = () => devUrl;
 //  process.env.DECORATOR_EXTERNAL_URL ||
 //  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
@@ -113,7 +116,6 @@ const setHeaders = (responsheader) => {
 };
 
 const BUILD_PATH = path.join(__dirname, "../build");
-
 
 const sendDataObj = (json) => {
   return {
@@ -193,8 +195,8 @@ const setBuildpathStatic = (subpath) => {
 
 const serverUse = (staticPath) => {
   return server.use(
-      `${BASE_URL}/${staticPath}`,
-      setBuildpathStatic(staticPath)
+    `${BASE_URL}/${staticPath}`,
+    setBuildpathStatic(staticPath)
   );
 };
 
@@ -236,7 +238,6 @@ const setServerPort = () => {
   });
 };
 
-
 const getMenuAndServeApp = () => {
   mainCacheMeny.get(mainCacheKey, (err, response) => {
     if (!err && response !== undefined) {
@@ -260,5 +261,4 @@ const checkBackupCache = () => {
   });
 };
 
-serveAppWithOutMenu();
-//getMenuAndServeApp();
+getMenuAndServeApp();

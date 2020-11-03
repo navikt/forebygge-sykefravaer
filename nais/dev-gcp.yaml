@@ -23,6 +23,7 @@ spec:
         - host: i.vimeocdn.com
         - host: api.vimeo.com
         - host: cdn.sanity.io
+        - host: api.sanity.io
         - host: dekoratoren.dev.nav.no
   envFrom:
     - secret: forebygge-sykefravaer-secrets
