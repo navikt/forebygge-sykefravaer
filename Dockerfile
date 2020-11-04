@@ -8,6 +8,7 @@ WORKDIR /app
 COPY server/ ./server
 COPY build/ ./build
 
+WORKDIR /app/server
 RUN yarn install --frozen-lockfile
 
 EXPOSE 3000
