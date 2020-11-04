@@ -12,4 +12,4 @@ WORKDIR /app/server
 RUN yarn install --frozen-lockfile
 
 EXPOSE 3000
-ENTRYPOINT ["node", "server/server.js"]
+ENTRYPOINT ["node", "server.js"]
