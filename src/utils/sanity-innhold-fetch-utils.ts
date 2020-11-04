@@ -3,7 +3,8 @@ const sanityClient = require("@sanity/client");
 export const BASE_URL = "/forebygge-sykefravaer";
 export const projectId = "er31zvh0";
 export const dataset =
-  process.env.NODE_ENV === "production" ? "production" : "development";
+  //process.env.NODE_ENV === "production" ? "production" : "development";
+  "development";
 
 const client = new sanityClient({
   projectId: projectId,

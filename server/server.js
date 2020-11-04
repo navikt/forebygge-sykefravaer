@@ -44,14 +44,11 @@ const startServer = (html) => {
 };
 
 const renderAppMedDecorator = (decoratorFragments) => {
-  console.log("fragments: ", decoratorFragments);
   return new Promise((resolve, reject) => {
     app.render("index.html", decoratorFragments, (err, html) => {
       if (err) {
-        console.log("Error", err);
         reject(err);
       } else {
-        console.log("Success", html);
         resolve(html);
       }
     });
