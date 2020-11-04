@@ -6,172 +6,64 @@ require("dotenv").config({
 });
 
 // imports
-const path = require("path");
-const express = require("express");
-const helmet = require("helmet");
-const fs = require("fs-extra");
-const request = require("request");
-const jsdom = require("jsdom");
-const NodeCache = require("node-cache");
 const { getVimeoApiProxy } = require("./vimeo-api-proxy");
 const { getVimeoBilderProxy } = require("./vimeo-bilder-proxy");
+const { BASE_PATH } = require("./konstanter");
+const getDecorator = require("./decorator");
+const mustacheExpress = require("mustache-express");
+const express = require("express");
+const app = express();
+const path = require("path");
+const buildPath = path.join(__dirname, "../build");
+const PORT = process.env.PORT || 3000;
 
-const server = express();
-server.use(helmet());
+app.engine("html", mustacheExpress());
+app.set("view engine", "mustache");
+app.set("views", buildPath);
 
-const BASE_URL = "/forebygge-sykefravaer";
-const { JSDOM } = jsdom;
-const prop = "innerHTML";
+const startServer = (html) => {
+  app.use(BASE_PATH + "/", express.static(buildPath, { index: false }));
 
-// Cache init
-const mainCacheKey = "sykefravaer-withMenu";
-const backupCacheKey = "sykefravaer-withMenuBackup";
-const mainCacheMeny = new NodeCache({ stdTTL: 900, checkperiod: 90 });
-const backupCacheMeny = new NodeCache({ stdTTL: 0, checkperiod: 0 });
+  app.get(`${BASE_PATH}/internal/isAlive`, (req, res) => res.sendStatus(200));
+  app.get(`${BASE_PATH}/internal/isReady`, (req, res) => res.sendStatus(200));
 
-//server response to pipeline
-server.get("/forebygge-sykefravaer/internal/isAlive", (req, res) =>
-  res.sendStatus(200)
-);
-server.get("/forebygge-sykefravaer/internal/isReady", (req, res) =>
-  res.sendStatus(200)
-);
+  app.use(getVimeoApiProxy());
+  app.use(getVimeoBilderProxy());
 
-const htmlinsert = () => [
-  { inject: "styles", from: "styles" },
-  { inject: "headerWithmenu", from: "header-withmenu" },
-  { inject: "footerWithmenu", from: "footer-withmenu" },
-  { inject: "megamenuResources", from: "megamenu-resources" },
-  { inject: "scripts", from: "scripts" },
-];
+  app.get(BASE_PATH, (req, res) => {
+    res.send(html);
+  });
 
-const brødsmulesti = [
-  {
-    title: "Forebygge og redusere sykefravær og frafall",
-    url: "https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer/",
-  },
-];
+  app.get(BASE_PATH + "/*", (req, res) => {
+    res.send(html);
+  });
 
-const devUrl =
-  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-  encodeURIComponent(JSON.stringify(brødsmulesti));
-
-const prodUrl =
-  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-  JSON.stringify(brødsmulesti);
-
-const url = () => devUrl;
-//  process.env.DECORATOR_EXTERNAL_URL ||
-//  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-//    JSON.stringify(brødsmulesti);
-
-const BUILD_PATH = path.join(__dirname, "../build");
-
-const injectMenuIntoHtml = (menu) => {
-  fs.readFile(BUILD_PATH + "/index.html", "utf8", function (err, html) {
-    if (!err) {
-      console.log("[DEBUG] fs.readfile er OK");
-      const { document } = new JSDOM(html).window;
-      htmlinsert().forEach((element) => {
-        document.getElementById(element.inject)[prop] = menu.getElementById(
-          element.from
-        )[prop];
-      });
-      const output = `<!DOCTYPE html>${document.documentElement.outerHTML}`;
-      mainCacheMeny.set(mainCacheKey, output, 10000);
-      backupCacheMeny.set(backupCacheKey, output, 0);
-      serveAppWithMenu(output);
-    } else {
-      console.log("[DEBUG] error ved readFile i injectMenuIntoHtml()");
-      checkBackupCache();
-    }
+  app.listen(PORT, () => {
+    console.log("Server listening on port", PORT);
   });
 };
 
-const getMenu = () => {
-  request({ method: "GET", uri: url() }, (error, response, body) => {
-    if (!error && response.statusCode >= 200 && response.statusCode < 400) {
-      const { document } = new JSDOM(body).window;
-      injectMenuIntoHtml(document);
-    } else {
-      console.log("tried to fetch menu fragments from ", `${url()}`);
-      console.log("respons failed, with response ", response);
-      console.log("error: ", error);
-      checkBackupCache();
-    }
+const renderAppMedDecorator = (decoratorFragments) => {
+  console.log("fragments: ", decoratorFragments);
+  return new Promise((resolve, reject) => {
+    app.render("index.html", decoratorFragments, (err, html) => {
+      if (err) {
+        console.log("Error", err);
+        reject(err);
+      } else {
+        console.log("Success", html);
+        resolve(html);
+      }
+    });
   });
 };
 
-const setBuildpathStatic = (subpath) => {
-  return express.static(path.join(BUILD_PATH, subpath));
-};
-
-const serverUse = (staticPath) => {
-  return server.use(
-    `${BASE_URL}/${staticPath}`,
-    setBuildpathStatic(staticPath)
-  );
-};
-
-const serveAppWithMenu = (app) => {
-  const staticPaths = [
-    "asset-manifest.json",
-    "manifest.json",
-    "favicon.ico",
-    "precache-manifest.*",
-    "service-worker.js",
-    "permittering.nav.illustrasjon.png",
-    "static",
-    "index.css",
-  ];
-
-  staticPaths.map((path) => serverUse(path));
-  server.use(getVimeoApiProxy());
-  server.use(getVimeoBilderProxy());
-  server.get([`${BASE_URL}/`], (req, res) => {
-    res.send(app);
+getDecorator()
+  .then(renderAppMedDecorator, (error) => {
+    console.error("Kunne ikke hente dekoratør ", error);
+    process.exit(1);
+  })
+  .then(startServer, (error) => {
+    console.error("Kunne ikke rendre app ", error);
+    process.exit(1);
   });
-  setServerPort();
-};
-
-const serveAppWithOutMenu = () => {
-  server.use(getVimeoApiProxy());
-  server.use(getVimeoBilderProxy());
-  server.use(BASE_URL, express.static(BUILD_PATH));
-  server.get(`${BASE_URL}/*`, (req, res) => {
-    res.sendFile(path.resolve(BUILD_PATH, "index.html"));
-  });
-  setServerPort();
-};
-
-const setServerPort = () => {
-  const port = process.env.PORT || 3000;
-  server.listen(port, () => {
-    console.log("server listening on port", port);
-  });
-};
-
-const getMenuAndServeApp = () => {
-  mainCacheMeny.get(mainCacheKey, (err, response) => {
-    if (!err && response !== undefined) {
-      serveAppWithMenu(response);
-    } else {
-      getMenu();
-    }
-  });
-};
-
-const checkBackupCache = () => {
-  backupCacheMeny.get(backupCacheKey, (err, response) => {
-    if (!err && response !== undefined) {
-      mainCacheMeny.set(mainCacheKey, response, 10000);
-      serveAppWithMenu(response);
-    } else {
-      console.log("failed to fetch menu");
-      console.log("cache store empty, serving app with out menu fragments");
-      serveAppWithOutMenu();
-    }
-  });
-};
-
-getMenuAndServeApp();

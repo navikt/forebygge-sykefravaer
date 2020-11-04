@@ -21,6 +21,7 @@ export enum SanityQueryTypes {
 }
 
 export const fetchSanityInnhold = () => {
+  console.log("Environement? ", process.env.NODE_ENV);
   const query = querySanity();
   return client
     .fetch(query)
