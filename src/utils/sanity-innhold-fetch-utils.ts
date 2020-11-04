@@ -1,10 +1,8 @@
 const sanityClient = require("@sanity/client");
 
 export const BASE_URL = "/forebygge-sykefravaer";
-export const projectId = "er31zvh0";
-export const dataset =
-  //process.env.NODE_ENV === "production" ? "production" : "development";
-  "development";
+export const projectId = (window as any).env.sanityProjectId;
+export const dataset = (window as any).env.sanityDataset;
 
 const client = new sanityClient({
   projectId: projectId,
@@ -22,7 +20,6 @@ export enum SanityQueryTypes {
 }
 
 export const fetchSanityInnhold = () => {
-  console.log("Environement? ", process.env.NODE_ENV);
   const query = querySanity();
   return client
     .fetch(query)
