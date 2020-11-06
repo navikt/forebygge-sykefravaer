@@ -10,6 +10,7 @@ import {
   WebinarOgKursInnhold,
 } from "../sanity-blocks/sanityTypes";
 import {
+  fetchSanityClientConfig,
   fetchSanityInnhold,
   SanityQueryTypes,
 } from "../utils/sanity-innhold-fetch-utils";
@@ -82,13 +83,15 @@ const InnholdContext = (props: ProviderProps) => {
       }
     };
 
-    fetchSanityInnhold()
-      .then((res: any) => {
-        setEnv(res.env);
-        res.data.forEach((item: DocumentTypes) => {
-          setDocumentData(item);
-        });
-      })
+    fetchSanityClientConfig()
+      .then((sanityClientConfig) =>
+        fetchSanityInnhold(sanityClientConfig).then((res: any) => {
+          setEnv(res.env);
+          res.data.forEach((item: DocumentTypes) => {
+            setDocumentData(item);
+          });
+        })
+      )
       .catch((err: any) => console.warn(err));
   }, []);
 

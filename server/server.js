@@ -28,14 +28,15 @@ const startServer = (html) => {
   app.get(`${BASE_PATH}/internal/isAlive`, (req, res) => res.sendStatus(200));
   app.get(`${BASE_PATH}/internal/isReady`, (req, res) => res.sendStatus(200));
 
-  app.get(`${BASE_PATH}/api/env.js`, (req, res) =>
-    res.send(
-      `window.env=${JSON.stringify({
+  app.get(`${BASE_PATH}/api/env`, (req, res) => {
+      setHeaders(res);
+      res.send(
+      `${JSON.stringify({
         sanityProjectId: process.env.SANITY_PROJECT_ID,
         sanityDataset: process.env.SANITY_DATASET,
       })}`
-    )
-  );
+    );
+  });
 
   app.use(getVimeoApiProxy());
   app.use(getVimeoBilderProxy());
@@ -63,6 +64,19 @@ const renderAppMedDecorator = (decoratorFragments) => {
       }
     });
   });
+};
+
+const setHeaders = (responsheader) => {
+    responsheader.setHeader("Access-Control-Allow-Origin", "*");
+    responsheader.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET"
+    );
+    responsheader.setHeader(
+        "Access-Control-Allow-Headers",
+        "X-Requested-With,content-type"
+    );
+    responsheader.setHeader("Access-Control-Allow-Credentials", true);
 };
 
 getDecorator()

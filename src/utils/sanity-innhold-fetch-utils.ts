@@ -1,14 +1,6 @@
 const sanityClient = require("@sanity/client");
 
 export const BASE_URL = "/forebygge-sykefravaer";
-export const projectId = (window as any).env.sanityProjectId;
-export const dataset = (window as any).env.sanityDataset;
-
-const client = new sanityClient({
-  projectId: projectId,
-  dataset: dataset,
-  useCdn: true,
-});
 
 export enum SanityQueryTypes {
   viHjelperDereMed = "vi-hjelper-dere-med",
@@ -19,11 +11,13 @@ export enum SanityQueryTypes {
   iaAvtalen = "ia-avtalen",
 }
 
-export const fetchSanityInnhold = () => {
+export const fetchSanityInnhold = (config: SanityConfig) => {
   const query = querySanity();
+  const client = new sanityClient(config);
+
   return client
     .fetch(query)
-    .then((result: Object) => sendDataObj(result))
+    .then((result: Object) => sendDataObj(result, config))
     .catch((error: any) => {
       console.log("Error: ", error);
     });
@@ -34,7 +28,33 @@ export interface SanityResponse {
   env: [string?, string?];
 }
 
+export interface SanityConfig {
+  projectId: string;
+  dataset: string;
+  useCdn: boolean;
+}
+
 const querystart = (len: number) => len === 0;
+
+export const fetchSanityClientConfig = () => {
+  const lokalUrl =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
+
+  return fetch(`${lokalUrl}${BASE_URL}/api/env`)
+    .then((response) => {
+      return response.json() as Promise<{
+        sanityProjectId: string;
+        sanityDataset: string;
+      }>;
+    })
+    .then((data) => {
+      return {
+        projectId: data.sanityProjectId,
+        dataset: data.sanityDataset,
+        useCdn: true,
+      };
+    });
+};
 
 const querySanity = () => {
   let querystring = "";
@@ -48,9 +68,12 @@ const querySanity = () => {
   );
 };
 
-const sendDataObj = (json: any): SanityResponse => {
+const sendDataObj = (
+  json: any,
+  sanityClientConfig: SanityConfig
+): SanityResponse => {
   return {
     data: json,
-    env: [projectId, dataset],
+    env: [sanityClientConfig.projectId, sanityClientConfig.dataset],
   };
 };
