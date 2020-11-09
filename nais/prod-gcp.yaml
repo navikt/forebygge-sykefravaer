@@ -22,6 +22,5 @@ spec:
       external:
         - host: i.vimeocdn.com
         - host: api.vimeo.com
-        - host: nav.no
   envFrom:
     - secret: forebygge-sykefravaer-secrets
