@@ -10,20 +10,8 @@ const brødsmulesti = [
   },
 ];
 
-const devUrl =
-  "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-  encodeURIComponent(JSON.stringify(brødsmulesti));
-const prodUrl =
-  "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-  encodeURIComponent(JSON.stringify(brødsmulesti));
-
-const url =
-  process.env.NAIS_CLUSTER_NAME === "prod-sbs" ||
-  process.env.NAIS_CLUSTER_NAME === "prod-gcp"
-    ? prodUrl
-    : devUrl;
-
-const requestDecorator = (callback) => request(url, callback);
+const decoratorUrl = process.env.DECORATOR_EXTERNAL_URL + encodeURIComponent(JSON.stringify(brødsmulesti));
+const requestDecorator = (callback) => request(decoratorUrl, callback);
 
 const getDecorator = () =>
   new Promise((resolve, reject) => {
