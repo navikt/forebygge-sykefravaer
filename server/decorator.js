@@ -10,26 +10,13 @@ const brødsmulesti = [
   },
 ];
 
-/*
 const decoratorUrl = process.env.DECORATOR_EXTERNAL_URL + encodeURIComponent(JSON.stringify(brødsmulesti));
-const requestDecorator = (callback) => request(decoratorUrl, callback);
-*/
 
-// TODO: bruk env  variabel DECORATOR_EXTERNAL_URL
-const devUrl = process.env.DECORATOR_EXTERNAL_URL +
-    "https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-    encodeURIComponent(JSON.stringify(brødsmulesti));
-const prodUrl =
-    "https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" +
-    encodeURIComponent(JSON.stringify(brødsmulesti));
-
-const url =
-    process.env.NAIS_CLUSTER_NAME === "prod-sbs" ||
-    process.env.NAIS_CLUSTER_NAME === "prod-gcp"
-        ? prodUrl
-        : devUrl;
-
-const requestDecorator = (callback) => request(url, callback);
+const requestDecorator = (callback) => {
+  console.log("DECORATOR URL?: ", decoratorUrl);
+  console.log("DECORATOR env variable?: ", process.env.DECORATOR_EXTERNAL_URL);
+  request(decoratorUrl, callback)
+};
 
 const getDecorator = () =>
   new Promise((resolve, reject) => {

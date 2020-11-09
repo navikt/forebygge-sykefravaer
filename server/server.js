@@ -56,7 +56,7 @@ const startServer = (html) => {
 
 const renderAppMedDecorator = (decoratorFragments) => {
   return new Promise((resolve, reject) => {
-    app.render("index.html", decoratorFragments, (err, html) => {
+    app.render('index.html', decoratorFragments, (err, html) => {
       if (err) {
         reject(err);
       } else {
