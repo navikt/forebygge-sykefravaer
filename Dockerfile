@@ -2,7 +2,6 @@ FROM navikt/node-express:12.18-alpine
 
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
-ENV NODE_EXTRA_CA_CERTS /etc/ssl/ca-bundle.pem
 
 WORKDIR /app
 COPY server/ ./server
