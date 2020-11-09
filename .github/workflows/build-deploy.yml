@@ -51,8 +51,8 @@ jobs:
                   PRINT_PAYLOAD: true
 
     deploy-to-prod:
-        name: Deploy to prod-sbs
-        if: github.ref == 'refs/heads/master'
+        name: Deploy to prod-gcp
+        if: github.ref == 'refs/heads/migrere-til-GCP'
         needs: deploy-to-dev
         runs-on: ubuntu-latest
         steps:
@@ -60,7 +60,7 @@ jobs:
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: prod-sbs
+                  CLUSTER: prod-gcp
                   VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/prod-sbs.yaml
+                  RESOURCE: nais/prod-gcp.yaml
                   PRINT_PAYLOAD: true
