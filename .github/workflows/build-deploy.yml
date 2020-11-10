@@ -36,7 +36,7 @@ jobs:
                   docker push ${IMAGE}
 
     deploy-to-dev:
-        name: Deploy to dev-gcp
+        name: Deploy to dev-sbs
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/migrere-til-GCP'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
@@ -45,9 +45,9 @@ jobs:
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: dev-gcp
+                  CLUSTER: dev-sbs
                   VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/dev-gcp.yaml
+                  RESOURCE: nais/dev-sbs.yaml
                   PRINT_PAYLOAD: true
 
     deploy-to-prod:
