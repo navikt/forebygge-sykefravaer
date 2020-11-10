@@ -66,6 +66,18 @@ const renderAppMedDecorator = (decoratorFragments) => {
   });
 };
 
+const renderAppUtenDecorator = () => {
+    return new Promise((resolve, reject) => {
+        app.render('index.html', (err, html) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(html);
+            }
+        });
+    });
+};
+
 const setHeaders = (responsheader) => {
     responsheader.setHeader("Access-Control-Allow-Origin", "*");
     responsheader.setHeader(
@@ -79,6 +91,13 @@ const setHeaders = (responsheader) => {
     responsheader.setHeader("Access-Control-Allow-Credentials", true);
 };
 
+renderAppUtenDecorator()
+    .then(startServer, (error) => {
+    console.error("Kunne ikke rendre app ", error);
+    process.exit(1);
+});
+
+/*
 getDecorator()
   .then(renderAppMedDecorator, (error) => {
     console.error("Kunne ikke hente dekoratør ", error);
@@ -88,3 +107,4 @@ getDecorator()
     console.error("Kunne ikke rendre app ", error);
     process.exit(1);
   });
+*/
