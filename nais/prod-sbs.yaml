@@ -24,5 +24,5 @@ spec:
     - name: NODE_EXTRA_CA_CERTS
       value: "/etc/ssl/ca-bundle.pem"
     - name: DECORATOR_EXTERNAL_URL
-      value: "https://dekoratoren.dev.nav.no/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=[{%22title%22:%22Forebygge%20og%20redusere%20sykefrav%C3%A6r%20og%20frafall%22,%22url%22:%22https://arbeidsgiver.nav.no/forebygge-sykefravaer/%22}]"
+      value: "https://dekoratoren.dev.nav.no/?context=arbeidsgiver"
 
