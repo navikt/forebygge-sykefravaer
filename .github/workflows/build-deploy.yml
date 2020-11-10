@@ -51,8 +51,8 @@ jobs:
                   PRINT_PAYLOAD: true
 
     deploy-to-prod:
-        name: Deploy to prod-gcp
-        if: github.ref == 'refs/heads/migrere-til-GCP'
+        name: Deploy to prod-sbs
+        if: github.ref == 'refs/heads/master'
         needs: deploy-to-dev
         runs-on: ubuntu-latest
         steps:
@@ -60,7 +60,22 @@ jobs:
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: prod-gcp
+                  CLUSTER: prod-sbs
                   VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/prod-gcp.yaml
+                  RESOURCE: nais/prod-sbs.yaml
+                  PRINT_PAYLOAD: true
+
+    deploy-to-labs:
+        name: Deploy to labs-gcp
+        if: github.ref == 'refs/heads/migrere-til-GCP'
+        needs: compile-test-and-build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: nais/deploy/actions/deploy@v1
+              env:
+                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+                  CLUSTER: labs-gcp
+                  VAR: version=${{ env.IMAGE }}
+                  RESOURCE: nais/labs-gcp.yaml
                   PRINT_PAYLOAD: true
