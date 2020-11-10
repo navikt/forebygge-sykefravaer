@@ -29,8 +29,8 @@ const startServer = (html) => {
   app.get(`${BASE_PATH}/internal/isReady`, (req, res) => res.sendStatus(200));
 
   app.get(`${BASE_PATH}/api/env`, (req, res) => {
-      setHeaders(res);
-      res.send(
+    setHeaders(res);
+    res.send(
       `${JSON.stringify({
         sanityProjectId: process.env.SANITY_PROJECT_ID,
         sanityDataset: process.env.SANITY_DATASET,
@@ -56,7 +56,7 @@ const startServer = (html) => {
 
 const renderAppMedDecorator = (decoratorFragments) => {
   return new Promise((resolve, reject) => {
-    app.render('index.html', decoratorFragments, (err, html) => {
+    app.render("index.html", decoratorFragments, (err, html) => {
       if (err) {
         reject(err);
       } else {
@@ -66,38 +66,16 @@ const renderAppMedDecorator = (decoratorFragments) => {
   });
 };
 
-const renderAppUtenDecorator = () => {
-    return new Promise((resolve, reject) => {
-        app.render('index.html', (err, html) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(html);
-            }
-        });
-    });
-};
-
 const setHeaders = (responsheader) => {
-    responsheader.setHeader("Access-Control-Allow-Origin", "*");
-    responsheader.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET"
-    );
-    responsheader.setHeader(
-        "Access-Control-Allow-Headers",
-        "X-Requested-With,content-type"
-    );
-    responsheader.setHeader("Access-Control-Allow-Credentials", true);
+  responsheader.setHeader("Access-Control-Allow-Origin", "*");
+  responsheader.setHeader("Access-Control-Allow-Methods", "GET");
+  responsheader.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  responsheader.setHeader("Access-Control-Allow-Credentials", true);
 };
 
-renderAppUtenDecorator()
-    .then(startServer, (error) => {
-    console.error("Kunne ikke rendre app ", error);
-    process.exit(1);
-});
-
-/*
 getDecorator()
   .then(renderAppMedDecorator, (error) => {
     console.error("Kunne ikke hente dekoratør ", error);
@@ -107,4 +85,3 @@ getDecorator()
     console.error("Kunne ikke rendre app ", error);
     process.exit(1);
   });
-*/
