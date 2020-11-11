@@ -32,8 +32,12 @@ GCP clusters bruker ikke Vault, da må secrets legges inn via `kubectl` som f.ek
 
 ```
 kubectl create secret generic forebygge-sykefravaer-secrets \
---from-literal=SECRET_1=******** \
---from-literal=SECRET_2=*********** -n arbeidsgiver
+--from-literal=SANITY_DATASET=********* \
+--from-literal=SANITY_PROJECT_ID=*********** \
+--from-literal=SANITY_CACHE_TTL=3 \
+--from-literal=SANITY_CACHE_CHECK=1 \
+--from-literal=VIMEO_TOKEN=*************************** \
+--from-literal=DECORATOR_EXTERNAL_URL="https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" -n arbeidsgiver
 ```
 
 ## Relevante lenker
