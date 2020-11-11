@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {
   DigitalTjeneste,
-  WebinarOgKursInnhold,
+  DocumentTypes,
   HelseIArbeid,
   IAavtalen,
   Oppfolging,
   setEnv,
-  DocumentTypes,
   VihjelperMed,
+  WebinarOgKursInnhold,
 } from "../sanity-blocks/sanityTypes";
-import { fetchsanityJSON, isProduction } from "../utils/fetch-utils";
+import {
+  fetchSanityClientConfig,
+  fetchSanityInnhold,
+  SanityQueryTypes,
+} from "../utils/sanity-innhold-fetch-utils";
 
 interface ProviderProps {
   children: React.ReactNode;
@@ -64,30 +68,31 @@ const InnholdContext = (props: ProviderProps) => {
         leggTilOverskriftSomMenyElement({ id: item._type, tekst: item.title });
       }
       switch (item._type) {
-        case "vi-hjelper-dere-med":
+        case SanityQueryTypes.viHjelperDereMed:
           return setViHjelperMed(item as VihjelperMed);
-        case "digitale-tjenester":
+        case SanityQueryTypes.digitaleTjenester:
           return setDtjenester(item as DigitalTjeneste);
-        case "webinar-og-kurs":
+        case SanityQueryTypes.webinarOgKurs:
           return setWebinarogkurs(item as WebinarOgKursInnhold);
-        case "oppfolging-fra-nav-arbeidslivssenter":
+        case SanityQueryTypes.oppfolgingFraNavArbeidslivssenter:
           return setOppfolging(item as Oppfolging);
-        case "helseIArbeid":
+        case SanityQueryTypes.helseIArbeid:
           return setHelsearbeid(item as HelseIArbeid);
-        case "ia-avtalen":
+        case SanityQueryTypes.iaAvtalen:
           return setIaAvtale(item as IAavtalen);
       }
     };
 
-    const url = isProduction();
-    fetchsanityJSON(url)
-      .then((res) => {
-        setEnv(res.env);
-        res.data.forEach((item: DocumentTypes) => {
-          setDocumentData(item);
-        });
-      })
-      .catch((err) => console.warn(err));
+    fetchSanityClientConfig()
+      .then((sanityClientConfig) =>
+        fetchSanityInnhold(sanityClientConfig).then((res: any) => {
+          setEnv(res.env);
+          res.data.forEach((item: DocumentTypes) => {
+            setDocumentData(item);
+          });
+        })
+      )
+      .catch((err: any) => console.warn(err));
   }, []);
 
   useEffect(() => {

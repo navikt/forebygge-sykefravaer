@@ -1,5 +1,5 @@
 import { getRestStatus, RestRessurs, RestStatus } from "./api-utils";
-import { BASE_URL } from "../utils/fetch-utils";
+import { BASE_URL } from "../utils/sanity-innhold-fetch-utils";
 
 export const SHOWCASE_PATH =
   BASE_URL + "/api/video/users/94865899/albums/6728595/videos";

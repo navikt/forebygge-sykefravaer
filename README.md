@@ -27,6 +27,19 @@ Master branch deployes automatisk til Prod.
 
 Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes
 
+### Overgang til GCP
+GCP clusters bruker ikke Vault, da må secrets legges inn via `kubectl` som f.eks: 
+
+```
+kubectl create secret generic forebygge-sykefravaer-secrets \
+--from-literal=SANITY_DATASET=********* \
+--from-literal=SANITY_PROJECT_ID=*********** \
+--from-literal=SANITY_CACHE_TTL=3 \
+--from-literal=SANITY_CACHE_CHECK=1 \
+--from-literal=VIMEO_TOKEN=*************************** \
+--from-literal=DECORATOR_EXTERNAL_URL="https://www.nav.no/dekoratoren/?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs=" -n arbeidsgiver
+```
+
 ## Relevante lenker
 
 - Prosjektet administreres her: https://manage.sanity.io/projects/er31zvh0

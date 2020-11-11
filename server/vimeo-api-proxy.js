@@ -39,7 +39,10 @@ const proxyConfig = {
 
 const getVimeoApiProxy = () => {
   if (proxyServer) {
+    console.log("Proxy server funnet. Legger til HttpsProxyAgent til proxyMiddleware for kunne fungere gjennom proxy.");
     proxyConfig.agent = new HttpsProxyAgent(proxyServer);
+  } else {
+    console.log("Ingen proxy server funnet. Oppretter proxyMiddleware uten HttpsProxyAgent (default)");
   }
   return createProxyMiddleware(FRONTEND_VIDEO_API_PATH, proxyConfig);
 };
