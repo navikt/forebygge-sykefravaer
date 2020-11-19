@@ -103,6 +103,7 @@ export interface DigitalTjeneste extends CommonTypes {
     body: Body;
     iconImage: Image;
     title: string;
+    nyhet: boolean;
     _key: string;
     _type: string;
   }[];
