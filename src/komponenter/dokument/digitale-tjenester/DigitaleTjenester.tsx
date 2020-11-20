@@ -5,6 +5,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import { serializers } from "../../../sanity-blocks/serializer";
 import { Undertittel } from "nav-frontend-typografi";
 import "./digitaleTjenester.less";
+import { Nyhet } from "../../Nyhet/Nyhet";
 
 interface Props {
   innhold: DigitalTjeneste | null;
@@ -28,7 +29,7 @@ const DigitaleTjenester = (props: Props) => {
             <div className={cls.element("txt-container")}>
               <div>
                 <Undertittel className={cls.element("title")}>
-                  {element.title}
+                  {element.title} {element.nyhet && <Nyhet className={cls.element('nyhet')}/>}
                 </Undertittel>
               </div>
               <div>
