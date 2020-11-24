@@ -1,4 +1,4 @@
-import { DocumentTypes, SanityEnv } from "../sanity-blocks/sanityTypes";
+import { DocumentTypes } from "../sanity-blocks/sanityTypes";
 
 const sanityClient = require("@sanity/client");
 
@@ -18,10 +18,9 @@ export const fetchSanityInnhold = async (
 ): Promise<SanityResponse> => {
   const query = querySanity();
   const client = new sanityClient(config);
-
   const response = await client.fetch(query);
   return {
-    data: (await response.json()) as DocumentTypes[],
+    data: response as DocumentTypes[],
   };
 };
 

@@ -23,8 +23,6 @@ export type TextBlock = {
   children: React.ReactElement[] | string[];
 };
 
-export type SanityEnv = [string?, string?];
-
 export let sanityConfig: Partial<SanityConfig> = {};
 
 export const sanityImageLink = (imageId: string) => {
@@ -38,7 +36,8 @@ export const sanityImageLink = (imageId: string) => {
     .concat(imageFragments[3])}`;
 };
 
-export const setSanityConfig = (config: SanityConfig) => (sanityConfig = config);
+export const setSanityConfig = (config: SanityConfig) =>
+  (sanityConfig = config);
 
 interface Image {
   asset: {
