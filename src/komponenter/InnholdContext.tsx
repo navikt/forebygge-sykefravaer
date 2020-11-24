@@ -16,7 +16,6 @@ import {
   SanityQueryTypes,
   SanityResponse,
 } from "../utils/sanity-innhold-fetch-utils";
-import * as Sentry from "@sentry/browser";
 
 interface ProviderProps {
   children: React.ReactNode;
@@ -97,11 +96,7 @@ const InnholdContext = (props: ProviderProps) => {
       });
     };
 
-    try {
-      fetchOgSettSanityConfigOgInnhold();
-    } catch (error) {
-      Sentry.captureException(error);
-    }
+    fetchOgSettSanityConfigOgInnhold();
   }, []);
 
   useEffect(() => {
