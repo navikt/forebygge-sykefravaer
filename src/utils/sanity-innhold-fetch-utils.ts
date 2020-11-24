@@ -1,3 +1,5 @@
+import { DocumentTypes, SanityEnv } from "../sanity-blocks/sanityTypes";
+
 const sanityClient = require("@sanity/client");
 
 export const BASE_URL = "/forebygge-sykefravaer";
@@ -11,21 +13,20 @@ export enum SanityQueryTypes {
   iaAvtalen = "ia-avtalen",
 }
 
-export const fetchSanityInnhold = (config: SanityConfig) => {
+export const fetchSanityInnhold = async (
+  config: SanityConfig
+): Promise<SanityResponse> => {
   const query = querySanity();
   const client = new sanityClient(config);
 
-  return client
-    .fetch(query)
-    .then((result: Object) => sendDataObj(result, config))
-    .catch((error: any) => {
-      console.log("Error: ", error);
-    });
+  const response = await client.fetch(query);
+  return {
+    data: (await response.json()) as DocumentTypes[],
+  };
 };
 
 export interface SanityResponse {
-  data: string;
-  env: [string?, string?];
+  data: DocumentTypes[];
 }
 
 export interface SanityConfig {
@@ -36,7 +37,7 @@ export interface SanityConfig {
 
 const querystart = (len: number) => len === 0;
 
-export const fetchSanityClientConfig = () => {
+export const fetchSanityClientConfig = (): Promise<SanityConfig> => {
   const lokalUrl =
     process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
 
@@ -66,14 +67,4 @@ const querySanity = () => {
   return querystring.concat(
     ') && !(_id in path("drafts.**"))] | order(priority)'
   );
-};
-
-const sendDataObj = (
-  json: any,
-  sanityClientConfig: SanityConfig
-): SanityResponse => {
-  return {
-    data: json,
-    env: [sanityClientConfig.projectId, sanityClientConfig.dataset],
-  };
 };

@@ -8,6 +8,7 @@
     "@navikt/fnrvalidator": "^1.1.2",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.1",
+    "@sentry/browser": "^5.27.6",
     "@testing-library/dom": "^7.24.5",
     "@types/amplitude-js": "^6.0.0",
     "@types/jest": "^26.0.0",

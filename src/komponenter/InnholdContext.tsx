@@ -5,15 +5,18 @@ import {
   HelseIArbeid,
   IAavtalen,
   Oppfolging,
-  setEnv,
+  setSanityConfig,
   VihjelperMed,
   WebinarOgKursInnhold,
 } from "../sanity-blocks/sanityTypes";
 import {
   fetchSanityClientConfig,
   fetchSanityInnhold,
+  SanityConfig,
   SanityQueryTypes,
+  SanityResponse,
 } from "../utils/sanity-innhold-fetch-utils";
+import * as Sentry from "@sentry/browser";
 
 interface ProviderProps {
   children: React.ReactNode;
@@ -83,16 +86,22 @@ const InnholdContext = (props: ProviderProps) => {
       }
     };
 
-    fetchSanityClientConfig()
-      .then((sanityClientConfig) =>
-        fetchSanityInnhold(sanityClientConfig).then((res: any) => {
-          setEnv(res.env);
-          res.data.forEach((item: DocumentTypes) => {
-            setDocumentData(item);
-          });
-        })
-      )
-      .catch((err: any) => console.warn(err));
+    const fetchOgSettSanityConfigOgInnhold = async () => {
+      const sanityConfig: SanityConfig = await fetchSanityClientConfig();
+      const sanityInnhold: SanityResponse = await fetchSanityInnhold(
+        sanityConfig
+      );
+      setSanityConfig(sanityConfig);
+      sanityInnhold.data.forEach((item: DocumentTypes) => {
+        setDocumentData(item);
+      });
+    };
+
+    try {
+      fetchOgSettSanityConfigOgInnhold();
+    } catch (error) {
+      Sentry.captureException(error);
+    }
   }, []);
 
   useEffect(() => {
