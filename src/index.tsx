@@ -15,7 +15,7 @@ if (process.env.REACT_APP_MOCK) {
 Sentry.init({
   dsn: "https://cdbc9e41249f474b8714aca002e84707@sentry.gc.nav.no/53",
   environment: getMiljø(),
-  // senabled: getMiljø() !== "local",
+  enabled: getMiljø() !== "local",
 });
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -3,5 +3,10 @@ export const getMiljø = (): string => {
   if (hostname === "arbeidsgiver.nav.no") {
     return "prod-sbs";
   }
+  if (hostname.includes("dev") || hostname.includes("-q")) {
+    console.log("Sentry environment: dev");
+    return "dev";
+  }
+  console.log("Sentry environment: local");
   return "local";
 };
