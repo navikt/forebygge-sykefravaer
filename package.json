@@ -21,7 +21,7 @@
     "craco-less": "^1.17.0",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
-    "eslint": "^7.14.0",
+    "eslint": "^6.6.0",
     "express": "^4.17.1",
     "jsdom": "^16.4.0",
     "lodash.throttle": "^4.1.1",
@@ -53,7 +53,7 @@
     "react-scripts": "^3.3.0",
     "request": "^2.88.2",
     "typescript": "^4.1.2",
-    "webpack": "^5.6.0"
+    "webpack": "4.42.0"
   },
   "scripts": {
     "start": "npm-run-all -p -r start-with-menu dev-server",
