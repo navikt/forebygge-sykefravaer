@@ -15,10 +15,7 @@ export interface Feil {
     status: RestStatus.Feil;
 }
 
-export type RestRessurs<T> =
-    | IkkeLastet
-    | Suksess<T>
-    | Feil;
+export type RestRessurs<T> = IkkeLastet | Suksess<T> | Feil;
 
 export const getRestStatus = (responseStatus: number): RestStatus => {
     switch (responseStatus) {

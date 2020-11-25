@@ -1,23 +1,22 @@
-@import "../../assets/style/commonStyle";
+@import '../../assets/style/commonStyle';
 
 .videopanel {
-
-  &__undertekst {
-    padding-bottom: 0.5rem;
-  }
-
-  @media (min-width: @mobilbreakpoint) {
-    &__videoer {
-      .videolenke {
-        padding-top: .25rem;
-        width: 50%;
-      }
-
-      .videolenke:nth-child(2) {
-        margin-left: 1rem;
-      }
-      display: flex;
-      flex-direction: row;
+    &__undertekst {
+        padding-bottom: 0.5rem;
     }
-  }
+
+    @media (min-width: @mobilbreakpoint) {
+        &__videoer {
+            .videolenke {
+                padding-top: 0.25rem;
+                width: 50%;
+            }
+
+            .videolenke:nth-child(2) {
+                margin-left: 1rem;
+            }
+            display: flex;
+            flex-direction: row;
+        }
+    }
 }
