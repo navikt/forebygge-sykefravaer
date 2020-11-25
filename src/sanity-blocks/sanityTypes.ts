@@ -1,4 +1,5 @@
 import React from "react";
+import { SanityConfig } from "../utils/sanity-innhold-fetch-utils";
 
 export enum TypoStyle {
   H1 = "h1",
@@ -22,12 +23,12 @@ export type TextBlock = {
   children: React.ReactElement[] | string[];
 };
 
-export let env = ["", ""];
+export let sanityConfig: Partial<SanityConfig> = {};
 
 export const sanityImageLink = (imageId: string) => {
   const imageFragments = imageId.split("-");
-  return `https://cdn.sanity.io/images/${env[0]}/${
-    env[1]
+  return `https://cdn.sanity.io/images/${sanityConfig.projectId}/${
+    sanityConfig.dataset
   }/${imageFragments[1]
     .concat("-")
     .concat(imageFragments[2])
@@ -35,7 +36,8 @@ export const sanityImageLink = (imageId: string) => {
     .concat(imageFragments[3])}`;
 };
 
-export const setEnv = (item: string[]) => (env = item);
+export const setSanityConfig = (config: SanityConfig) =>
+  (sanityConfig = config);
 
 interface Image {
   asset: {
@@ -120,8 +122,8 @@ export interface WebinarOgKursInnhold extends CommonTypes {
 
 export interface TidligereNettkursInnhold extends CommonTypes {
   tittel: string;
-  nyestopptakUndertekst: string,
-  alleopptakUndertekst: string,
+  nyestopptakUndertekst: string;
+  alleopptakUndertekst: string;
   lenker: Lenke[];
 }
 
