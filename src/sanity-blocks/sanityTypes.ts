@@ -129,6 +129,7 @@ export interface TidligereNettkursInnhold extends CommonTypes {
 export interface Kurspåmelding extends CommonTypes {
     tittel: string;
     undertekst: string;
+    undertekstUtenKurs: string;
     lenke: Lenke;
 }
 
