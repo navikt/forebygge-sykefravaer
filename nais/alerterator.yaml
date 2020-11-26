@@ -1,0 +1,17 @@
+apiVersion: "nais.io/v1"
+kind: "Alert"
+metadata:
+  name: forebygge-sykefravaer-alert
+  labels:
+    team: arbeidsgiver
+spec:
+  receivers:
+    slack:
+      channel: 'arbeidsgiver-teamia-utvikling'
+      prependText: '<!here> | '
+  alerts:
+    - alert: Applikasjon nede
+      expr: sum(up{app="forebygge-sykefravaer", job="kubernetes-pods"}) == 0
+      for: 30s
+      description: "forebygge-sykefravaer er nede"
+      action: "Sjekk logs.adeo.no for logger, og Grafana-dashboardet vårt: https://grafana.adeo.no/d/MwhvlzSMz/team-ia-samledashboard"
