@@ -10,7 +10,7 @@ spec:
   team: arbeidsgiver
   port: 3000
   ingresses:
-    - https://arbeidsgiver.nav.no/forebygge-sykefravaer
+    - https://arbeidsgiver.nav.no/forebygge-sykefravaer-gcp
   liveness:
     path: /forebygge-sykefravaer/internal/isReady
     initialDelay: 10
