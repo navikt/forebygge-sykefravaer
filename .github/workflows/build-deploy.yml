@@ -37,7 +37,7 @@ jobs:
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/migrere-til-GCP'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fjerne-sbs-avhengigheter-etter-bruk-av-gcp'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
