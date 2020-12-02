@@ -35,21 +35,6 @@ jobs:
                   echo ${IMAGE}
                   docker push ${IMAGE}
 
-    deploy-to-dev:
-        name: Deploy to dev-sbs
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/migrere-til-GCP'
-        needs: compile-test-and-build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: nais/deploy/actions/deploy@v1
-              env:
-                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: dev-sbs
-                  VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/dev-sbs.yaml
-                  PRINT_PAYLOAD: true
-
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/migrere-til-GCP'
@@ -78,19 +63,4 @@ jobs:
                   CLUSTER: prod-gcp
                   VAR: version=${{ env.IMAGE }}
                   RESOURCE: nais/prod-gcp.yaml
-                  PRINT_PAYLOAD: true
-
-    deploy-to-prod:
-        name: Deploy to prod-sbs
-        if: github.ref == 'refs/heads/master'
-        needs: compile-test-and-build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: nais/deploy/actions/deploy@v1
-              env:
-                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: prod-sbs
-                  VAR: version=${{ env.IMAGE }}
-                  RESOURCE: nais/prod-sbs.yaml
                   PRINT_PAYLOAD: true
