@@ -37,7 +37,7 @@ jobs:
 
     deploy-alert:
         name: Deploy alert to prod
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/alert-deploy'
+        if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
