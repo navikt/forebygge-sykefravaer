@@ -49,7 +49,6 @@ kubectl create secret generic forebygge-sykefravaer-secrets \
 
 - i prod: https://arbeidsgiver.nav.no/forebygge-sykefravaer
 - i dev miljø: https://arbeidsgiver-gcp.dev.nav.no/forebygge-sykefravaer --trenger #naisdevice kjørende se https://doc.nais.io/device/install/ for info om det
-- fra utvikler image: https://arbeidsgiver-q.nav.no/forebygge-sykefravaer
 
 ---
 
