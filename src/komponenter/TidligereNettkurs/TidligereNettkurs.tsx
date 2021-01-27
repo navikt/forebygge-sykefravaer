@@ -39,7 +39,7 @@ export const TidligereNettkurs = (props: Props) => {
             <VideoPanel restVideoliste={restVideoliste} />
             {innhold?.alleopptakUndertekst && (
                 <Normaltekst className={cls.element('undertekst')}>
-                    {innhold?.alleopptakUndertekst}
+                    <span className="bold">{innhold?.alleopptakUndertekst}</span>
                 </Normaltekst>
             )}
             {innhold?.lenker.map((lenke) => (
