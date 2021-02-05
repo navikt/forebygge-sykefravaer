@@ -5,7 +5,8 @@ ENV NODE_ENV $NODE_ENV
 
 WORKDIR /var/server
 
-COPY server/ .
+COPY server/ ./server
+WORKDIR /var/server/server
 COPY build/ ./build
 
 RUN yarn install --frozen-lockfile
