@@ -3,11 +3,16 @@ FROM navikt/node-express:12.18-alpine
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
 
-WORKDIR /app
+WORKDIR /var/server
 COPY server/ ./server
 COPY build/ ./build
 
-WORKDIR /app/server
+USER root
+RUN chown -R apprunner /var/server/build
+RUN chown -R apprunner /var/server/server
+USER apprunner
+
+WORKDIR /var/server/server
 RUN yarn install --frozen-lockfile
 
 EXPOSE 3000
