@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "/forebygge-sykefravaer",
   "dependencies": {
-    "@craco/craco": "^5.7.0",
+    "@craco/craco": "^6.1.1",
     "@navikt/fnrvalidator": "^1.1.2",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.1",
-    "@sentry/browser": "^5.27.6",
+    "@sentry/browser": "^6.1.0",
     "@testing-library/dom": "^7.24.5",
     "@types/amplitude-js": "^7.0.0",
     "@types/jest": "^26.0.0",
