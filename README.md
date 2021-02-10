@@ -6,6 +6,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 - Prosjektet administreres her: https://manage.sanity.io/projects/er31zvh0
 
 # Komme i gang
+**Viktig** Connect med Nais-device for å få tilgang til dekoratoren.dev.nav.no, hellers vil appen ikke starte
 
 - Legg Sanity-hemmeligheter i en fil som heter `.env` i prosjektet. Da lastes de automatisk inn som miljøvariabler. Filen er lagt med i `.gitignore`, så den blir ikke sjekket inn med git. Hemmelighetene trengs for å kunne hente tekster fra Sanity. Hemmenlighetene finnes i Vault under preprod/sbs.
 - Installere avhengigheter: `yarn`
