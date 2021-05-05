@@ -20,7 +20,7 @@
     "@typescript-eslint/parser": "^4.0.1",
     "amplitude-js": "^7.1.0",
     "classnames": "^2.2.6",
-    "console-stamp": "^0.2.9",
+    "console-stamp": "^3.0.2",
     "craco-less": "^1.17.0",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
