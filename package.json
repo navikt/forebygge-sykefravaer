@@ -54,7 +54,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "request": "^2.88.2",
-    "typescript": "^4.1.3"
+    "typescript": "^4.3.3"
   },
   "scripts": {
     "start": "npm-run-all -p -r start-with-menu dev-server",
