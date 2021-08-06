@@ -2093,10 +2093,19 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.0":
+"@types/react@*":
   version "17.0.14"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.14.tgz#f0629761ca02945c4e8fea99b8177f4c5c61fb0f"
   integrity sha512-0WwKHUbWuQWOce61UexYuWTGuGY/8JvtUe/dtQ6lR4sZ3UiylHotJeWpf3ArP9+DSGUoLY3wbU59VyMrJps5VQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.16":
+  version "17.0.16"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.16.tgz#056f40c45645761527baeb7d89d842a6abdf285a"
+  integrity sha512-3kCUiOOlQTwUUvjNFkbBTWMTxdTGybz/PfjCw9JmaRGcEDBQh+nGMg7/E9P2rklhJuYVd25IYLNcvqgSPCPksg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -3515,6 +3524,14 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+chalk@^4.1.1:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
+  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
 char-regex@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-1.0.2.tgz#d744358226217f981ed58f479b1d6bcc29545dcf"
@@ -3805,12 +3822,12 @@ console-browserify@^1.1.0:
   resolved "https://registry.yarnpkg.com/console-browserify/-/console-browserify-1.2.0.tgz#67063cef57ceb6cf4993a2ab3a55840ae8c49336"
   integrity sha512-ZMkYO/LkF17QvCPqM0gxw8yUzigAOZOSWSHg91FH6orS7vcEj5dVZTidN2fQ14yBSdg97RqhSNwLUXInd52OTA==
 
-console-stamp@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/console-stamp/-/console-stamp-3.0.2.tgz#eb27bde7fed64b7c2ebb189da63e8de45fb7d9a3"
-  integrity sha512-nYIxVrp1Cau8wRy8RQJO1VNBTYQPnFcN7SrsLAStSavo38Y4+jcysh5n4nZNd/WkR2IOULgwr2+6qDxMUA7Hog==
+console-stamp@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/console-stamp/-/console-stamp-3.0.3.tgz#a7a47427ffab893c20d30407199bc4b40346a7ba"
+  integrity sha512-6ltMcMEVDHb1bqb+qaVfCX7Vf3vEkfZEeKyReG1ny45Rv6YJynCcdv94j7whNVfxj/4/3Ji/QBHY6p4JI51Ucw==
   dependencies:
-    chalk "^4.1.0"
+    chalk "^4.1.1"
     dateformat "^4.5.1"
 
 constants-browserify@^1.0.0:
