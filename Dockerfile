@@ -1,4 +1,4 @@
-FROM navikt/node-express:12.18-alpine
+FROM navikt/node-express:14
 
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
