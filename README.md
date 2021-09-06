@@ -6,10 +6,10 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 - Prosjektet administreres her: https://manage.sanity.io/projects/er31zvh0
 
 # Komme i gang
-**Viktig** Connect med Nais-device for å få tilgang til dekoratoren.dev.nav.no, hellers vil appen ikke starte
+**Viktig** Connect med Nais-device for å få tilgang til dekoratoren.dev.nav.no, ellers vil appen ikke starte
 
 - Legg Sanity-hemmeligheter i en fil som heter `.env` i prosjektet. Da lastes de automatisk inn som miljøvariabler. Filen er lagt med i `.gitignore`, så den blir ikke sjekket inn med git. Hemmelighetene trengs for å kunne hente tekster fra Sanity. Hemmenlighetene finnes i Vault under preprod/sbs.
-- Installere avhengigheter: `yarn`
+- Installere avhengigheter: `yarn` fra både rotmappen og mappen `/server`
 - Starte appen lokalt: Her har man flere muligheter, avhengig av hva man vil.
   1.  Kjøre opp utviklingserver med menylinje `yarn start`
   2.  Kjøre opp utviklingserver uten menylinje `yarn start-nomenu`
@@ -24,12 +24,10 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 
 Master branch deployes automatisk til Prod.
 
-### Hvordan deployer man en vis branch?
-
-Oppdater filen `.github/workflows/build-deploy.yml` ved `deploy-to-dev` steg med navn til den branch-en som skal deployes
+Labs og/eller dev: Endre filen `.github/workflows/build-deploy.yml` ved stegene `deploy-to-dev` og/eller `deploy-to-labs` med navnet til branchen som skal deployes.
 
 ### Overgang til GCP
-GCP clusters bruker ikke Vault, da må secrets legges inn via `kubectl` som f.eks: 
+GCP clusters brukºer ikke Vault, da må secrets legges inn via `kubectl` som f.eks: 
 
 ```
 kubectl create secret generic forebygge-sykefravaer-secrets \
