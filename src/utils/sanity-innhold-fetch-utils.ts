@@ -41,6 +41,7 @@ export const fetchSanityClientConfig = (): Promise<SanityConfig> => {
         .then((response) => {
             return response.json() as Promise<{
                 sanityProjectId: string;
+                apiVersion: "2021-09-06",
                 sanityDataset: string;
             }>;
         })
@@ -48,6 +49,7 @@ export const fetchSanityClientConfig = (): Promise<SanityConfig> => {
             return {
                 projectId: data.sanityProjectId,
                 dataset: data.sanityDataset,
+                apiVersion: "2021-09-06",
                 useCdn: true,
             };
         });

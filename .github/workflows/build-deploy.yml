@@ -10,11 +10,11 @@ jobs:
         name: Build and run tests
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
-            - uses: actions/setup-node@v1
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
               with:
-                  node-version: '12.x'
-            - uses: actions/cache@v1
+                  node-version: '14.x'
+            - uses: actions/cache@v2
               with:
                   path: ./node_modules
                   key: ${{ runner.os }}-node-cache-${{ hashFiles('yarn.lock') }}
@@ -40,7 +40,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
@@ -49,11 +49,11 @@ jobs:
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/oppdatere-avhengigheter-august-2021'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/oppdatere-avhengigheter-sept-21'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
@@ -68,7 +68,7 @@ jobs:
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
