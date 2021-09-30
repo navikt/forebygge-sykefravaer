@@ -22,7 +22,7 @@ interface KursDto {
     ShowInActivityList: number;
     configurable_custom: null | {
         Fylke: string;
-        'Type kurs': string;
+        Type: string;
         Tema: string;
     };
 }
@@ -43,7 +43,7 @@ const mapTilKurs = (kursDto: KursDto): Kurs => ({
     id: kursDto.RegistrationID,
     tittel: kursDto.Title,
     tema: kursDto.configurable_custom?.Tema,
-    type: kursDto.configurable_custom?.['Type kurs'],
+    type: kursDto.configurable_custom?.Type,
     start: new Date(kursDto.RegistrationFromDateTime),
     slutt: new Date(kursDto.RegistrationToDateTime),
     påmeldingsfrist: new Date(kursDto.RegistrationDeadline),

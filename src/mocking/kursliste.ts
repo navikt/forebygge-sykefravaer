@@ -22,7 +22,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Troms og Finnmark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -49,7 +49,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Troms og Finnmark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -76,7 +76,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -103,7 +103,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -130,7 +130,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -158,7 +158,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -186,7 +186,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Rogaland',
-            'Type kurs': 'Informasjonsm\u00f8te',
+            Type: 'Informasjonsm\u00f8te',
             Tema: 'Annet',
         },
     },
@@ -211,7 +211,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Nordland',
-            'Type kurs': 'Informasjonsm\u00f8te',
+            Type: 'Informasjonsm\u00f8te',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -240,7 +240,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -267,7 +267,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -294,7 +294,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -319,7 +319,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Frokostm\u00f8te',
+            Type: 'Frokostm\u00f8te',
             Tema: 'Rekruttere og inkludere',
         },
     },
@@ -345,7 +345,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Frokostm\u00f8te',
+            Type: 'Frokostm\u00f8te',
             Tema: 'Rekruttere og inkludere',
         },
     },
@@ -371,7 +371,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': null,
+            Type: null,
             Tema: null,
         },
     },
@@ -397,7 +397,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Nordland',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -423,7 +423,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -450,7 +450,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Nordland',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -478,7 +478,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -506,7 +506,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -533,7 +533,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Tr\u00f8ndelag',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -561,7 +561,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -589,7 +589,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -617,7 +617,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -665,7 +665,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -693,7 +693,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -719,7 +719,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -745,7 +745,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -771,7 +771,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -797,7 +797,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -823,7 +823,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -849,7 +849,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -877,7 +877,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -903,7 +903,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -929,7 +929,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -955,7 +955,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -981,7 +981,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -1007,7 +1007,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -1034,7 +1034,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1061,7 +1061,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Tr\u00f8ndelag',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1130,7 +1130,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Troms og Finnmark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1156,7 +1156,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Nettverks- og erfaringssamling',
+            Type: 'Nettverks- og erfaringssamling',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -1182,7 +1182,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Nettverks- og erfaringssamling',
+            Type: 'Nettverks- og erfaringssamling',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -1208,7 +1208,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Nettverks- og erfaringssamling',
+            Type: 'Nettverks- og erfaringssamling',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -1234,7 +1234,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Nettverks- og erfaringssamling',
+            Type: 'Nettverks- og erfaringssamling',
             Tema: 'Inkluderende arbeidsliv (IA)',
         },
     },
@@ -1261,7 +1261,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Troms og Finnmark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1286,7 +1286,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Rogaland',
-            'Type kurs': 'Informasjonsm\u00f8te',
+            Type: 'Informasjonsm\u00f8te',
             Tema: 'Arbeidss\u00f8keraktivitet',
         },
     },
@@ -1312,7 +1312,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Nordland',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1338,7 +1338,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1365,7 +1365,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1392,7 +1392,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1419,7 +1419,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1447,7 +1447,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1475,7 +1475,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1502,7 +1502,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1529,7 +1529,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1555,7 +1555,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1581,7 +1581,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1608,7 +1608,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1635,7 +1635,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1663,7 +1663,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1690,7 +1690,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Agder (Aust-Agder og Vest-Agder)',
-            'Type kurs': 'E-l\u00e6ring',
+            Type: 'E-l\u00e6ring',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1717,7 +1717,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1744,7 +1744,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1771,7 +1771,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1798,7 +1798,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1826,7 +1826,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1854,7 +1854,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1881,7 +1881,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1908,7 +1908,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1935,7 +1935,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1962,7 +1962,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -1989,7 +1989,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2016,7 +2016,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2043,7 +2043,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2070,7 +2070,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2097,7 +2097,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2124,7 +2124,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vest-Viken (Buskerud, B\u00e6rum og Asker)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Arbeidss\u00f8keraktivitet',
         },
     },
@@ -2151,7 +2151,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vest-Viken (Buskerud, B\u00e6rum og Asker)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Arbeidss\u00f8keraktivitet',
         },
     },
@@ -2179,7 +2179,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2207,7 +2207,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2234,7 +2234,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2261,7 +2261,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2288,7 +2288,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2315,7 +2315,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2342,7 +2342,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2370,7 +2370,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2398,7 +2398,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2424,7 +2424,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2450,7 +2450,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2477,7 +2477,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2506,7 +2506,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2534,7 +2534,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2562,7 +2562,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2590,7 +2590,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2618,7 +2618,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestfold og Telemark',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2644,7 +2644,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vest-Viken (Buskerud, B\u00e6rum og Asker)',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Arbeidss\u00f8keraktivitet',
         },
     },
@@ -2715,7 +2715,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2743,7 +2743,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2769,7 +2769,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Agder (Aust-Agder og Vest-Agder)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2795,7 +2795,7 @@ export const kurslisteMock = [
         ShowInActivityList: 0,
         configurable_custom: {
             Fylke: 'Oslo',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2822,7 +2822,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2849,7 +2849,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Landsdekkende',
-            'Type kurs': 'Webinar',
+            Type: 'Webinar',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2877,7 +2877,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: '\u00d8st-Viken (\u00d8stfold, Follo og Romerike)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2906,7 +2906,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -2933,7 +2933,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vest-Viken (Buskerud, B\u00e6rum og Asker)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Arbeidss\u00f8keraktivitet',
         },
     },
@@ -2961,7 +2961,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Rogaland',
-            'Type kurs': 'E-l\u00e6ring',
+            Type: 'E-l\u00e6ring',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -3008,7 +3008,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Agder (Aust-Agder og Vest-Agder)',
-            'Type kurs': 'E-l\u00e6ring',
+            Type: 'E-l\u00e6ring',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -3037,7 +3037,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'Kurs',
+            Type: 'Kurs',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -3065,7 +3065,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'E-l\u00e6ring',
+            Type: 'E-l\u00e6ring',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
@@ -3093,7 +3093,7 @@ export const kurslisteMock = [
         ShowInActivityList: 1,
         configurable_custom: {
             Fylke: 'Vestland (Sogn og Fjordane og Hordaland)',
-            'Type kurs': 'E-l\u00e6ring',
+            Type: 'E-l\u00e6ring',
             Tema: 'Hjelpemidler og tilrettelegging',
         },
     },
