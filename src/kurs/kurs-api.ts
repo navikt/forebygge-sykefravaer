@@ -3,7 +3,7 @@ import { getRestStatus, RestRessurs, RestStatus } from './api-utils';
 export const KURSOVERSIKT_API_PATH = '/kursoversikt/api/kurs';
 
 interface KursDto {
-    RegistrationID: number;
+    RegistrationID: string;
     Title: string;
     RegistrationUrl: string;
     RegistrationImageMediaStorageID: number;
@@ -28,7 +28,7 @@ interface KursDto {
 }
 
 export interface Kurs {
-    id: number;
+    id: string;
     tittel: string;
     tema?: string;
     type?: string;

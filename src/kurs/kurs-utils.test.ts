@@ -2,7 +2,7 @@ import {formatterKursdato, getNesteNettkurs} from './kurs-utils';
 import {Kurs} from "./kurs-api";
 
 const byggKurs = (
-    id: number,
+    id: string,
     tittel: string,
     start: Date,
     tema: string = 'Inkluderende arbeidsliv (IA)',
@@ -43,8 +43,8 @@ describe('getNesteNettkurs pluker ut neste tilgjengelig webinar for IA ut i fra 
     test('Neste kurs starter i fremtiden', () => {
 
         const kursliste: Kurs[] = [
-            byggKurs(1, "Kurs som har gått ut på dato", new Date('2020-10-14T12:04:52.000Z')),
-            byggKurs(2, "Kurs i fremtiden (2050)", new Date('2050-12-31T08:01:01.000Z'))
+            byggKurs("kurs#1", "Kurs som har gått ut på dato", new Date('2020-10-14T12:04:52.000Z')),
+            byggKurs("kurs#2", "Kurs i fremtiden (2050)", new Date('2050-12-31T08:01:01.000Z'))
         ];
         const nesteNettKurs = getNesteNettkurs(kursliste);
         expect(nesteNettKurs?.tittel).toBe('Kurs i fremtiden (2050)');
@@ -53,7 +53,7 @@ describe('getNesteNettkurs pluker ut neste tilgjengelig webinar for IA ut i fra 
     test('Returnerer undefined dersom ingen kurs funnet', () => {
 
         const kursliste: Kurs[] = [
-            byggKurs(1, "Kurs som har gått ut på dato", new Date('2020-10-14T12:04:52.000Z')),
+            byggKurs("kurs#1", "Kurs som har gått ut på dato", new Date('2020-10-14T12:04:52.000Z')),
         ];
         const nesteNettKurs = getNesteNettkurs(kursliste);
         expect(nesteNettKurs?.tittel).toBe(undefined);
@@ -62,19 +62,19 @@ describe('getNesteNettkurs pluker ut neste tilgjengelig webinar for IA ut i fra 
     test('Returnerer bare kurs som er av type webinar og tema IA', () => {
         const kursliste: Kurs[] = [
             byggKurs(
-                1,
+                "kurs#1",
                 "Kurs for arbeidssøkere ",
                 new Date('2050-12-31T08:01:01.000Z'),
                 'Arbeidssøkeraktivitet'),
             byggKurs(
-                2,
+                "kurs#2",
                 "IA Webinar",
                 new Date('2050-12-31T08:01:01.000Z'),
                 'Inkluderende arbeidsliv (IA)',
                 'Webinar'
             ),
             byggKurs(
-                3,
+                "kurs#3",
                 "Om hjelpemidler og tilrettelegging",
                 new Date('2050-12-31T08:01:01.000Z'),
                 'Hjelpemidler og tilrettelegging',
