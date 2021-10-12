@@ -3,7 +3,7 @@ import { getRestStatus, RestRessurs, RestStatus } from './api-utils';
 export const KURSOVERSIKT_API_PATH = '/kursoversikt/api/kurs';
 
 interface KursDto {
-    RegistrationID: number;
+    RegistrationID: string;
     Title: string;
     RegistrationUrl: string;
     RegistrationImageMediaStorageID: number;
@@ -22,13 +22,13 @@ interface KursDto {
     ShowInActivityList: number;
     configurable_custom: null | {
         Fylke: string;
-        'Type kurs': string;
+        Type: string;
         Tema: string;
     };
 }
 
 export interface Kurs {
-    id: number;
+    id: string;
     tittel: string;
     tema?: string;
     type?: string;
@@ -43,7 +43,7 @@ const mapTilKurs = (kursDto: KursDto): Kurs => ({
     id: kursDto.RegistrationID,
     tittel: kursDto.Title,
     tema: kursDto.configurable_custom?.Tema,
-    type: kursDto.configurable_custom?.['Type kurs'],
+    type: kursDto.configurable_custom?.Type,
     start: new Date(kursDto.RegistrationFromDateTime),
     slutt: new Date(kursDto.RegistrationToDateTime),
     påmeldingsfrist: new Date(kursDto.RegistrationDeadline),

@@ -74,6 +74,10 @@
     "react-scripts/**/glob-parent": "^5.1.2",
     "ansi-html": "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41",
     "ansi-regex": "^5.0.1"
+    "react-scripts/**/immer": "^9.0.6",
+    "react-scripts/**/nth-check": "^2.0.1",
+    "react-scripts/**/tmpl": "^1.0.5",
+    "set-value": "^4.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"

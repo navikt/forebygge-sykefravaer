@@ -44,12 +44,12 @@ jobs:
             - uses: nais/deploy/actions/deploy@v1
               env:
                   APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: prod-sbs
+                  CLUSTER: prod-gcp
                   RESOURCE: nais/alerterator.yaml
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/ansi-html-fix'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fiks-neste-kurs-ikke-vises-pga-endringer-i-kurs-api'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
