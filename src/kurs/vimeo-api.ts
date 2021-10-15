@@ -1,7 +1,7 @@
 import { getRestStatus, RestRessurs, RestStatus } from './api-utils';
 import { BASE_URL } from '../utils/sanity-innhold-fetch-utils';
 
-export const SHOWCASE_PATH = BASE_URL + '/api/video/users/94865899/albums/7667708/videos';
+export const SHOWCASE_PATH = BASE_URL + '/api/video/users/94865899/albums/8652554/videos';
 export const THUMBNAILS_PATH = BASE_URL + '/api/thumbnails';
 
 interface ShowcaseDto {

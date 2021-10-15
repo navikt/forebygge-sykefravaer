@@ -49,7 +49,7 @@ jobs:
 
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fiks-neste-kurs-ikke-vises-pga-endringer-i-kurs-api'
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/fikse-lenken-til-videos-showcase'
         needs: compile-test-and-build
         runs-on: ubuntu-latest
         steps:
