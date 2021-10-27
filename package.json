@@ -18,7 +18,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
-    "amplitude-js": "^8.4.0",
+    "amplitude-js": "^8.8.0",
     "classnames": "^2.2.6",
     "console-stamp": "^3.0.3",
     "craco-less": "^1.17.0",
