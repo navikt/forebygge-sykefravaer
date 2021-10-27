@@ -1616,13 +1616,13 @@
     "@sanity/block-content-to-hyperscript" "^3.0.0"
     prop-types "^15.6.2"
 
-"@sanity/client@^2.13.0":
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.16.0.tgz#0d2beeb5d4fd1f7b6dbfee18556fc4490290d848"
-  integrity sha512-tc4iuPL3NBBys6rJAL1+C2YnPfEOzscR1M/SgJ81V12QxMUqWa6b8WxYC18NCQTAXCLtkzlsoLUz3zCqnhPwPQ==
+"@sanity/client@^2.21.0":
+  version "2.21.7"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.21.7.tgz#563d6707f74f4502891978ecc901b4fdd6b1f7ba"
+  integrity sha512-/JkDn+2pGR6cIgwADxaJpzPwT9gDjkHYabfSTux4lcgZ8Sv6YtfjzTl3DhMlDIA2EodAvJG9Fkff0BI12SwKcA==
   dependencies:
     "@sanity/eventsource" "2.14.0"
-    "@sanity/generate-help-url" "2.15.0"
+    "@sanity/generate-help-url" "2.18.0"
     "@sanity/observable" "2.0.9"
     deep-assign "^2.0.0"
     get-it "^5.0.3"
@@ -1637,10 +1637,10 @@
     "@rexxars/eventsource-polyfill" "^1.0.0"
     eventsource "^1.0.6"
 
-"@sanity/generate-help-url@2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-2.15.0.tgz#63e0c49979aeb7bea7ed22242609f2c4578ccc3b"
-  integrity sha512-a28hvBov4t52a96gsRAv12ifhAjAu20KE+HHq2+bWAtbFXIwVI+Y0alDlkVsx7/5GfJPte8xuFaxFYQz2Zquaw==
+"@sanity/generate-help-url@2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-2.18.0.tgz#9130301579ff38b6bcc2ea0ce6105a7979272a66"
+  integrity sha512-If8Qkw32LWPes16UzqwUsTLgfxF5d4ACdUvCLMl6grJc/5G8LKPAGCQUuA/d1F4W16yCJVV7Zv31HDRDXJSJkg==
 
 "@sanity/generate-help-url@^0.140.0":
   version "0.140.0"
