@@ -7,7 +7,7 @@ const FRONTEND_VIDEO_API_PATH = "/forebygge-sykefravaer/api/video";
 
 const listeAvTillatteUrler = [
   new RegExp(
-    "^" + FRONTEND_VIDEO_API_PATH + "/users/94865899/albums/[0-9]*/videos"
+    "^" + FRONTEND_VIDEO_API_PATH + "/users/49269267/albums/[0-9]*/videos"
   ),
 ];
 

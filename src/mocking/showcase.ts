@@ -5,8 +5,8 @@ export const showcaseMock = {
     paging: {
         next: null,
         previous: null,
-        first: '/users/94865899/albums/6728595/videos?page=1',
-        last: '/users/94865899/albums/6728595/videos?page=1',
+        first: '/users/49269267/albums/6728595/videos?page=1',
+        last: '/users/49269267/albums/6728595/videos?page=1',
     },
     data: [
         {
@@ -163,7 +163,7 @@ export const showcaseMock = {
                         total: 1,
                     },
                     related: {
-                        uri: '/users/94865899/albums/6728595/videos?offset=1',
+                        uri: '/users/49269267/albums/6728595/videos?offset=1',
                         options: ['GET'],
                     },
                     recommendations: {
@@ -188,16 +188,16 @@ export const showcaseMock = {
                 },
             },
             user: {
-                uri: '/users/94865899',
+                uri: '/users/49269267',
                 name: 'nav webinar',
-                link: 'https://vimeo.com/user94865899',
+                link: 'https://vimeo.com/user49269267',
                 location: '',
                 gender: '',
                 bio: null,
                 short_bio: null,
                 created_time: '2019-02-08T12:52:06+00:00',
                 pictures: {
-                    uri: '/users/94865899/pictures/33738101',
+                    uri: '/users/49269267/pictures/33738101',
                     active: true,
                     type: 'custom',
                     sizes: [
@@ -254,79 +254,79 @@ export const showcaseMock = {
                 metadata: {
                     connections: {
                         albums: {
-                            uri: '/users/94865899/albums',
+                            uri: '/users/49269267/albums',
                             options: ['GET'],
                             total: 9,
                         },
                         appearances: {
-                            uri: '/users/94865899/appearances',
+                            uri: '/users/49269267/appearances',
                             options: ['GET'],
                             total: 0,
                         },
                         channels: {
-                            uri: '/users/94865899/channels',
+                            uri: '/users/49269267/channels',
                             options: ['GET'],
                             total: 0,
                         },
                         feed: {
-                            uri: '/users/94865899/feed',
+                            uri: '/users/49269267/feed',
                             options: ['GET'],
                         },
                         followers: {
-                            uri: '/users/94865899/followers',
+                            uri: '/users/49269267/followers',
                             options: ['GET'],
                             total: 234,
                         },
                         following: {
-                            uri: '/users/94865899/following',
+                            uri: '/users/49269267/following',
                             options: ['GET'],
                             total: 1,
                         },
                         groups: {
-                            uri: '/users/94865899/groups',
+                            uri: '/users/49269267/groups',
                             options: ['GET'],
                             total: 0,
                         },
                         likes: {
-                            uri: '/users/94865899/likes',
+                            uri: '/users/49269267/likes',
                             options: ['GET'],
                             total: 0,
                         },
                         membership: {
-                            uri: '/users/94865899/membership/',
+                            uri: '/users/49269267/membership/',
                             options: ['PATCH'],
                         },
                         moderated_channels: {
-                            uri: '/users/94865899/channels?filter=moderated',
+                            uri: '/users/49269267/channels?filter=moderated',
                             options: ['GET'],
                             total: 1,
                         },
                         portfolios: {
-                            uri: '/users/94865899/portfolios',
+                            uri: '/users/49269267/portfolios',
                             options: ['GET'],
                             total: 0,
                         },
                         videos: {
-                            uri: '/users/94865899/videos',
+                            uri: '/users/49269267/videos',
                             options: ['GET'],
                             total: 51,
                         },
                         shared: {
-                            uri: '/users/94865899/shared/videos',
+                            uri: '/users/49269267/shared/videos',
                             options: ['GET'],
                             total: 0,
                         },
                         pictures: {
-                            uri: '/users/94865899/pictures',
+                            uri: '/users/49269267/pictures',
                             options: ['GET', 'POST'],
                             total: 1,
                         },
                         folders_root: {
-                            uri: '/users/94865899/folders/root',
+                            uri: '/users/49269267/folders/root',
                             options: ['GET'],
                         },
                         teams: {
-                            uri: '/users/94865899/teams',
+                            uri: '/users/49269267/teams',
                             options: ['GET'],
                             total: 1,
                         },
@@ -514,7 +514,7 @@ export const showcaseMock = {
                         total: 1,
                     },
                     related: {
-                        uri: '/users/94865899/albums/6728595/videos?offset=2',
+                        uri: '/users/49269267/albums/6728595/videos?offset=2',
                         options: ['GET'],
                     },
                     recommendations: {
@@ -539,16 +539,16 @@ export const showcaseMock = {
                 },
             },
             user: {
-                uri: '/users/94865899',
+                uri: '/users/49269267',
                 name: 'nav webinar',
-                link: 'https://vimeo.com/user94865899',
+                link: 'https://vimeo.com/user49269267',
                 location: '',
                 gender: '',
                 bio: null,
                 short_bio: null,
                 created_time: '2019-02-08T12:52:06+00:00',
                 pictures: {
-                    uri: '/users/94865899/pictures/33738101',
+                    uri: '/users/49269267/pictures/33738101',
                     active: true,
                     type: 'custom',
                     sizes: [
@@ -605,79 +605,79 @@ export const showcaseMock = {
                 metadata: {
                     connections: {
                         albums: {
-                            uri: '/users/94865899/albums',
+                            uri: '/users/49269267/albums',
                             options: ['GET'],
                             total: 9,
                         },
                         appearances: {
-                            uri: '/users/94865899/appearances',
+                            uri: '/users/49269267/appearances',
                             options: ['GET'],
                             total: 0,
                         },
                         channels: {
-                            uri: '/users/94865899/channels',
+                            uri: '/users/49269267/channels',
                             options: ['GET'],
                             total: 0,
                         },
                         feed: {
-                            uri: '/users/94865899/feed',
+                            uri: '/users/49269267/feed',
                             options: ['GET'],
                         },
                         followers: {
-                            uri: '/users/94865899/followers',
+                            uri: '/users/49269267/followers',
                             options: ['GET'],
                             total: 234,
                         },
                         following: {
-                            uri: '/users/94865899/following',
+                            uri: '/users/49269267/following',
                             options: ['GET'],
                             total: 1,
                         },
                         groups: {
-                            uri: '/users/94865899/groups',
+                            uri: '/users/49269267/groups',
                             options: ['GET'],
                             total: 0,
                         },
                         likes: {
-                            uri: '/users/94865899/likes',
+                            uri: '/users/49269267/likes',
                             options: ['GET'],
                             total: 0,
                         },
                         membership: {
-                            uri: '/users/94865899/membership/',
+                            uri: '/users/49269267/membership/',
                             options: ['PATCH'],
                         },
                         moderated_channels: {
-                            uri: '/users/94865899/channels?filter=moderated',
+                            uri: '/users/49269267/channels?filter=moderated',
                             options: ['GET'],
                             total: 1,
                         },
                         portfolios: {
-                            uri: '/users/94865899/portfolios',
+                            uri: '/users/49269267/portfolios',
                             options: ['GET'],
                             total: 0,
                         },
                         videos: {
-                            uri: '/users/94865899/videos',
+                            uri: '/users/49269267/videos',
                             options: ['GET'],
                             total: 51,
                         },
                         shared: {
-                            uri: '/users/94865899/shared/videos',
+                            uri: '/users/49269267/shared/videos',
                             options: ['GET'],
                             total: 0,
                         },
                         pictures: {
-                            uri: '/users/94865899/pictures',
+                            uri: '/users/49269267/pictures',
                             options: ['GET', 'POST'],
                             total: 1,
                         },
                         folders_root: {
-                            uri: '/users/94865899/folders/root',
+                            uri: '/users/49269267/folders/root',
                             options: ['GET'],
                         },
                         teams: {
-                            uri: '/users/94865899/teams',
+                            uri: '/users/49269267/teams',
                             options: ['GET'],
                             total: 1,
                         },
@@ -865,7 +865,7 @@ export const showcaseMock = {
                         total: 1,
                     },
                     related: {
-                        uri: '/users/94865899/albums/6728595/videos?offset=3',
+                        uri: '/users/49269267/albums/6728595/videos?offset=3',
                         options: ['GET'],
                     },
                     recommendations: {
@@ -890,16 +890,16 @@ export const showcaseMock = {
                 },
             },
             user: {
-                uri: '/users/94865899',
+                uri: '/users/49269267',
                 name: 'nav webinar',
-                link: 'https://vimeo.com/user94865899',
+                link: 'https://vimeo.com/user49269267',
                 location: '',
                 gender: '',
                 bio: null,
                 short_bio: null,
                 created_time: '2019-02-08T12:52:06+00:00',
                 pictures: {
-                    uri: '/users/94865899/pictures/33738101',
+                    uri: '/users/49269267/pictures/33738101',
                     active: true,
                     type: 'custom',
                     sizes: [
@@ -956,79 +956,79 @@ export const showcaseMock = {
                 metadata: {
                     connections: {
                         albums: {
-                            uri: '/users/94865899/albums',
+                            uri: '/users/49269267/albums',
                             options: ['GET'],
                             total: 9,
                         },
                         appearances: {
-                            uri: '/users/94865899/appearances',
+                            uri: '/users/49269267/appearances',
                             options: ['GET'],
                             total: 0,
                         },
                         channels: {
-                            uri: '/users/94865899/channels',
+                            uri: '/users/49269267/channels',
                             options: ['GET'],
                             total: 0,
                         },
                         feed: {
-                            uri: '/users/94865899/feed',
+                            uri: '/users/49269267/feed',
                             options: ['GET'],
                         },
                         followers: {
-                            uri: '/users/94865899/followers',
+                            uri: '/users/49269267/followers',
                             options: ['GET'],
                             total: 234,
                         },
                         following: {
-                            uri: '/users/94865899/following',
+                            uri: '/users/49269267/following',
                             options: ['GET'],
                             total: 1,
                         },
                         groups: {
-                            uri: '/users/94865899/groups',
+                            uri: '/users/49269267/groups',
                             options: ['GET'],
                             total: 0,
                         },
                         likes: {
-                            uri: '/users/94865899/likes',
+                            uri: '/users/49269267/likes',
                             options: ['GET'],
                             total: 0,
                         },
                         membership: {
-                            uri: '/users/94865899/membership/',
+                            uri: '/users/49269267/membership/',
                             options: ['PATCH'],
                         },
                         moderated_channels: {
-                            uri: '/users/94865899/channels?filter=moderated',
+                            uri: '/users/49269267/channels?filter=moderated',
                             options: ['GET'],
                             total: 1,
                         },
                         portfolios: {
-                            uri: '/users/94865899/portfolios',
+                            uri: '/users/49269267/portfolios',
                             options: ['GET'],
                             total: 0,
                         },
                         videos: {
-                            uri: '/users/94865899/videos',
+                            uri: '/users/49269267/videos',
                             options: ['GET'],
                             total: 51,
                         },
                         shared: {
-                            uri: '/users/94865899/shared/videos',
+                            uri: '/users/49269267/shared/videos',
                             options: ['GET'],
                             total: 0,
                         },
                         pictures: {
-                            uri: '/users/94865899/pictures',
+                            uri: '/users/49269267/pictures',
                             options: ['GET', 'POST'],
                             total: 1,
                         },
                         folders_root: {
-                            uri: '/users/94865899/folders/root',
+                            uri: '/users/49269267/folders/root',
                             options: ['GET'],
                         },
                         teams: {
-                            uri: '/users/94865899/teams',
+                            uri: '/users/49269267/teams',
                             options: ['GET'],
                             total: 1,
                         },
@@ -1216,7 +1216,7 @@ export const showcaseMock = {
                         total: 1,
                     },
                     related: {
-                        uri: '/users/94865899/albums/6728595/videos?offset=4',
+                        uri: '/users/49269267/albums/6728595/videos?offset=4',
                         options: ['GET'],
                     },
                     recommendations: {
@@ -1241,16 +1241,16 @@ export const showcaseMock = {
                 },
             },
             user: {
-                uri: '/users/94865899',
+                uri: '/users/49269267',
                 name: 'nav webinar',
-                link: 'https://vimeo.com/user94865899',
+                link: 'https://vimeo.com/user49269267',
                 location: '',
                 gender: '',
                 bio: null,
                 short_bio: null,
                 created_time: '2019-02-08T12:52:06+00:00',
                 pictures: {
-                    uri: '/users/94865899/pictures/33738101',
+                    uri: '/users/49269267/pictures/33738101',
                     active: true,
                     type: 'custom',
                     sizes: [
@@ -1307,79 +1307,79 @@ export const showcaseMock = {
                 metadata: {
                     connections: {
                         albums: {
-                            uri: '/users/94865899/albums',
+                            uri: '/users/49269267/albums',
                             options: ['GET'],
                             total: 9,
                         },
                         appearances: {
-                            uri: '/users/94865899/appearances',
+                            uri: '/users/49269267/appearances',
                             options: ['GET'],
                             total: 0,
                         },
                         channels: {
-                            uri: '/users/94865899/channels',
+                            uri: '/users/49269267/channels',
                             options: ['GET'],
                             total: 0,
                         },
                         feed: {
-                            uri: '/users/94865899/feed',
+                            uri: '/users/49269267/feed',
                             options: ['GET'],
                         },
                         followers: {
-                            uri: '/users/94865899/followers',
+                            uri: '/users/49269267/followers',
                             options: ['GET'],
                             total: 234,
                         },
                         following: {
-                            uri: '/users/94865899/following',
+                            uri: '/users/49269267/following',
                             options: ['GET'],
                             total: 1,
                         },
                         groups: {
-                            uri: '/users/94865899/groups',
+                            uri: '/users/49269267/groups',
                             options: ['GET'],
                             total: 0,
                         },
                         likes: {
-                            uri: '/users/94865899/likes',
+                            uri: '/users/49269267/likes',
                             options: ['GET'],
                             total: 0,
                         },
                         membership: {
-                            uri: '/users/94865899/membership/',
+                            uri: '/users/49269267/membership/',
                             options: ['PATCH'],
                         },
                         moderated_channels: {
-                            uri: '/users/94865899/channels?filter=moderated',
+                            uri: '/users/49269267/channels?filter=moderated',
                             options: ['GET'],
                             total: 1,
                         },
                         portfolios: {
-                            uri: '/users/94865899/portfolios',
+                            uri: '/users/49269267/portfolios',
                             options: ['GET'],
                             total: 0,
                         },
                         videos: {
-                            uri: '/users/94865899/videos',
+                            uri: '/users/49269267/videos',
                             options: ['GET'],
                             total: 51,
                         },
                         shared: {
-                            uri: '/users/94865899/shared/videos',
+                            uri: '/users/49269267/shared/videos',
                             options: ['GET'],
                             total: 0,
                         },
                         pictures: {
-                            uri: '/users/94865899/pictures',
+                            uri: '/users/49269267/pictures',
                             options: ['GET', 'POST'],
                             total: 1,
                         },
                         folders_root: {
-                            uri: '/users/94865899/folders/root',
+                            uri: '/users/49269267/folders/root',
                             options: ['GET'],
                         },
                         teams: {
-                            uri: '/users/94865899/teams',
+                            uri: '/users/49269267/teams',
                             options: ['GET'],
                             total: 1,
                         },
@@ -1588,16 +1588,16 @@ export const showcaseMock = {
                 },
             },
             user: {
-                uri: '/users/94865899',
+                uri: '/users/49269267',
                 name: 'nav webinar',
-                link: 'https://vimeo.com/user94865899',
+                link: 'https://vimeo.com/user49269267',
                 location: '',
                 gender: '',
                 bio: null,
                 short_bio: null,
                 created_time: '2019-02-08T12:52:06+00:00',
                 pictures: {
-                    uri: '/users/94865899/pictures/33738101',
+                    uri: '/users/49269267/pictures/33738101',
                     active: true,
                     type: 'custom',
                     sizes: [
@@ -1654,79 +1654,79 @@ export const showcaseMock = {
                 metadata: {
                     connections: {
                         albums: {
-                            uri: '/users/94865899/albums',
+                            uri: '/users/49269267/albums',
                             options: ['GET'],
                             total: 9,
                         },
                         appearances: {
-                            uri: '/users/94865899/appearances',
+                            uri: '/users/49269267/appearances',
                             options: ['GET'],
                             total: 0,
                         },
                         channels: {
-                            uri: '/users/94865899/channels',
+                            uri: '/users/49269267/channels',
                             options: ['GET'],
                             total: 0,
                         },
                         feed: {
-                            uri: '/users/94865899/feed',
+                            uri: '/users/49269267/feed',
                             options: ['GET'],
                         },
                         followers: {
-                            uri: '/users/94865899/followers',
+                            uri: '/users/49269267/followers',
                             options: ['GET'],
                             total: 234,
                         },
                         following: {
-                            uri: '/users/94865899/following',
+                            uri: '/users/49269267/following',
                             options: ['GET'],
                             total: 1,
                         },
                         groups: {
-                            uri: '/users/94865899/groups',
+                            uri: '/users/49269267/groups',
                             options: ['GET'],
                             total: 0,
                         },
                         likes: {
-                            uri: '/users/94865899/likes',
+                            uri: '/users/49269267/likes',
                             options: ['GET'],
                             total: 0,
                         },
                         membership: {
-                            uri: '/users/94865899/membership/',
+                            uri: '/users/49269267/membership/',
                             options: ['PATCH'],
                         },
                         moderated_channels: {
-                            uri: '/users/94865899/channels?filter=moderated',
+                            uri: '/users/49269267/channels?filter=moderated',
                             options: ['GET'],
                             total: 1,
                         },
                         portfolios: {
-                            uri: '/users/94865899/portfolios',
+                            uri: '/users/49269267/portfolios',
                             options: ['GET'],
                             total: 0,
                         },
                         videos: {
-                            uri: '/users/94865899/videos',
+                            uri: '/users/49269267/videos',
                             options: ['GET'],
                             total: 51,
                         },
                         shared: {
-                            uri: '/users/94865899/shared/videos',
+                            uri: '/users/49269267/shared/videos',
                             options: ['GET'],
                             total: 0,
                         },
                         pictures: {
-                            uri: '/users/94865899/pictures',
+                            uri: '/users/49269267/pictures',
                             options: ['GET', 'POST'],
                             total: 1,
                         },
                         folders_root: {
-                            uri: '/users/94865899/folders/root',
+                            uri: '/users/49269267/folders/root',
                             options: ['GET'],
                         },
                         teams: {
-                            uri: '/users/94865899/teams',
+                            uri: '/users/49269267/teams',
                             options: ['GET'],
                             total: 1,
                         },
