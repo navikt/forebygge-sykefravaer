@@ -4,21 +4,21 @@
   "private": true,
   "homepage": "/forebygge-sykefravaer",
   "dependencies": {
-    "@craco/craco": "^6.1.1",
+    "@craco/craco": "^6.4.0",
     "@navikt/fnrvalidator": "^1.1.2",
     "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/client": "^2.13.0",
-    "@sentry/browser": "^6.11.0",
-    "@testing-library/dom": "^8.1.0",
+    "@sanity/client": "^2.21.7",
+    "@sentry/browser": "^6.13.3",
+    "@testing-library/dom": "^8.10.1",
     "@types/amplitude-js": "^8.0.0",
     "@types/jest": "^27.0.2",
     "@types/lodash.throttle": "^4.1.6",
-    "@types/node": "^16.4.13",
+    "@types/node": "^16.11.6",
     "@types/react-router": "^5.1.17",
-    "@types/react-router-dom": "^5.1.5",
+    "@types/react-router-dom": "^5.3.2",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
-    "amplitude-js": "^8.4.0",
+    "amplitude-js": "^8.9.0",
     "classnames": "^2.2.6",
     "console-stamp": "^3.0.3",
     "craco-less": "^1.17.0",
@@ -96,8 +96,8 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/classnames": "^2.2.11",
     "@types/fetch-mock": "^7.3.3",
     "@types/react": "^17.0.33",
@@ -106,6 +106,6 @@
     "fetch-mock": "^9.10.7",
     "http-proxy-middleware": "^2.0.0",
     "https-proxy-agent": "^5.0.0",
-    "prettier": "^2.2.0"
+    "prettier": "^2.4.1"
   }
 }
