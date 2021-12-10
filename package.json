@@ -11,7 +11,7 @@
     "@sentry/browser": "^6.13.3",
     "@testing-library/dom": "^8.10.1",
     "@types/amplitude-js": "^8.0.0",
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^27.0.3",
     "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^16.11.6",
     "@types/react-router": "^5.1.17",
