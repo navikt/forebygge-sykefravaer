@@ -7,7 +7,7 @@
     "@craco/craco": "^6.4.3",
     "@navikt/fnrvalidator": "^1.1.2",
     "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/client": "^2.23.2",
+    "@sanity/client": "^3.0.6",
     "@sentry/browser": "^6.16.1",
     "@testing-library/dom": "^8.11.2",
     "@types/amplitude-js": "^8.9.4",
@@ -73,7 +73,8 @@
   "resolutions": {
     "react-scripts/**/nth-check": "^2.0.1",
     "postcss": "^8.2.13",
-    "json-schema": "^0.4.0"
+    "json-schema": "^0.4.0",
+    "follow-redirects": "^1.14.8"
   },
   "eslintConfig": {
     "extends": "react-app"
