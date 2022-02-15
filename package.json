@@ -8,9 +8,9 @@
     "@navikt/fnrvalidator": "^1.1.2",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.0.6",
-    "@sentry/browser": "^6.16.1",
+    "@sentry/browser": "^6.17.8",
     "@testing-library/dom": "^8.11.2",
-    "@types/amplitude-js": "^8.9.4",
+    "@types/amplitude-js": "^8.9.6",
     "@types/jest": "^27.4.0",
     "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^16.11.17",
@@ -92,16 +92,16 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/classnames": "^2.2.11",
     "@types/fetch-mock": "^7.3.3",
-    "@types/react": "^17.0.38",
+    "@types/react": "^17.0.39",
     "@types/react-collapse": "^5.0.0",
     "@types/react-dom": "^17.0.11",
     "fetch-mock": "^9.10.7",
-    "http-proxy-middleware": "^2.0.0",
+    "http-proxy-middleware": "^2.0.3",
     "https-proxy-agent": "^5.0.0",
     "prettier": "^2.5.1"
   }
