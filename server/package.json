@@ -15,6 +15,7 @@
     "request": "^2.88.2"
   },
   "resolutions": {
-    "json-schema": "^0.4.0"
+    "json-schema": "^0.4.0",
+    "follow-redirects": "^1.14.8"
   }
 }
