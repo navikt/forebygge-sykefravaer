@@ -193,10 +193,10 @@ combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-console-stamp@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/console-stamp/-/console-stamp-3.0.3.tgz#a7a47427ffab893c20d30407199bc4b40346a7ba"
-  integrity sha512-6ltMcMEVDHb1bqb+qaVfCX7Vf3vEkfZEeKyReG1ny45Rv6YJynCcdv94j7whNVfxj/4/3Ji/QBHY6p4JI51Ucw==
+console-stamp@3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/console-stamp/-/console-stamp-3.0.4.tgz#e8cfb6cee0d8e0d11cb41d9ce5bc100783f95116"
+  integrity sha512-+C/Q+6Hwd/3FFx19TgnbX2sj0FkupMn6BkAzeZKMZL3xfPchFckY6E5UusYyD1/OpkIU8+4Y0UMiVtpusDsV3A==
   dependencies:
     chalk "^4.1.1"
     dateformat "^4.5.1"

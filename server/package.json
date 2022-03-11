@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "console-stamp": "3.0.3",
+    "console-stamp": "3.0.4",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "fs-extra": "^10.0.0",
