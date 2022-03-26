@@ -6,7 +6,7 @@
     "console-stamp": "3.0.3",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "http-proxy-middleware": "^2.0.0",
     "https-proxy-agent": "^5.0.0",
     "jsdom": "^17.0.0",
