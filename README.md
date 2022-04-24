@@ -17,7 +17,7 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 - Kjøre applikasjonen med Docker:
   1. `yarn install && yarn build`
   2. `docker build -t forebygge-sykefravaer .`
-  3. `docker run -d -p 3000:3000 forebygge-sykefravaer`
+  3. `docker run -d -p 3000:3000 --env-file=./.env forebygge-sykefravaer`
   4. For å stoppe, kjør `docker stop <id>` med id-en fra forrige kommando
 
 ## Deploy
