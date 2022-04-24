@@ -4,8 +4,8 @@ const path = require("path");
 
 module.exports = {
     devServer: {
-        before: (app) => {
-            app.get("/forebygge-sykefravaer/api/thumbnail*", (req, res) =>
+        onBeforeSetupMiddleware: (devServer) => {
+            devServer.app.get("/forebygge-sykefravaer/api/thumbnail*", (req, res) =>
                 res.sendFile("videoThumbnail.jpg", {
                     root: path.join(__dirname, "./src/mocking/"),
                 })
