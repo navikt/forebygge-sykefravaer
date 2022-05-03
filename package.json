@@ -74,7 +74,8 @@
     "react-scripts/**/nth-check": "^2.0.1",
     "postcss": "^8.2.13",
     "json-schema": "^0.4.0",
-    "follow-redirects": "^1.14.8"
+    "follow-redirects": "^1.14.8",
+    "async": "2.6.4"
   },
   "eslintConfig": {
     "extends": "react-app"
