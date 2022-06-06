@@ -35,7 +35,6 @@ const Banner = () => {
                         />
                     </div>
                 </div>
-                <div className={cls.element('bunnlinje')} />
             </div>
         </>
     );
