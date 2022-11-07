@@ -6,6 +6,7 @@ interface Props {
     className: string;
     overskrift: string;
     id: string;
+    children: React.ReactNode;
 }
 
 const Infoseksjon: FunctionComponent<Props> = (props) => {

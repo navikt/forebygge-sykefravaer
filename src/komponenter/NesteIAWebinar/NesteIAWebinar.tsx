@@ -41,7 +41,7 @@ export const NesteIAWebinar: FunctionComponent<Props> = (props) => {
         <div className="neste-ia-webinar">
             Neste webinar:{' '}
             <a className="lenke" href={getLenkeTilKurspåmelding(nesteWebinar)}>
-                {nesteWebinar.tittel} ({nesteWebinar.start})
+                <>{nesteWebinar.tittel} ({nesteWebinar.start})</>
             </a>
         </div>
     );

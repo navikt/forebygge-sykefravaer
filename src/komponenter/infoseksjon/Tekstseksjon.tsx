@@ -6,6 +6,7 @@ interface Tekstseksjon {
     tittel?: string;
     id?: string;
     disableModifier?: boolean;
+    children: React.ReactNode
 }
 
 const Tekstseksjon: FunctionComponent<Tekstseksjon> = (props) => {
