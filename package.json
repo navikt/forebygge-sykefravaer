@@ -27,6 +27,7 @@
     "eslint": "^8.26.0",
     "eslint-config-react-app": "^7.0.1",
     "express": "^4.18.2",
+    "follow-redirects": "^1.14.8",
     "jsdom": "^20.0.2",
     "lodash.throttle": "^4.1.1",
     "nav-frontend-alertstriper": "^4.0.2",
@@ -47,6 +48,8 @@
     "nav-frontend-typografi": "^4.0.2",
     "nav-frontend-typografi-style": "^2.0.2",
     "npm-run-all": "^4.1.5",
+    "nth-check": "^2.0.1",
+    "postcss": "^8.2.13",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-collapse": "^5.1.1",
@@ -69,15 +72,6 @@
     "dev-server": "cross-env PORT=3001 node server/server.js",
     "lint": "eslint --ext ts,tsx .",
     "test": "craco test"
-  },
-  "resolutions": {
-    "react-scripts/**/nth-check": "^2.0.1",
-    "postcss": "^8.2.13",
-    "json-schema": "^0.4.0",
-    "follow-redirects": "^1.14.8",
-    "async": "2.6.4",
-    "ejs": "3.1.7",
-    "eventsource": "1.1.1"
   },
   "eslintConfig": {
     "extends": "react-app"
