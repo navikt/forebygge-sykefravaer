@@ -3,7 +3,7 @@ export const getMiljø = (): string => {
     if (hostname === 'arbeidsgiver.nav.no') {
         return 'prod-gcp';
     }
-    if (hostname.includes('dev') || hostname.includes('dev.nav.no')) {
+    if (hostname.includes('dev.nav.no')) {
         console.log('Sentry environment: dev');
         return 'dev-gcp';
     }

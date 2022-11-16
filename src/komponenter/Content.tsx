@@ -20,9 +20,7 @@ const Content = () => {
         helsearbeid,
         iaavtale,
         sanityFetchError,
-    } = useContext(
-        ForebyggeSykefravaerContext,
-    );
+    } = useContext(ForebyggeSykefravaerContext);
 
     const [width, setWidth] = useState(calcWidth(1, 2));
     useEffect(() => {
@@ -34,7 +32,7 @@ const Content = () => {
     if (sanityFetchError) {
         return (
             <AlertStripeFeil>
-                En feil har oppstått ved henting av innhold, vennligst last inn siden på nytt
+                En feil har oppstått ved henting av innhold, vennligst last inn siden på nytt.
             </AlertStripeFeil>);
     }
 
