@@ -37,7 +37,7 @@ const Meny = () => {
         const throttleScrollevent = throttle(() => setFocusIndex(), 75);
         const dispatchmobilevent = () => (isMobil() ? setButtonStyling(setScroll()) : null);
 
-        window.onscroll = function () {
+        window.onscroll = function() {
             throttleScrollevent();
             dispatchmobilevent();
         };
@@ -46,6 +46,11 @@ const Meny = () => {
         return () =>
             window.removeEventListener('resize', () => setButtonStyling(initmenuPosition()));
     }, [overskrifter]);
+
+
+    if (overskrifter.length === 0) {
+        return null;
+    }
 
     return (
         <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
@@ -56,24 +61,21 @@ const Meny = () => {
                         <Undertittel className={cls.element('tittel')}>
                             Innhold på denne siden:
                         </Undertittel>
-
-                        {overskrifter
-                            ? overskrifter.map((overskrift: Overskrift, index: number) => {
-                                  return (
-                                      <Normaltekst
-                                          className={cls.element(
-                                              'lenke',
-                                              sectionInFocus === index ? 'bold' : ''
-                                          )}
-                                          key={index}
-                                      >
-                                          <Lenke href={'#'.concat(overskrift.id)}>
-                                              {overskrift.tekst}
-                                          </Lenke>
-                                      </Normaltekst>
-                                  );
-                              })
-                            : null}
+                        {overskrifter.map((overskrift: Overskrift, index: number) => {
+                            return (
+                                <Normaltekst
+                                    className={cls.element(
+                                        'lenke',
+                                        sectionInFocus === index ? 'bold' : '',
+                                    )}
+                                    key={index}
+                                >
+                                    <Lenke href={'#'.concat(overskrift.id)}>
+                                        {overskrift.tekst}
+                                    </Lenke>
+                                </Normaltekst>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
