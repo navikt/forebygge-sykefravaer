@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import {
     DigitalTjeneste,
     DocumentTypes,
@@ -16,6 +17,7 @@ import {
     SanityQueryTypes,
     SanityResponse,
 } from '../utils/sanity-innhold-fetch-utils';
+import { logger } from '../utils/kibanaLogger';
 
 interface ProviderProps {
     children: React.ReactNode;
@@ -34,6 +36,7 @@ interface Context {
     oppfolging: null | Oppfolging;
     helsearbeid: null | HelseIArbeid;
     iaavtale: null | IAavtalen;
+    sanityFetchError: boolean;
 }
 
 export const ForebyggeSykefravaerContext = React.createContext({} as Context);
@@ -47,6 +50,8 @@ const InnholdContext = (props: ProviderProps) => {
     const [helsearbeid, setHelsearbeid] = useState<null | HelseIArbeid>(null);
     const [iaAvtale, setIaAvtale] = useState<null | IAavtalen>(null);
 
+    const [sanityFetchError, setSanityFetchError] = useState<boolean>(false);
+
     const context: Context = {
         overskrifter: overskrifter,
         viHjelper: viHjelperMed,
@@ -55,6 +60,7 @@ const InnholdContext = (props: ProviderProps) => {
         oppfolging,
         helsearbeid,
         iaavtale: iaAvtale,
+        sanityFetchError,
     };
 
     const leggTilOverskriftSomMenyElement = (overskrift: Overskrift) =>
@@ -89,12 +95,16 @@ const InnholdContext = (props: ProviderProps) => {
             });
         };
 
-        fetchOgSettSanityConfigOgInnhold();
+        fetchOgSettSanityConfigOgInnhold()
+            .catch(error => {
+                setSanityFetchError(true);
+                logger.error('Feil ved henting av innhold fra Sanity: ' + error);
+            });
     }, []);
 
     useEffect(() => {
         const uniquelist = overskrifter.filter(
-            (item, index) => overskrifter.indexOf(item) === index
+            (item, index) => overskrifter.indexOf(item) === index,
         );
         if (uniquelist.length !== overskrifter.length) {
             setOverskrift(uniquelist);

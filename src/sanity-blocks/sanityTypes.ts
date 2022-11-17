@@ -65,7 +65,7 @@ export interface BodyContent {
     _type: string;
 }
 
-export interface CommonTypes {
+interface CommonTypes {
     priority: number;
     publishedAt: string;
     title: string;
