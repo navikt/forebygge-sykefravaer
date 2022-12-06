@@ -21,7 +21,7 @@ const Banner = () => {
     const cls = BEMHelper('banner');
     return (
         <>
-            <div className={cls.className} role="banner" aria-roledescription="site banner">
+            <div className={cls.className}>
                 <div className={cls.element('wrapper')}>
                     <div className={cls.element('tekst')}>
                         <TypografiBase type={txtSize}>
