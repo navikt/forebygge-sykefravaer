@@ -70,7 +70,8 @@ const Meny = () => {
                                     )}
                                     key={index}
                                 >
-                                    <Lenke href={'#'.concat(overskrift.id)}>
+                                    <Lenke href={'#'.concat(overskrift.id)}
+                                           ariaLabel={'Gå til seksjon '.concat(overskrift.tekst)}>
                                         {overskrift.tekst}
                                     </Lenke>
                                 </Normaltekst>
