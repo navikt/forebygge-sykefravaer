@@ -47,7 +47,7 @@ const InnholdContext = (props: ProviderProps) => {
     const [dtjenester, setDtjenester] = useState<null | DigitalTjeneste>(null);
     const [webinarogkurs, setWebinarogkurs] = useState<null | WebinarOgKursInnhold>(null);
     const [oppfolging, setOppfolging] = useState<null | Oppfolging>(null);
-    const [helsearbeid, setHelsearbeid] = useState<null | HelseIArbeid>(null);
+    const [helseIArbeid, setHelseIArbeid] = useState<null | HelseIArbeid>(null);
     const [iaAvtale, setIaAvtale] = useState<null | IAavtalen>(null);
 
     const [sanityFetchError, setSanityFetchError] = useState<boolean>(false);
@@ -58,7 +58,7 @@ const InnholdContext = (props: ProviderProps) => {
         tjenester: dtjenester,
         webinarogkurs,
         oppfolging,
-        helsearbeid,
+        helsearbeid: helseIArbeid,
         iaavtale: iaAvtale,
         sanityFetchError,
     };
@@ -80,7 +80,7 @@ const InnholdContext = (props: ProviderProps) => {
                 case SanityQueryTypes.oppfolgingFraNavArbeidslivssenter:
                     return setOppfolging(item as Oppfolging);
                 case SanityQueryTypes.helseIArbeid:
-                    return setHelsearbeid(item as HelseIArbeid);
+                    return setHelseIArbeid(item as HelseIArbeid);
                 case SanityQueryTypes.iaAvtalen:
                     return setIaAvtale(item as IAavtalen);
             }
