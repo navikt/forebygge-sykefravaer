@@ -9,6 +9,10 @@ Siden gir informasjon til arbeidsgivere om hva NAV kan hjelpe til med i forbinde
 **Viktig** Connect med Nais-device for å få tilgang til dekoratoren.dev.nav.no, ellers vil appen ikke starte
 
 - Legg Sanity-hemmeligheter i en fil som heter `.env` i prosjektet. Da lastes de automatisk inn som miljøvariabler. Filen er lagt med i `.gitignore`, så den blir ikke sjekket inn med git. Hemmelighetene trengs for å kunne hente tekster fra Sanity. Hemmenlighetene finnes i Vault under preprod/sbs.
+- Legg til url til dekoratøren i `.env` (her for dev-miljøet): 
+```
+DECORATOR_EXTERNAL_URL="https://dekoratoren.dev.nav.no?context=arbeidsgiver&redirectToApp=true&level=Level4&language=nb&breadcrumbs="
+```
 - Installere avhengigheter: `yarn` fra både rotmappen og mappen `/server`
 - Starte appen lokalt: Her har man flere muligheter, avhengig av hva man vil.
   1.  Kjøre opp utviklingserver med menylinje `yarn start`
