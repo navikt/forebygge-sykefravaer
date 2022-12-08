@@ -1,7 +1,16 @@
 @import '../../assets/style/commonStyle';
 
 .meny {
-    position: static;
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    left: 0;
+    z-index: 950;
+
+    &__wrapper {
+        z-index: 950;
+        position: relative;
+    }
 
     &__container {
         background-color: white;
