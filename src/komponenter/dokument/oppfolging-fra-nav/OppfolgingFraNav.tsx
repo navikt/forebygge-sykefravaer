@@ -9,7 +9,6 @@ import './oppfolgingFraNav.less';
 
 interface Props {
     innhold: Oppfolging | null;
-    width: number;
 }
 
 const cls = BEMHelper('oppfolgingFraNav');
@@ -35,7 +34,7 @@ const OppfolgingFraNav = (props: Props) => {
                     return (
                         <div className={cls.element('content-block')} key={index}>
                             {setTitle(element)}
-                            <div style={setStyle(element, props.width)}>
+                            <div style={setStyle(element)}>
                                 <BlockContent
                                     blocks={element.bodyContent}
                                     serializers={serializers}
