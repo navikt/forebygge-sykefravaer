@@ -4,7 +4,6 @@ import { Normaltekst, Undertittel } from 'nav-frontend-typografi';
 import Lenke from 'nav-frontend-lenker';
 import { ForebyggeSykefravaerContext, Overskrift } from '../InnholdContext';
 import throttle from 'lodash.throttle';
-import MenuButton from './menu-button/MenuButton';
 import './meny.less';
 import { initmenuPosition, setScroll } from '../../utils/menu-utils';
 import { isMobil } from '../../utils/document-utils';
@@ -16,8 +15,6 @@ const Meny = () => {
     const [sectionInFocus, setSectionInFocus] = useState<number>(0);
     const [viewmobilMenu, setViewmobilMenu] = useState<boolean>(false);
     const [buttonStyling, setButtonStyling] = useState<any>(initmenuPosition());
-
-    const toggleButton = () => setViewmobilMenu(!viewmobilMenu);
 
     useEffect(() => {
         const scrollHeight = () => window.scrollY || window.pageYOffset;
@@ -55,7 +52,6 @@ const Meny = () => {
     return (
         <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
             <div className={cls.element('wrapper')}>
-                <MenuButton on={viewmobilMenu} change={toggleButton} />
                 <div className={cls.element('container', viewmobilMenu ? '' : 'closed')}>
                     <div className={cls.element('content')}>
                         <Undertittel className={cls.element('tittel')}>
