@@ -50,29 +50,27 @@ const Meny = () => {
 
     return (
         <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
-            <div className={cls.element('wrapper')}>
-                <div className={cls.element('container')}>
-                    <div className={cls.element('content')}>
-                        <Undertittel className={cls.element('tittel')}>
-                            Innhold på denne siden:
-                        </Undertittel>
-                        {overskrifter.map((overskrift: Overskrift, index: number) => {
-                            return (
-                                <Normaltekst
-                                    className={cls.element(
-                                        'lenke',
-                                        sectionInFocus === index ? 'bold' : '',
-                                    )}
-                                    key={index}
-                                >
-                                    <Lenke href={'#'.concat(overskrift.id)}
-                                           ariaLabel={'Gå til seksjon '.concat(overskrift.tekst)}>
-                                        {overskrift.tekst}
-                                    </Lenke>
-                                </Normaltekst>
-                            );
-                        })}
-                    </div>
+            <div className={cls.element('container')}>
+                <div className={cls.element('content')}>
+                    <Undertittel className={cls.element('tittel')}>
+                        Innhold på denne siden:
+                    </Undertittel>
+                    {overskrifter.map((overskrift: Overskrift, index: number) => {
+                        return (
+                            <Normaltekst
+                                className={cls.element(
+                                    'lenke',
+                                    sectionInFocus === index ? 'bold' : '',
+                                )}
+                                key={index}
+                            >
+                                <Lenke href={'#'.concat(overskrift.id)}
+                                       ariaLabel={'Gå til seksjon '.concat(overskrift.tekst)}>
+                                    {overskrift.tekst}
+                                </Lenke>
+                            </Normaltekst>
+                        );
+                    })}
                 </div>
             </div>
         </div>
