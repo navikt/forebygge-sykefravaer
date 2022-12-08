@@ -13,7 +13,6 @@ const cls = BEMHelper('meny');
 const Meny = () => {
     const { overskrifter } = useContext(ForebyggeSykefravaerContext);
     const [sectionInFocus, setSectionInFocus] = useState<number>(0);
-    const [viewmobilMenu, setViewmobilMenu] = useState<boolean>(false);
     const [buttonStyling, setButtonStyling] = useState<any>(initmenuPosition());
 
     useEffect(() => {
@@ -52,7 +51,7 @@ const Meny = () => {
     return (
         <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
             <div className={cls.element('wrapper')}>
-                <div className={cls.element('container', viewmobilMenu ? '' : 'closed')}>
+                <div className={cls.element('container')}>
                     <div className={cls.element('content')}>
                         <Undertittel className={cls.element('tittel')}>
                             Innhold på denne siden:
