@@ -9,6 +9,7 @@ const CheckedCircle = ({ className }: { className?: string }) => {
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden={"true"}
         >
             <path
                 d="M10 0C4.48583 0 0 4.48667 0 10C0 15.5133 4.48583 20 10 20C15.5133 20 20 15.5133 20 10C20 4.48667 15.5133 0 10 0Z"

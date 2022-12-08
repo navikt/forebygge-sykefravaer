@@ -16,16 +16,16 @@ const cls = BEMHelper('viHjelperDereMed');
 const ViHjelperDereMed = (props: Props) => {
     return props.innhold ? (
         <div>
-            <div className={cls.element('checklist')}>
+            <ul className={cls.element('checklist')}>
                 {props.innhold.checklist.map((element, index) => {
                     return (
-                        <div className={cls.element('checklist-element')} key={index}>
+                        <li className={cls.element('checklist-element')} key={index}>
                             <CheckedCircle className={cls.element('checklist-icon')} />
                             {element.checkpoint}
-                        </div>
+                        </li>
                     );
                 })}
-            </div>
+            </ul>
             <div>
                 <BlockContent blocks={props.innhold.content} serializers={serializers} />
             </div>
