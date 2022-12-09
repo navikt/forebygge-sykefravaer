@@ -3,10 +3,11 @@
 .meny {
     position: relative;
     top: 0;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
 
     &__container {
         background-color: white;
-        box-shadow: @componentShadow;
     }
 
     &__content {
@@ -36,10 +37,16 @@
         height: fit-content;
         max-height: 18.75rem;
         margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
 
 
         &__content {
             max-width: unset;
+        }
+
+        &__container {
+            box-shadow: @componentShadow;
         }
     }
 }

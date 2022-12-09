@@ -5,8 +5,7 @@ import Lenke from 'nav-frontend-lenker';
 import { ForebyggeSykefravaerContext, Overskrift } from '../InnholdContext';
 import throttle from 'lodash.throttle';
 import './meny.less';
-import { initmenuPosition, setScroll } from '../../utils/menu-utils';
-import { isMobil } from '../../utils/document-utils';
+import { initmenuPosition } from '../../utils/menu-utils';
 
 const cls = BEMHelper('meny');
 
@@ -31,11 +30,9 @@ const Meny = () => {
             });
 
         const throttleScrollevent = throttle(() => setFocusIndex(), 75);
-        const dispatchmobilevent = () => (isMobil() ? setButtonStyling(setScroll()) : null);
 
         window.onscroll = function() {
             throttleScrollevent();
-            dispatchmobilevent();
         };
 
         window.addEventListener('resize', () => setButtonStyling(initmenuPosition()));
@@ -49,7 +46,7 @@ const Meny = () => {
     }
 
     return (
-        <div className={cls.className} style={{ marginTop: `${buttonStyling}px` }}>
+        <div className={cls.className}>
             <div className={cls.element('container')}>
                 <div className={cls.element('content')}>
                     <Undertittel className={cls.element('tittel')}>

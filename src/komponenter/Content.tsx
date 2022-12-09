@@ -10,6 +10,7 @@ import IaAvtalen from './dokument/ia-avtalen/IaAvtalen';
 import { calcWidth } from '../utils/document-utils';
 import { skrivTilMalingBesokerSide } from '../amplitude/amplitude-eventlog';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
+import Meny from './meny/Meny';
 
 const Content = () => {
     const {
