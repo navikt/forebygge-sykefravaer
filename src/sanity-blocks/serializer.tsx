@@ -8,37 +8,49 @@ import {
     Undertittel,
 } from 'nav-frontend-typografi';
 import React, { CSSProperties } from 'react';
-import { sanityImageLink, TextBlock, TypoStyle } from './sanityTypes';
+import { sanityImageLink, TextBlock, TypographyStyle } from './sanityTypes';
 import Lenke from 'nav-frontend-lenker';
 import { logLenkeTrykk } from '../amplitude/amplitude-eventlog';
 
-const typoComponents = {
-    [TypoStyle.H1]: Sidetittel,
-    [TypoStyle.H2]: Innholdstittel,
-    [TypoStyle.H3]: Systemtittel,
-    [TypoStyle.H4]: Undertittel,
-    [TypoStyle.H5]: Ingress,
-    [TypoStyle.H6]: Element,
-    [TypoStyle.Normal]: Normaltekst,
+const typographyComponents = {
+    [TypographyStyle.H1]: Sidetittel,
+    [TypographyStyle.H2]: Innholdstittel,
+    [TypographyStyle.H3]: Systemtittel,
+    [TypographyStyle.H4]: Undertittel,
+    [TypographyStyle.H5]: Ingress,
+    [TypographyStyle.H6]: Element,
+    [TypographyStyle.Normal]: Normaltekst,
 };
+
+const typographyTags = new Map([
+        [Sidetittel, 'h1'],
+        [Innholdstittel, 'h2'],
+        [Systemtittel, 'h2'],
+        [Undertittel, 'h3'],
+        [Ingress, 'strong'],
+        [Element, undefined],
+        [Normaltekst, undefined],
+    ])
+;
 
 const Whitespace = ({ innhold }: { innhold: TextBlock }): React.ReactElement => {
     return (
         <>
-            {blockSerializer(innhold)}
+            {textBlockSerializer(innhold)}
             <br />
         </>
     );
 };
 
-const blockSerializer = (block: TextBlock) => {
-    const TypoComponent = typoComponents[block.node.style] || typoComponents[TypoStyle.Normal];
-    return <TypoComponent>{block.children}</TypoComponent>;
+const textBlockSerializer = (block: TextBlock) => {
+    const TypographyComponent = typographyComponents[block.node.style] || typographyComponents[TypographyStyle.Normal];
+    const typograptyTag = typographyTags.get(TypographyComponent);
+    return <TypographyComponent tag={typograptyTag}>{block.children}</TypographyComponent>;
 };
 
 const serializeCheck = (block: TextBlock) => {
     return block.children[block.children.length - 1] !== '' ? (
-        blockSerializer(block)
+        textBlockSerializer(block)
     ) : (
         <Whitespace innhold={block} />
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SanityConfig } from '../utils/sanity-innhold-fetch-utils';
 
-export enum TypoStyle {
+export enum TypographyStyle {
     H1 = 'h1',
     H2 = 'h2',
     H3 = 'h3',
@@ -18,7 +18,7 @@ export type TextBlock = {
         markDefs: [];
         _key: string;
         _type: string;
-        style: TypoStyle;
+        style: TypographyStyle;
     };
     children: React.ReactElement[] | string[];
 };

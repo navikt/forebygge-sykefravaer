@@ -37,7 +37,7 @@ const Dokument: FunctionComponent<Props> = (props) => {
     const header = innhold.mainImage ? (
         <HeaderWithImage innhold={innhold} />
     ) : (
-        <Innholdstittel>{innhold.title}</Innholdstittel>
+        <Innholdstittel tag="h2">{innhold.title}</Innholdstittel>
     );
 
     return (
@@ -54,7 +54,7 @@ const HeaderWithImage: FunctionComponent<{ innhold: DocumentTypes }> = ({ innhol
     return (
         <div className={cls.element('header')}>
             <BlockContent blocks={innhold.mainImage} serializers={serializers} />
-            <Innholdstittel className={cls.element('header-txt')}>{innhold.title}</Innholdstittel>
+            <Innholdstittel tag="h2" className={cls.element('header-txt')}>{innhold.title}</Innholdstittel>
         </div>
     );
 };
