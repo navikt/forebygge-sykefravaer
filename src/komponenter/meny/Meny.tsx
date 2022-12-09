@@ -52,22 +52,26 @@ const Meny = () => {
                     <Undertittel className={cls.element('tittel')}>
                         Innhold på denne siden:
                     </Undertittel>
-                    {overskrifter.map((overskrift: Overskrift, index: number) => {
-                        return (
-                            <Normaltekst
-                                className={cls.element(
-                                    'lenke',
-                                    sectionInFocus === index ? 'bold' : '',
-                                )}
-                                key={index}
-                            >
-                                <Lenke href={'#'.concat(overskrift.id)}
-                                       ariaLabel={'Gå til seksjon '.concat(overskrift.tekst)}>
-                                    {overskrift.tekst}
-                                </Lenke>
-                            </Normaltekst>
-                        );
-                    })}
+                    <ul className={cls.element('oversiktsliste')}>
+                        {overskrifter.map((overskrift: Overskrift, index: number) => {
+                            return (
+                                <li>
+                                    <Normaltekst
+                                        className={cls.element(
+                                            'lenke',
+                                            sectionInFocus === index ? 'bold' : '',
+                                        )}
+                                        key={index}
+                                    >
+                                        <Lenke href={'#'.concat(overskrift.id)}
+                                               ariaLabel={'Gå til seksjon '.concat(overskrift.tekst)}>
+                                            {overskrift.tekst}
+                                        </Lenke>
+                                    </Normaltekst>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </div>
             </div>
         </div>

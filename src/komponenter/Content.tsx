@@ -7,10 +7,8 @@ import WebinarOgKurs from './dokument/webinar-og-kurs/WebinarOgKurs';
 import OppfolgingFraNav from './dokument/oppfolging-fra-nav/OppfolgingFraNav';
 import Helsearbeid from './dokument/helsearbeid/HelseArbeid';
 import IaAvtalen from './dokument/ia-avtalen/IaAvtalen';
-import { calcWidth } from '../utils/document-utils';
 import { skrivTilMalingBesokerSide } from '../amplitude/amplitude-eventlog';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
-import Meny from './meny/Meny';
 
 const Content = () => {
     const {
