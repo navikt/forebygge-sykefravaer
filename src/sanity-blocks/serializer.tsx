@@ -57,7 +57,7 @@ const serializeCheck = (block: TextBlock) => {
 };
 
 const imageSerializer = (props: any) => (
-    <img src={sanityImageLink(props.node.asset._ref)} alt={'illustrasjon'} />
+    <img src={sanityImageLink(props.node.asset._ref)} aria-hidden={true} alt='' />
 );
 
 const colorMarks = (props: any) => (

@@ -13,6 +13,7 @@ const ForebyggeSykefravaerIcon = (props: Props) => {
             viewBox="0 0 243 191"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
         >
             <path
                 d="M57.7993 42.2566C45.3528 42.2566 35.0003 48.9051 30.0973 59.119C26.8967 65.7864 26.9996 73.9746 26.9996 82.823C26.9996 83.157 27.0022 83.4758 27.0073 83.7801C26.4045 84.0034 25.8395 84.2481 25.3125 84.5133C23.1926 85.5801 21.9375 87.8938 21.9375 89.5841L21.9388 90.0463C21.9514 91.5956 22.0909 93.2719 23.625 96.3451C25.9279 100.958 29.0289 102.424 31.2943 102.889C32.8587 107.565 35.2566 111.623 38.8125 114.938C39.4751 115.556 40.1549 116.117 40.853 116.628L41.5617 120.009L42.1875 128.46L45.7388 157.195H68.0899L72.5625 128.46L73.3761 120.009L73.4322 119.687C82.5627 116.116 91.125 106.513 91.125 88.0915C91.125 64.285 78.3707 42.2566 57.7993 42.2566Z"
@@ -40,7 +41,6 @@ const ForebyggeSykefravaerIcon = (props: Props) => {
             />
             <mask
                 id="mask0"
-                mask-type="alpha"
                 maskUnits="userSpaceOnUse"
                 x="15"
                 y="119"
@@ -79,7 +79,6 @@ const ForebyggeSykefravaerIcon = (props: Props) => {
             </g>
             <mask
                 id="mask1"
-                mask-type="alpha"
                 maskUnits="userSpaceOnUse"
                 x="16"
                 y="35"
@@ -124,7 +123,6 @@ const ForebyggeSykefravaerIcon = (props: Props) => {
             />
             <mask
                 id="mask2"
-                mask-type="alpha"
                 maskUnits="userSpaceOnUse"
                 x="140"
                 y="114"
@@ -163,7 +161,6 @@ const ForebyggeSykefravaerIcon = (props: Props) => {
             </g>
             <mask
                 id="mask3"
-                mask-type="alpha"
                 maskUnits="userSpaceOnUse"
                 x="150"
                 y="49"
@@ -184,7 +181,6 @@ const ForebyggeSykefravaerIcon = (props: Props) => {
             </g>
             <mask
                 id="mask4"
-                mask-type="alpha"
                 maskUnits="userSpaceOnUse"
                 x="151"
                 y="77"
