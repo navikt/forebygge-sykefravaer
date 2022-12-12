@@ -8,7 +8,6 @@ import { serializers, setStyle } from '../../../sanity-blocks/serializer';
 
 interface Props {
     innhold: VihjelperMed | null;
-    width: number;
 }
 
 const cls = BEMHelper('viHjelperDereMed');
@@ -49,7 +48,7 @@ const ViHjelperDereMed = (props: Props) => {
             <div className={cls.element('footer')}>
                 {props.innhold.footer.map((element, index) => {
                     return (
-                        <div style={setStyle(element, props.width)} key={index}>
+                        <div style={setStyle(element)} key={index}>
                             <BlockContent blocks={element.bodyContent} serializers={serializers} />
                         </div>
                     );
