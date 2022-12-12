@@ -25,7 +25,7 @@ const DigitaleTjenester = (props: Props) => {
                         </div>
                         <div className={cls.element('txt-container')}>
                             <div>
-                                <Undertittel className={cls.element('title')}>
+                                <Undertittel tag="h3" className={cls.element('title')}>
                                     {element.title}{' '}
                                     {element.nyhet && <Nyhet className={cls.element('nyhet')} />}
                                 </Undertittel>

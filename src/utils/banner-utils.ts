@@ -1,6 +1,6 @@
-export enum TypoSize {
+export enum TypographySize {
     sidetittel = 'sidetittel',
-    undertitel = 'undertittel',
+    innholdstittel = 'innholdstittel',
 }
 
 export interface ImageSize {
@@ -11,11 +11,11 @@ export interface ImageSize {
 const mobilImageSize = { width: '170', height: '133' };
 const desktopImageSize = { width: '243', height: '191' };
 
-const mobilTextSize = TypoSize.undertitel;
-const desktopTextSize = TypoSize.sidetittel;
+const mobilTextSize = TypographySize.innholdstittel;
+const desktopTextSize = TypographySize.sidetittel;
 
 const isMobil = () => window.innerWidth < 768;
 
 export const calcImageSize = (): ImageSize => (isMobil() ? mobilImageSize : desktopImageSize);
 
-export const calcTextSize = (): TypoSize => (isMobil() ? mobilTextSize : desktopTextSize);
+export const calcTextSize = (): TypographySize => (isMobil() ? mobilTextSize : desktopTextSize);
