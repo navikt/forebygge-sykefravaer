@@ -20,7 +20,7 @@ const OppfolgingFraNav = (props: Props) => {
     return innhold ? (
         <div className={cls.className}>
             <div>
-                {innhold.alertstripe.map((element, index) => {
+                {innhold.alertstripe?.map((element, index) => {
                     return (
                         <div className={cls.element('alert-row')} key={index}>
                             <AlertStripe type={element.alertType[0]}>
