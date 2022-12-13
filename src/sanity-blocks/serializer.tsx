@@ -70,11 +70,11 @@ const link = (props: any) => (
     </Lenke>
 );
 
-export const setStyle = (element: { color?: [string] }, width: number): CSSProperties => {
+export const setStyle = (element: { color?: [string] }): CSSProperties => {
     if (element.color) {
         return {
             backgroundColor: element.color[0],
-            padding: `1.5rem ${width}rem`,
+            padding: `1.5rem 1.5rem`,
             borderRadius: '4px',
         };
     }

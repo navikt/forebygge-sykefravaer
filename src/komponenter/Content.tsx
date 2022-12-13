@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ForebyggeSykefravaerContext } from './InnholdContext';
 import Dokument from './dokument/Dokument';
 import ViHjelperDereMed from './dokument/vi-hjelper-dere-med/ViHjelperDereMed';
@@ -7,7 +7,6 @@ import WebinarOgKurs from './dokument/webinar-og-kurs/WebinarOgKurs';
 import OppfolgingFraNav from './dokument/oppfolging-fra-nav/OppfolgingFraNav';
 import Helsearbeid from './dokument/helsearbeid/HelseArbeid';
 import IaAvtalen from './dokument/ia-avtalen/IaAvtalen';
-import { calcWidth } from '../utils/document-utils';
 import { skrivTilMalingBesokerSide } from '../amplitude/amplitude-eventlog';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
 
@@ -22,11 +21,8 @@ const Content = () => {
         sanityFetchError,
     } = useContext(ForebyggeSykefravaerContext);
 
-    const [width, setWidth] = useState(calcWidth(1, 2));
     useEffect(() => {
         skrivTilMalingBesokerSide();
-        window.addEventListener('resize', () => setWidth(calcWidth(1, 2)));
-        return () => window.removeEventListener('resize', () => setWidth(calcWidth(1, 2)));
     }, []);
 
     if (sanityFetchError) {
@@ -39,7 +35,7 @@ const Content = () => {
     return (
         <div>
             <Dokument innhold={viHjelper}>
-                <ViHjelperDereMed innhold={viHjelper} width={width} />
+                <ViHjelperDereMed innhold={viHjelper} />
             </Dokument>
             <Dokument innhold={tjenester}>
                 <DigitaleTjenester innhold={tjenester} />
@@ -48,7 +44,7 @@ const Content = () => {
                 <WebinarOgKurs innhold={webinarogkurs} />
             </Dokument>
             <Dokument innhold={oppfolging}>
-                <OppfolgingFraNav innhold={oppfolging} width={width} />
+                <OppfolgingFraNav innhold={oppfolging} />
             </Dokument>
             <Dokument innhold={helsearbeid}>
                 <Helsearbeid innhold={helsearbeid} />
