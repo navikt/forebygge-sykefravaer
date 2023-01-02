@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ForebyggeSykefravaerContext } from './InnholdContext';
 import Dokument from './dokument/Dokument';
 import ViHjelperDereMed from './dokument/vi-hjelper-dere-med/ViHjelperDereMed';
