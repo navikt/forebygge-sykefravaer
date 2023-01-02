@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ForebyggeSykefravaerContext } from './InnholdContext';
 import Dokument from './dokument/Dokument';
 import ViHjelperDereMed from './dokument/vi-hjelper-dere-med/ViHjelperDereMed';
@@ -7,7 +7,6 @@ import WebinarOgKurs from './dokument/webinar-og-kurs/WebinarOgKurs';
 import OppfolgingFraNav from './dokument/oppfolging-fra-nav/OppfolgingFraNav';
 import Helsearbeid from './dokument/helsearbeid/HelseArbeid';
 import IaAvtalen from './dokument/ia-avtalen/IaAvtalen';
-import { calcWidth } from '../utils/document-utils';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
 import { logEvent } from '../amplitude/logevents';
 
@@ -22,11 +21,12 @@ const Content = () => {
         sanityFetchError,
     } = useContext(ForebyggeSykefravaerContext);
 
-    const [width, setWidth] = useState(calcWidth(1, 2));
     useEffect(() => {
-        logEvent("sidevisning")
-        window.addEventListener('resize', () => setWidth(calcWidth(1, 2)));
-        return () => window.removeEventListener('resize', () => setWidth(calcWidth(1, 2)));
+        logEvent('sidevisning');
+        window.addEventListener('resize', () => {
+        });
+        return () => window.removeEventListener('resize', () => {
+        });
     }, []);
 
     if (sanityFetchError) {
