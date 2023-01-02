@@ -8,8 +8,8 @@ import OppfolgingFraNav from './dokument/oppfolging-fra-nav/OppfolgingFraNav';
 import Helsearbeid from './dokument/helsearbeid/HelseArbeid';
 import IaAvtalen from './dokument/ia-avtalen/IaAvtalen';
 import { calcWidth } from '../utils/document-utils';
-import { skrivTilMalingBesokerSide } from '../amplitude/amplitude-eventlog';
 import { AlertStripeFeil } from 'nav-frontend-alertstriper';
+import { logEvent } from '../amplitude/logevents';
 
 const Content = () => {
     const {
@@ -22,9 +22,10 @@ const Content = () => {
         sanityFetchError,
     } = useContext(ForebyggeSykefravaerContext);
 
+    logEvent("sidevisning")
+
     const [width, setWidth] = useState(calcWidth(1, 2));
     useEffect(() => {
-        skrivTilMalingBesokerSide();
         window.addEventListener('resize', () => setWidth(calcWidth(1, 2)));
         return () => window.removeEventListener('resize', () => setWidth(calcWidth(1, 2)));
     }, []);

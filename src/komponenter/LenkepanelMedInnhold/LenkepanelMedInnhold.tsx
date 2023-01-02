@@ -6,7 +6,7 @@ import { serializers } from '../../sanity-blocks/serializer';
 import BlockContent from '@sanity/block-content-to-react';
 import BEMHelper from '../../utils/bem';
 import './LenkepanelMedInnhold.less';
-import { logNavigering } from '../../amplitude/amplitude-eventlog';
+import { logNavigering } from '../../amplitude/logevents';
 
 interface Props {
     innhold: Lenke;
