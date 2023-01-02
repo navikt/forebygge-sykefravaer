@@ -23,10 +23,6 @@ const Content = () => {
 
     useEffect(() => {
         logEvent('sidevisning');
-        window.addEventListener('resize', () => {
-        });
-        return () => window.removeEventListener('resize', () => {
-        });
     }, []);
 
     if (sanityFetchError) {
