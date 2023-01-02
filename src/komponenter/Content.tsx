@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ForebyggeSykefravaerContext } from './InnholdContext';
 import Dokument from './dokument/Dokument';
 import ViHjelperDereMed from './dokument/vi-hjelper-dere-med/ViHjelperDereMed';
@@ -22,10 +22,9 @@ const Content = () => {
         sanityFetchError,
     } = useContext(ForebyggeSykefravaerContext);
 
-    logEvent("sidevisning")
-
     const [width, setWidth] = useState(calcWidth(1, 2));
     useEffect(() => {
+        logEvent("sidevisning")
         window.addEventListener('resize', () => setWidth(calcWidth(1, 2)));
         return () => window.removeEventListener('resize', () => setWidth(calcWidth(1, 2)));
     }, []);
@@ -40,7 +39,7 @@ const Content = () => {
     return (
         <div>
             <Dokument innhold={viHjelper}>
-                <ViHjelperDereMed innhold={viHjelper} width={width} />
+                <ViHjelperDereMed innhold={viHjelper} />
             </Dokument>
             <Dokument innhold={tjenester}>
                 <DigitaleTjenester innhold={tjenester} />
@@ -49,7 +48,7 @@ const Content = () => {
                 <WebinarOgKurs innhold={webinarogkurs} />
             </Dokument>
             <Dokument innhold={oppfolging}>
-                <OppfolgingFraNav innhold={oppfolging} width={width} />
+                <OppfolgingFraNav innhold={oppfolging} />
             </Dokument>
             <Dokument innhold={helsearbeid}>
                 <Helsearbeid innhold={helsearbeid} />

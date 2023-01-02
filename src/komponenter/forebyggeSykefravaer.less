@@ -17,11 +17,13 @@ html {
     &__content {
         background-color: @backgroundColorGrey;
         display: flex;
+        flex-direction: column;
     }
 
     @media (min-width: @mobilbreakpoint) {
         &__content {
             padding: 0 1rem;
+            flex-direction: row;
         }
     }
 }

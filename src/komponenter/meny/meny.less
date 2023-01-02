@@ -1,46 +1,25 @@
 @import '../../assets/style/commonStyle';
 
 .meny {
-    position: fixed;
-    top: 6rem;
-    right: 0;
-    left: 0;
-    z-index: 950;
-
-    &__wrapper {
-        z-index: 950;
-        position: relative;
-    }
+    top: 0;
+    margin: 0 0.5rem 1.5rem 0.5rem;
+    background-color: white;
+    border-radius: 4px;
+    padding: 1.5rem 1rem;
 
     &__container {
-        z-index: 950;
         background-color: white;
-        max-width: 16.5rem;
-        max-height: 19.625rem;
-        border-radius: 4px;
-        position: absolute;
-        right: 0.95rem;
-        transition: ease-in-out 0.4s;
-        transform: scale(1);
-        opacity: 1;
-        box-shadow: @componentShadow;
-
-        &--closed {
-            transform: scale(0);
-            opacity: 0;
-        }
-    }
-
-    .menubutton {
-        position: absolute;
-        right: 3.5%;
-        top: 0;
-        z-index: 951;
     }
 
     &__content {
         padding: 1rem;
         max-width: 75%;
+    }
+
+    &__oversiktsliste {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
     }
 
     &__lenke {
@@ -65,17 +44,16 @@
         height: fit-content;
         max-height: 18.75rem;
         margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
 
-        &__container {
-            &--closed {
-                transform: scale(1);
-                opacity: 1;
-                position: unset;
-            }
-        }
 
         &__content {
             max-width: unset;
+        }
+
+        &__container {
+            box-shadow: @componentShadow;
         }
     }
 }
