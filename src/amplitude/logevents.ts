@@ -1,21 +1,18 @@
 import amplitude from './amplitudeInstance';
 
-const miljo = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
-const appkey = '#forebygge-sykefravaer-'.concat(miljo);
-
 const hrefKey = (href: Location) => href.toString();
 
-export const skrivTilMalingBesokerSide = () => {
-    amplitude.logEvent(appkey.concat('-brukerbesokersiden'));
+export const logEvent = (eventName: string, data?: any) => {
+    amplitude.logEvent(eventName, {app: 'samtalestøtte-arbeidsgiver', ...data});
 };
 
-export const logLenkeTrykk = (
+export const logNavigeringTilEksternSide = (
     event: React.MouseEvent<HTMLElement | MouseEvent>,
     href: Location | undefined
 ) => {
     event.preventDefault();
     if (!!href) {
-        amplitude.logEvent(appkey.concat('-lenketrykk=').concat(hrefKey(href)));
+        logNavigering(hrefKey(href))
         window.location = href;
     }
 };
@@ -23,7 +20,7 @@ export const logLenkeTrykk = (
 export const logNavigering = (destinasjon: string) => {
     const gjeldendeHrefUtenQuery = window.location.href.split('?')[0].split('#')[0];
     amplitude.logEvent('navigere', {
-        destinasjon,
+        destinasjon: destinasjon,
         url: gjeldendeHrefUtenQuery,
     });
 };
