@@ -7,7 +7,7 @@ amplitudeInstance.init('default', '', {
     saveEvents: false,
     includeUtm: true,
     includeReferrer: true,
-    platform: window.location.toString(),
+    platform: window.location.toString().split('?')[0].split('#')[0],
 });
 
 export default amplitudeInstance;
