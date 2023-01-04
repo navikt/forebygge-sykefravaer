@@ -16,11 +16,11 @@ const cls = BEMHelper('lenkepanel-med-innhold');
 
 export const LenkepanelMedInnhold: FunctionComponent<Props> = ({ innhold }) => {
     const logEventOgSettHref = (e: React.MouseEvent<HTMLElement | MouseEvent>) => {
-        const href = innhold.href;
-        if (!!href) {
+        const destinasjon = innhold.href;
+        if (!!destinasjon) {
             e.preventDefault();
-            logNavigering(href);
-            window.location.href = href;
+            logNavigering(destinasjon, innhold.tekst);
+            window.location.href = destinasjon;
         }
     };
 

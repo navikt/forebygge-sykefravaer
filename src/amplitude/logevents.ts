@@ -3,24 +3,24 @@ import amplitude from './amplitudeInstance';
 const hrefKey = (href: Location) => href.toString();
 
 export const logEvent = (eventName: string, data?: any) => {
-    amplitude.logEvent(eventName, { app: 'forebygge-sykefravaer', team: 'teamia', ...data });
+    amplitude.logEvent(eventName, { ...data });
 };
 
 export const logNavigeringTilEksternSide = (
     event: React.MouseEvent<HTMLElement | MouseEvent>,
     href: Location | undefined,
+    lenketekst: string
 ) => {
     event.preventDefault();
     if (!!href) {
-        logNavigering(hrefKey(href));
+        logNavigering(hrefKey(href), lenketekst);
         window.location = href;
     }
 };
 
-export const logNavigering = (destinasjon: string) => {
-    const gjeldendeHrefUtenQuery = window.location.href.split('?')[0].split('#')[0];
+export const logNavigering = (destinasjon: string, lenketekst: string) => {
     amplitude.logEvent('navigere', {
-        destinasjon: destinasjon,
-        url: gjeldendeHrefUtenQuery,
+        destinasjon,
+        lenketekst
     });
 };

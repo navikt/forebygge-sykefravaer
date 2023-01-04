@@ -65,7 +65,8 @@ const colorMarks = (props: any) => (
 );
 
 const link = (props: any) => (
-    <Lenke href={props.mark.href} onClick={(event) => logNavigeringTilEksternSide(event, props.mark.href)}>
+    <Lenke href={props.mark.href}
+           onClick={(event) => logNavigeringTilEksternSide(event, props.mark.href, props.children[0])}>
         {props.children.map((elem: string) => elem)}
     </Lenke>
 );
