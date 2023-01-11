@@ -3,7 +3,7 @@ import amplitude from './amplitudeInstance';
 const hrefKey = (href: Location) => href.toString();
 
 export const logEvent = (eventName: string, data?: any) => {
-    amplitude.logEvent(eventName, { ...data });
+    amplitude.logEvent(eventName, { app: 'forebygge-sykefravaer', team: 'teamia', ...data });
 };
 
 export const logNavigeringTilEksternSide = (
