@@ -17,7 +17,7 @@ import {
     SanityQueryTypes,
     SanityResponse,
 } from '../utils/sanity-innhold-fetch-utils';
-import { logger } from '../utils/kibanaLogger';
+import {logger, predefinerteFeilmeldinger} from '../utils/logger';
 
 interface ProviderProps {
     children: React.ReactNode;
@@ -97,8 +97,8 @@ const InnholdContext = (props: ProviderProps) => {
 
         fetchOgSettSanityConfigOgInnhold()
             .catch(error => {
+                logger.error(predefinerteFeilmeldinger.feilVedHentingAvSanityInnhold);
                 setSanityFetchError(true);
-                logger.error('Feil ved henting av innhold fra Sanity: ' + error);
             });
     }, []);
 

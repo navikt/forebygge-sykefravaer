@@ -10,3 +10,5 @@ export const getMiljø = (): string => {
     console.log('Sentry environment: local');
     return 'local';
 };
+
+export const BASE_URL = '/forebygge-sykefravaer';

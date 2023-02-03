@@ -14,6 +14,7 @@ const getDecorator = require("./decorator");
 const mustacheExpress = require("mustache-express");
 const express = require("express");
 const getCspValue = require('./csp');
+const loggingHandler = require("./backend-logger");
 const app = express();
 const path = require("path");
 const buildPath = path.join(__dirname, "../build");
@@ -22,6 +23,7 @@ const PORT = process.env.PORT || 3000;
 app.engine("html", mustacheExpress());
 app.set("view engine", "mustache");
 app.set("views", buildPath);
+app.use(express.json())
 
 const startServer = (html) => {
   app.use(BASE_PATH + "/", express.static(buildPath, { index: false }));
@@ -43,6 +45,7 @@ const startServer = (html) => {
     next();
   });
 
+  app.post(`${BASE_PATH}/api/logger`, loggingHandler )
 
   app.get(`${BASE_PATH}/internal/isAlive`, (req, res) => res.sendStatus(200));
   app.get(`${BASE_PATH}/internal/isReady`, (req, res) => res.sendStatus(200));

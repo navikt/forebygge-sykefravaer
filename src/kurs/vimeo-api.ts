@@ -1,5 +1,6 @@
 import { getRestStatus, RestRessurs, RestStatus } from './api-utils';
-import { BASE_URL } from '../utils/sanity-innhold-fetch-utils';
+import {BASE_URL} from "../utils/miljøUtils";
+import {logger, predefinerteFeilmeldinger} from "../utils/logger";
 
 export const SHOWCASE_PATH = BASE_URL + '/api/video/users/49269267/albums/8652554/videos';
 export const THUMBNAILS_PATH = BASE_URL + '/api/thumbnails';
@@ -74,6 +75,7 @@ export const hentRestVideoliste = async (): Promise<RestVideoliste> => {
                 data: videoListe,
             };
         } catch (error) {
+            logger.error(predefinerteFeilmeldinger.feilVedHentingAvVideoliste);
             return { status: RestStatus.Feil };
         }
     }

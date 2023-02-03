@@ -1,4 +1,5 @@
 import { getRestStatus, RestRessurs, RestStatus } from './api-utils';
+import {logger, predefinerteFeilmeldinger} from "../utils/logger";
 
 export const KURSOVERSIKT_API_PATH = '/kursoversikt/api/kurs';
 
@@ -64,6 +65,7 @@ export const hentRestKurs = async (): Promise<RestKursliste> => {
                 data: kursliste,
             };
         } catch (error) {
+            logger.error(predefinerteFeilmeldinger.feilVedHentingAvKursliste);
             return { status: RestStatus.Feil };
         }
     }
