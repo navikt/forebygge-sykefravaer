@@ -1,6 +1,5 @@
 import { frontendLogger } from "./frontendLogger";
 import { backendLogger } from "./backendLogger";
-import {hentRestVideoliste} from "../kurs/vimeo-api";
 
 // Må synces med listen over predefinerte feilmeldinger i server
 export const predefinerteFeilmeldinger = {
