@@ -1,8 +1,7 @@
-import { DocumentTypes } from '../sanity-blocks/sanityTypes';
+import {DocumentTypes} from '../sanity-blocks/sanityTypes';
+import {BASE_URL} from "./miljøUtils";
 
 const sanityClient = require('@sanity/client');
-
-export const BASE_URL = '/forebygge-sykefravaer';
 
 export enum SanityQueryTypes {
     viHjelperDereMed = 'vi-hjelper-dere-med',

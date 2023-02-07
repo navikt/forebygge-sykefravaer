@@ -1,3 +1,5 @@
+import {logger, predefinerteFeilmeldinger} from "../utils/logger";
+
 export enum RestStatus {
     IkkeLastet = 'IkkeLastet',
     Suksess = 'Suksess',
@@ -23,6 +25,7 @@ export const getRestStatus = (responseStatus: number): RestStatus => {
             return RestStatus.Suksess;
         }
         default: {
+            logger.error(predefinerteFeilmeldinger.feilVedNettverkskall);
             return RestStatus.Feil;
         }
     }
