@@ -28,7 +28,7 @@ DECORATOR_EXTERNAL_URL="https://dekoratoren.dev.nav.no?context=arbeidsgiver&redi
 
 Master branch deployes automatisk til Prod.
 
-Labs og/eller dev: Endre filen `.github/workflows/build-deploy.yml` ved stegene `deploy-to-dev` og/eller `deploy-to-labs` med navnet til branchen som skal deployes.
+Labs og/eller dev: Endre filen `.github/workflows/build-deploy.yaml` ved stegene `deploy-to-dev` og/eller `deploy-to-labs` med navnet til branchen som skal deployes.
 
 ### Overgang til GCP
 GCP clusters brukºer ikke Vault, da må secrets legges inn via `kubectl` som f.eks: 

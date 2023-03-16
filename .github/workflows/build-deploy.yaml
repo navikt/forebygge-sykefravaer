@@ -36,18 +36,6 @@ jobs:
               run: |
                 docker build . -t ${IMAGE} && docker push ${IMAGE}
 
-    deploy-alert:
-        name: Deploy alert to prod
-        if: github.ref == 'refs/heads/master'
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: nais/deploy/actions/deploy@v1
-              env:
-                  APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-                  CLUSTER: prod-gcp
-                  RESOURCE: nais/alerterator.yaml
-
     deploy-to-dev-gcp:
         name: Deploy to dev-gcp
         if: github.ref == 'refs/heads/master'
