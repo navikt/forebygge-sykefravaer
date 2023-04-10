@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: "https://www.nav.no/arbeidsgiver/redusere-sykefravar"
+    prometheus.io/scrape: "false"
+  labels:
+    app: forebygge-sykefravaer
+    team: teamia
+  name: dev-redirect-forebygge-sykefravar-to-redusere-sykefravar
+  namespace: teamia
+spec:
+  ingressClassName: gw-dev-nav-no
+  rules:
+    - host: arbeidsgiver-gcp.dev.nav.no
+      http:
+        paths:
+          - backend:
+              service:
+                name: forebygge-sykefravaer
+                port:
+                  number: 80
+            path: /forebygge-sykefravaer(/|$)(.*)
+            pathType: ImplementationSpecific
