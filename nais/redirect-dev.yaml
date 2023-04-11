@@ -7,9 +7,9 @@ metadata:
     prometheus.io/scrape: "false"
   labels:
     app: forebygge-sykefravaer
-    team: teamia
+    team: arbeidsgiver
   name: dev-redirect-forebygge-sykefravar-to-redusere-sykefravar
-  namespace: teamia
+  namespace: arbeidsgiver
 spec:
   ingressClassName: gw-dev-nav-no
   rules:
